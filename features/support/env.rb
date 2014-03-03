@@ -7,4 +7,4 @@ require 'rspec/expectations'
 ##
 # You can handle all padrino applications using instead:
 #   Padrino.application
-Capybara.app = Lenstroy2::App.tap { |app|  }
+Capybara.app = Lenstroy::App.tap { |app|  }

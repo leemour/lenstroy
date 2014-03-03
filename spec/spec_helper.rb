@@ -8,9 +8,9 @@ end
 # You can use this method to custom specify a Rack app
 # you want rack-test to invoke:
 #
-#   app Lenstroy2::App
-#   app Lenstroy2::App.tap { |a| }
-#   app(Lenstroy2::App) do
+#   app Lenstroy::App
+#   app Lenstroy::App.tap { |a| }
+#   app(Lenstroy::App) do
 #     set :foo, :bar
 #   end
 #

@@ -5,5 +5,6 @@
 :script: jquery
 :renderer: haml
 :stylesheet: sass
-:namespace: Lenstroy2
+:namespace: Lenstroy
 :migration_format: timestamp
+:admin_renderer: haml

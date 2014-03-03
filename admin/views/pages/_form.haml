@@ -1,0 +1,69 @@
+- error = @page.errors.include?(:slug)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :slug, :class => 'control-label'
+  .controls
+    =f.text_field :slug, :class => 'form-control input-xlarge input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:slug, :class => 'text-error') : pat(:example)
+
+- error = @page.errors.include?(:title)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :title, :class => 'control-label'
+  .controls
+    =f.text_field :title, :class => 'form-control input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:title, :class => 'text-error') : pat(:example)
+
+- error = @page.errors.include?(:parent_id)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :parent_id, :class => 'control-label'
+  .controls
+    =f.select :parent_id, :class => 'form-control input-xlarge input-with-feedback', :options => root_pages
+    %span.help-inline=error ? f.error_message_on(:parent_id, :class => 'text-error') : 'Выберите родительскую страницу'
+
+- error = @page.errors.include?(:status)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :status, :class => 'control-label'
+  .controls
+    =f.select :status, :class => 'form-control input-xlarge input-with-feedback', :options => page_statuses
+    %span.help-inline=error ? f.error_message_on(:status, :class => 'text-error') : pat(:example)
+
+- error = @page.errors.include?(:content)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :content, :class => 'control-label'
+  .controls
+    =f.text_area :content, :class => 'form-control input-xlarge input-with-feedback redactorjs', :rows => '10'
+    %span.help-inline=error ? f.error_message_on(:content, :class => 'text-error') : pat(:example)
+
+- error = @page.errors.include?(:excerpt)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :excerpt, :class => 'control-label'
+  .controls
+    =f.text_field :excerpt, :class => 'form-control input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:excerpt, :class => 'text-error') : pat(:example)
+
+- error = @page.errors.include?(:seo_title)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :seo_title, :class => 'control-label'
+  .controls
+    =f.text_field :seo_title, :class => 'form-control input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:seo_title, :class => 'text-error') : pat(:example)
+
+- error = @page.errors.include?(:seo_desc)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :seo_desc, :class => 'control-label'
+  .controls
+    =f.text_field :seo_desc, :class => 'form-control input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:seo_desc, :class => 'text-error') : pat(:example)
+
+- error = @page.errors.include?(:seo_keys)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :seo_keys, :class => 'control-label'
+  .controls
+    =f.text_field :seo_keys, :class => 'form-control input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:seo_keys, :class => 'text-error') : pat(:example)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:pages, :index), :class => 'btn'

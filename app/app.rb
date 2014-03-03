@@ -1,4 +1,4 @@
-module Lenstroy2
+module Lenstroy
   class App < Padrino::Application
     register SassInitializer
     use ActiveRecord::ConnectionAdapters::ConnectionManagement
@@ -7,6 +7,7 @@ module Lenstroy2
     register Padrino::Helpers
 
     enable :sessions
+    enable :reload
 
     ##
     # Caching support.
@@ -52,17 +53,19 @@ module Lenstroy2
     #     disable :asset_stamp # no asset timestamping for dev
     #   end
     #
+    configure :development do
+      require 'rack-livereload'
+      use Rack::LiveReload
+    end
 
-    ##
+    #
     # You can manage errors like:
-    #
-    #   error 404 do
-    #     render 'errors/404'
-    #   end
-    #
-    #   error 505 do
-    #     render 'errors/505'
-    #   end
-    #
+    error 404 do
+      render 'errors/404'
+    end
+
+    error 505 do
+      render 'errors/505'
+    end
   end
 end

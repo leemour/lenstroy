@@ -1,0 +1,20 @@
+%footer
+  .container-fluid
+    .row-fuild
+
+      .copyright.span4
+        Все права защищены &copy;
+        =Time.now.year
+        %strong="ООО «#{company_name}»"
+
+      .span4
+        %h3 Контакты
+        = mail_to contact_email
+        %br
+        ="Тел.: #{contact_tel}"
+        %br
+        ="Факс: #{contact_tel}"
+
+      .span3.pull-right
+        Создание сайта —
+        =link_to 'Рябит', 'http://riabit.ru'

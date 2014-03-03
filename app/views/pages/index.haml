@@ -1,0 +1,24 @@
+#main-slider.carousel.slide
+  %ol.carousel-indicators
+    %li.active{"data-slide-to" => "0", "data-target" => "#main-slider"}
+    %li{"data-slide-to" => "1", "data-target" => "#main-slider"}
+    %li{"data-slide-to" => "2", "data-target" => "#main-slider"}
+  / Carousel items
+  .carousel-inner
+    .active.item
+      = image_tag(src="/images/carousel/building001.jpg")
+      .carousel-caption
+        %h4 First Thumbnail label
+        %p
+          Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+    .item= image_tag(src="/images/carousel/building002.jpg")
+    .item= image_tag(src="/images/carousel/building003.jpg")
+  / Carousel nav
+  %a.carousel-control.left{"data-slide" => "prev", :href => "#main-slider"} ‹
+  %a.carousel-control.right{"data-slide" => "next", :href => "#main-slider"} ›
+
+%h1= @page.title
+
+%div.content= @page.content.html_safe
+
+/ %p= @page.excerpt

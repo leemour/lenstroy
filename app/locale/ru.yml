@@ -1,0 +1,25 @@
+ru:
+  Admin: Админка
+
+  padrino:
+    admin:
+      edit: Изменить
+      account: пользователь
+      Accounts: Пользователи
+      Pages: Страницы
+
+      id: ID
+      name: Имя
+      surname: Фамилия
+      email: Email
+      created_at: Создан
+      updated_at: Изменен
+
+      slug: Путь
+      title: Заголовок
+      content: Содержание
+      excerpt: Выдержка
+      seo_title: SEO заголовок
+      seo_desc: SEO описание
+      seo_keys: Ключевые слова
+      parent_id: Родительская

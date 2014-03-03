@@ -1,0 +1,26 @@
+ru:
+  models:
+    account:
+      name: Пользователи
+      attributes:
+        id: Id
+        name: Имя
+        surname: Фамилия
+        email: Email
+        password: Пароль
+        password_confirmation: Подтвердите пароль
+        crypted_password: Шифр пароля
+        role: Роль
+        created_at: Создан
+        updated_at: Изменен
+    page:
+      name: Страницы
+      attributes:
+        slug: Путь
+        title: Заголовок
+        content: Содержание
+        excerpt: Выдержка
+        seo_title: SEO заголовок
+        seo_desc: SEO описание
+        seo_keys: Ключевые слова
+        parent_id: Родительская
