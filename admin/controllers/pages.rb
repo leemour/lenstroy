@@ -1,11 +1,11 @@
 Lenstroy::Admin.controllers :pages do
-  # before :edit, :new do
-  #   @parents = root_pages
-  # end
+  before :index do
+    sort_pages
+  end
 
   get :index do
     @title = "Pages"
-    @pages = Page.all
+    @pages = Page.sorted_by(@sort_column, @sort_order)
     render 'pages/index'
   end
 
@@ -17,7 +17,7 @@ Lenstroy::Admin.controllers :pages do
 
   post :create do
     @page = Page.new(params[:page])
-    @post.account = current_account
+    @page.account = current_account
     if @page.save
       @title = pat(:create_title, :model => "page #{@page.id}")
       flash[:success] = pat(:create_success, :model => 'Page')

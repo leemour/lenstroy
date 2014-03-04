@@ -4,9 +4,11 @@ class Page < ActiveRecord::Base
 
   validates_presence_of :title
   validates_presence_of :content
+  validates_uniqueness_of :slug
 
   def self.primary(slug)
-    where(slug: slug, parent_id: 0).first.seoize
+    page = where(slug: slug, parent_id: 0).first
+    page.seoize if page
   end
 
   def self.secondary(parent, child)
@@ -18,12 +20,17 @@ class Page < ActiveRecord::Base
     where(parent_id: 0)
   end
 
+  def self.sorted_by(column, order)
+    Page.order(column => order)
+  end
+
   def self.statuses
     {published: 'опубликовано', draft: 'черновик'}
   end
 
   def status
-    self.class.statuses[read_attribute(:status).to_sym]
+    status = read_attribute(:status)
+    self.class.statuses[status.to_sym] if status
   end
 
   def seoize
@@ -31,6 +38,12 @@ class Page < ActiveRecord::Base
     seo_keys  ||= 'строительство,загородный дом,коттеджи,бани,струбы'
     seo_title ||= title
     self
+  end
+
+  def seo_column
+    %i[seo_desc seo_keys seo_title].map do |info|
+      send(info).empty? ? ' – ' : ' ✔ '
+    end.join('')
   end
 
   def index_page?

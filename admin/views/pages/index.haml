@@ -26,19 +26,20 @@
                       =hidden_field_tag :page_ids, :'data-delete-many-ids' => true
                       =submit_tag pat(:delete), :class =>'list-menu-popover-delete-selected-btn btn btn-danger btn-small'
                       .btn.btn-default.btn-small.cancel=pat(:cancel)
-        %th.header= mat(:page, :id)
-        %th.header= mat(:page, :slug)
-        %th.header= mat(:page, :title)
-        %th.header= mat(:page, :status)
-        %th.header= mat(:page, :account_id)
-        %th.header= mat(:page, :parent_id)
-        %th.header= mat(:page, :content)
-        %th.header= mat(:page, :excerpt)
-        %th.header= mat(:page, :seo_title)
-        %th.header= mat(:page, :seo_desc)
-        %th.header= mat(:page, :seo_keys)
-        %th.header= mat(:page, :created_at)
-        %th.header= mat(:page, :updated_at)
+        %th.header= sort_link(:page, :id)
+        %th.header= sort_link(:page, :slug)
+        %th.header= sort_link(:page, :title)
+        %th.header= sort_link(:page, :status)
+        %th.header= sort_link(:page, :account_id)
+        %th.header= sort_link(:page, :parent_id)
+        / %th.header= mat(:page, :content)
+        %th.header= sort_link(:page, :excerpt)
+        %th.header SEO
+        / %th.header= mat(:page, :seo_title)
+        / %th.header= mat(:page, :seo_desc)
+        / %th.header= mat(:page, :seo_keys)
+        / %th.header= mat(:page, :created_at)
+        / %th.header= mat(:page, :updated_at)
         %th.header.list-row-action-header
 
     %tbody
@@ -50,20 +51,20 @@
           %td.list-column=page.slug
           %td.list-column=page.title
           %td.list-column=page.status
-          %td.list-column=page.account_id
-          %td.list-column=page.parent_id
-          %td.list-column=page.content
+          %td.list-column=page.account.name
+          %td.list-column=page.parent.slug if page.parent
+          / %td.list-column=page.content
           %td.list-column=page.excerpt
-          %td.list-column=page.seo_title
-          %td.list-column=page.seo_desc
-          %td.list-column=page.seo_keys
-          %td.list-column=page.parent_id
-          %td.list-column=time_ago_in_words page.created_at
-          %td.list-column=time_ago_in_words page.updated_at
+          %td.list-column=page.seo_column
+          / %td.list-column=page.seo_title
+          / %td.list-column=page.seo_desc
+          / %td.list-column=page.seo_keys
+          / %td.list-column=time_ago_in_words page.created_at
+          / %td.list-column=time_ago_in_words page.updated_at
           %td.list-column.list-row-action
             .list-row-action-wrapper
-              =link_to tag_icon(:edit), :href => url(:pages, :edit, :id => page.id), :rel => :tooltip, :title => "#{pat(:edit)} page", :class => 'list-row-action-wrapper-link'
-              =link_to tag_icon(:trash), :rel => :tooltip, :title => "#{pat(:delete)} page", :class => 'list-row-action-delete-one list-row-action-wrapper-link'
+              =link_to tag_icon(:edit), :href => url(:pages, :edit, :id => page.id), :rel => :tooltip, :title => "#{pat(:edit)} #{pat(:page)}", :class => 'list-row-action-wrapper-link'
+              =link_to tag_icon(:trash), :rel => :tooltip, :title => "#{pat(:delete)} #{pat(:page)}", :class => 'list-row-action-delete-one list-row-action-wrapper-link'
               .popover.list-row-action-popover-delete-one.left
                 .arrow
                 %h3.popover-title=pat(:delete, :model => "page")

@@ -23,6 +23,15 @@ class Account < ActiveRecord::Base
     account && account.has_password?(password) ? account : nil
   end
 
+  def self.roles
+    {admin: 'администратор', editor: "редактор", writer: "автор"}
+  end
+
+  # def role
+  #   role = read_attribute(:role)
+  #   self.class.roles[role.to_sym] if role
+  # end
+
   def has_password?(password)
     ::BCrypt::Password.new(crypted_password) == password
   end

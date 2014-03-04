@@ -43,8 +43,8 @@
           %td.list-column=account.email
           %td.list-column.list-row-action
             .list-row-action-wrapper
-              =link_to tag_icon(:edit), :href => url(:accounts, :edit, :id => account.id), :rel => :tooltip, :title => "#{pat(:edit)} account", :class => 'list-row-action-wrapper-link'
-              =link_to tag_icon(:trash), :rel => :tooltip, :title => "#{pat(:delete)} account", :class => 'list-row-action-delete-one list-row-action-wrapper-link'
+              =link_to tag_icon(:edit), :href => url(:accounts, :edit, :id => account.id), :rel => :tooltip, :title => "#{pat(:edit)} #{pat(:account)}", :class => 'list-row-action-wrapper-link'
+              =link_to tag_icon(:trash), :rel => :tooltip, :title => "#{pat(:delete)} #{pat(:account)}", :class => 'list-row-action-delete-one list-row-action-wrapper-link'
               .popover.list-row-action-popover-delete-one.left
                 .arrow
                 %h3.popover-title=pat(:delete, :model => "account")

@@ -1,9 +1,26 @@
 .DS_Store
+/.idea
+
+# Ignore all logfiles and tempfiles.
 log/**/*
 tmp/**/*
 bin/*
 vendor/gems/*
 !vendor/gems/cache/
 .sass-cache/*
+
+# Ignore the default SQLite database.
 db/*.db
 .*.sw*
+
+# Ignore bundler config
+/.bundle
+
+# Ignore Environment variables
+/config/secret.rb
+
+# Ignore Uploads
+/public/uploads
+
+# Ignore Backup
+/backup

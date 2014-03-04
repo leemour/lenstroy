@@ -1,5 +1,8 @@
 ru:
   models:
+    common_attributes: &common_attrs
+      created_at: Создан
+      updated_at: Изменен
     account:
       name: Пользователи
       attributes:
@@ -11,16 +14,18 @@ ru:
         password_confirmation: Подтвердите пароль
         crypted_password: Шифр пароля
         role: Роль
-        created_at: Создан
-        updated_at: Изменен
+        <<: *common_attrs
     page:
       name: Страницы
       attributes:
         slug: Путь
         title: Заголовок
+        status: Статус
+        account_id: Автор
         content: Содержание
         excerpt: Выдержка
         seo_title: SEO заголовок
         seo_desc: SEO описание
         seo_keys: Ключевые слова
         parent_id: Родительская
+        <<: *common_attrs

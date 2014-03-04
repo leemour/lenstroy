@@ -5,8 +5,11 @@ ru:
     admin:
       edit: Изменить
       account: пользователь
+      page: страница
       Accounts: Пользователи
+      Account: Пользователь
       Pages: Страницы
+      Page: Страница
 
       id: ID
       name: Имя

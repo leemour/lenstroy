@@ -31,7 +31,8 @@ end
 
 
 group :test do
-  # gem 'mocha'
+  gem 'factory_girl'
+  gem 'database_cleaner'
   gem 'rspec'
   gem 'capybara'
   gem 'cucumber'
