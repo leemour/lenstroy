@@ -1,10 +1,11 @@
 module Lenstroy
   class App < Padrino::Application
-    register SassInitializer
     use ActiveRecord::ConnectionAdapters::ConnectionManagement
     register Padrino::Rendering
     register Padrino::Mailer
     register Padrino::Helpers
+
+    register SassInitializer
 
     enable :sessions
     enable :reload
@@ -66,12 +67,19 @@ module Lenstroy
 
     #
     # You can manage errors like:
-    error 404 do
-      render 'errors/404'
+    error 403 do
+      @title = t('custom_errors.403.title')
+      render 'errors/403', :layout => :error
     end
 
-    error 505 do
-      render 'errors/505'
+    error 404 do
+      @title = t('custom_errors.404.title')
+      render 'errors/404', :layout => :error
+    end
+
+    error 500 do
+      @title = t('custom_errors.500.title')
+      render 'errors/500', :layout => :error
     end
   end
 end

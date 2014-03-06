@@ -1,0 +1,169 @@
+# Logfile created on 2014-03-06 22:05:52 +0400 by logger.rb/44203
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : Starting the New Relic agent in "production" environment.
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : Reading configuration from 
+[03/06/14 22:05:52 +0400 ubu (29806)] ERROR : Unable to read configuration file : Is a directory @ io_fread - /home/leemour/Ruby/lenstroy2
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : Enabling the Request Sampler.
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : Environment: production
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : No known dispatcher detected.
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : Application: production
+[03/06/14 22:05:52 +0400 ubu (29806)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'production'
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : Installing deferred Rack instrumentation
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : Installing Sinatra instrumentation
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : Installing Padrino instrumentation
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : Installing Net instrumentation
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : Installing ActiveRecord 4 instrumentation
+[03/06/14 22:05:52 +0400 ubu (29806)] INFO : Finished instrumentation
+[03/06/14 22:05:56 +0400 ubu (29806)] INFO : Doing deferred dependency-detection before Rack startup
+[03/06/14 22:05:56 +0400 ubu (29806)] WARN : Failure when capturing error 'Could not find table 'pages'':
+[03/06/14 22:05:56 +0400 ubu (29806)] WARN : NoMethodError: undefined method `message' for nil:NilClass
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : Starting the New Relic agent in "production" environment.
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : Reading configuration from 
+[03/06/14 22:06:42 +0400 ubu (30837)] ERROR : Unable to read configuration file : Is a directory @ io_fread - /home/leemour/Ruby/lenstroy2
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : Enabling the Request Sampler.
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : Environment: production
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : No known dispatcher detected.
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : Application: production
+[03/06/14 22:06:42 +0400 ubu (30837)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'production'
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : Installing deferred Rack instrumentation
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : Installing Sinatra instrumentation
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : Installing Padrino instrumentation
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : Installing Net instrumentation
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : Installing ActiveRecord 4 instrumentation
+[03/06/14 22:06:42 +0400 ubu (30837)] INFO : Finished instrumentation
+[03/06/14 22:06:43 +0400 ubu (30837)] INFO : Doing deferred dependency-detection before Rack startup
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : Starting the New Relic agent in "production" environment.
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : Reading configuration from 
+[03/06/14 22:09:09 +0400 ubu (31274)] ERROR : Unable to read configuration file : Is a directory @ io_fread - /home/leemour/Ruby/lenstroy2
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : Enabling the Request Sampler.
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : Environment: production
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : No known dispatcher detected.
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : Application: production
+[03/06/14 22:09:09 +0400 ubu (31274)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'production'
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : Installing deferred Rack instrumentation
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : Installing Sinatra instrumentation
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : Installing Padrino instrumentation
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : Installing Net instrumentation
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : Installing ActiveRecord 4 instrumentation
+[03/06/14 22:09:09 +0400 ubu (31274)] INFO : Finished instrumentation
+[03/06/14 22:09:12 +0400 ubu (31274)] INFO : Doing deferred dependency-detection before Rack startup
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : Starting the New Relic agent in "production" environment.
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : Reading configuration from 
+[03/06/14 22:10:11 +0400 ubu (31592)] ERROR : Unable to read configuration file : Is a directory @ io_fread - /home/leemour/Ruby/lenstroy2
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : Enabling the Request Sampler.
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : Environment: production
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : No known dispatcher detected.
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : Application: production
+[03/06/14 22:10:11 +0400 ubu (31592)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'production'
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : Installing deferred Rack instrumentation
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : Installing Sinatra instrumentation
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : Installing Padrino instrumentation
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : Installing Net instrumentation
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : Installing ActiveRecord 4 instrumentation
+[03/06/14 22:10:11 +0400 ubu (31592)] INFO : Finished instrumentation
+[03/06/14 22:10:12 +0400 ubu (31592)] INFO : Doing deferred dependency-detection before Rack startup
+[03/06/14 22:13:44 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:44 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:44 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:44 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:44 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:44 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:45 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:46 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:46 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:46 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:46 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:46 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:46 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:46 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:13:46 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:14:37 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:14:37 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:14:37 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:14:37 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:14:37 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:14:37 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:14:37 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:14:37 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:14:37 +0400 ubu (31592)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Template '/errors/404' not found in '/home/leemour/Ruby/lenstroy2/app/views'!
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : Starting the New Relic agent in "production" environment.
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : Reading configuration from 
+[03/06/14 22:14:57 +0400 ubu (32090)] ERROR : Unable to read configuration file : Is a directory @ io_fread - /home/leemour/Ruby/lenstroy2
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : Enabling the Request Sampler.
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : Environment: production
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : No known dispatcher detected.
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : Application: production
+[03/06/14 22:14:57 +0400 ubu (32090)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'production'
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : Installing deferred Rack instrumentation
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : Installing Sinatra instrumentation
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : Installing Padrino instrumentation
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : Installing Net instrumentation
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : Installing ActiveRecord 4 instrumentation
+[03/06/14 22:14:57 +0400 ubu (32090)] INFO : Finished instrumentation
+[03/06/14 22:14:59 +0400 ubu (32090)] INFO : Doing deferred dependency-detection before Rack startup
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : Starting the New Relic agent in "production" environment.
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : Reading configuration from 
+[03/06/14 22:16:27 +0400 ubu (32452)] ERROR : Unable to read configuration file : Is a directory @ io_fread - /home/leemour/Ruby/lenstroy2
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : Enabling the Request Sampler.
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : Environment: production
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : No known dispatcher detected.
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : Application: production
+[03/06/14 22:16:27 +0400 ubu (32452)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'production'
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : Installing deferred Rack instrumentation
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : Installing Sinatra instrumentation
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : Installing Padrino instrumentation
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : Installing Net instrumentation
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : Installing ActiveRecord 4 instrumentation
+[03/06/14 22:16:27 +0400 ubu (32452)] INFO : Finished instrumentation
+[03/06/14 22:16:29 +0400 ubu (32452)] INFO : Doing deferred dependency-detection before Rack startup
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : Starting the New Relic agent in "production" environment.
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : Reading configuration from 
+[03/06/14 22:18:39 +0400 ubu (326)] ERROR : Unable to read configuration file : Is a directory @ io_fread - /home/leemour/Ruby/lenstroy2
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : Enabling the Request Sampler.
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : Environment: production
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : No known dispatcher detected.
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : Application: production
+[03/06/14 22:18:39 +0400 ubu (326)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'production'
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : Installing deferred Rack instrumentation
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : Installing Sinatra instrumentation
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : Installing Padrino instrumentation
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : Installing Net instrumentation
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : Installing ActiveRecord 4 instrumentation
+[03/06/14 22:18:39 +0400 ubu (326)] INFO : Finished instrumentation
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : Starting the New Relic agent in "production" environment.
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : Reading configuration from 
+[03/06/14 22:19:29 +0400 ubu (698)] ERROR : Unable to read configuration file : Is a directory @ io_fread - /home/leemour/Ruby/lenstroy2
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : Enabling the Request Sampler.
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : Environment: production
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : No known dispatcher detected.
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : Application: production
+[03/06/14 22:19:29 +0400 ubu (698)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'production'
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : Installing deferred Rack instrumentation
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : Installing Sinatra instrumentation
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : Installing Padrino instrumentation
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : Installing Net instrumentation
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : Installing ActiveRecord 4 instrumentation
+[03/06/14 22:19:29 +0400 ubu (698)] INFO : Finished instrumentation
+[03/06/14 22:19:31 +0400 ubu (698)] INFO : Doing deferred dependency-detection before Rack startup
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : Starting the New Relic agent in "production" environment.
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : Reading configuration from 
+[03/06/14 22:19:59 +0400 ubu (1035)] ERROR : Unable to read configuration file : Is a directory @ io_fread - /home/leemour/Ruby/lenstroy2
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : Enabling the Request Sampler.
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : Environment: production
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : No known dispatcher detected.
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : Application: production
+[03/06/14 22:19:59 +0400 ubu (1035)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'production'
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : Installing deferred Rack instrumentation
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : Installing Sinatra instrumentation
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : Installing Padrino instrumentation
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : Installing Net instrumentation
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : Installing ActiveRecord 4 instrumentation
+[03/06/14 22:19:59 +0400 ubu (1035)] INFO : Finished instrumentation

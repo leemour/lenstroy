@@ -8,13 +8,13 @@ guard 'livereload' do
   watch(%r{config/locales/.+\.yml})
   # Padrino
   # watch(%r{(app|vendor)/assets(/\w+/.+\.(css|sass|scss|js|coffee))}) { |m| "#{m[3]}" }
-  watch(%r{app/assets/stylesheets/.+\.(css|sass|scss)}) { "/stylesheets/application.css" }
-  watch(%r{app/assets/javascripts(/(?<!bootstr)(\w+/)?.+\.(js|coffee))}) { "/javascripts/application.js" }
-  watch(%r{app/assets/javascripts/bootstrap/.+\.(js|coffee)}) { "/javascripts/bootstrap.js" }
+  watch(%r{app/assets/stylesheets/.+\.(css|sass|scss)}) { "/public/stylesheets/application.css" }
+  watch(%r{app/assets/javascripts(/(?<!bootstr)(\w+/)?.+\.(js|coffee))}) { "/public/javascripts/application.js" }
+  watch(%r{app/assets/javascripts/bootstrap/.+\.(js|coffee)}) { "/public/javascripts/bootstrap.js" }
 
-  watch(%r{admin/assets/stylesheets/.+\.(css|sass|scss)}) { "public/admin/stylesheets/admin.css" }
-  watch(%r{admin/assets/javascripts(/(?<!bootstr)(\w+/)?.+\.(js|coffee))}) { "/admin/javascripts/application.js" }
-  watch(%r{app/assets/javascripts/bootstrap/.+\.(js|coffee)}) { "/javascripts/bootstrap.js" }
+  watch(%r{admin/assets/stylesheets/.+\.(css|sass|scss)}) { "/public/admin/stylesheets/admin.css" }
+  watch(%r{admin/assets/javascripts(/(?<!bootstr)(\w+/)?.+\.(js|coffee))}) { "/public/admin/javascripts/application.js" }
+  watch(%r{app/assets/javascripts/bootstrap/.+\.(js|coffee)}) { "/public/admin/javascripts/bootstrap.js" }
 
   # Rails Assets Pipeline
   # watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html))).*}) { |m| "/assets/#{m[3]}" }

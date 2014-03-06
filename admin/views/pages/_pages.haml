@@ -1,0 +1,23 @@
+-@pages.each do |page|
+  %tr.list-row
+    %td.list-column.list-selectable
+      =check_box_tag 'page_ids[]', :value => page.id, :class => 'list-selectable-checkbox'
+    %td.list-column=page.id
+    %td.list-column=page.slug
+    %td.list-column=page.title
+    %td.list-column=page.status
+    %td.list-column=page.account.name
+    %td.list-column= link_to page.parent.title, url(:pages, :edit, id: page.parent.id) if page.parent
+    %td.list-column=page.excerpt
+    %td.list-column=page.seo_column
+    %td.list-column.list-row-action
+      .list-row-action-wrapper
+        =link_to tag_icon(:edit), :href => url(:pages, :edit, :id => page.id), :rel => :tooltip, :title => "#{pat(:edit)} #{pat(:page)}", :class => 'list-row-action-wrapper-link'
+        =link_to tag_icon(:trash), :rel => :tooltip, :title => "#{pat(:delete)} #{pat(:page)}", :class => 'list-row-action-delete-one list-row-action-wrapper-link'
+        .popover.list-row-action-popover-delete-one.left
+          .arrow
+          %h3.popover-title=pat(:delete, :model => "page")
+          .popover-content
+            = form_tag url(:pages, :destroy, :id => page.id), :method => :delete do
+              =submit_tag pat(:delete), :class =>'list-row-action-popover-delete-one-btn btn btn-danger btn-small'
+              .btn.btn-default.btn-small.cancel=pat(:cancel)

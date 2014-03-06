@@ -1,5 +1,7 @@
 Lenstroy::App.controller do
   get :index do
+    # binding.pry
+    # raise ENV['SESSION_SECRET'].inspect
     @page = Page.find_by_slug(:index)
     render 'pages/index'
   end
@@ -11,34 +13,13 @@ Lenstroy::App.controller do
 
   get '/:primary', priority: :low do
     @page = Page.primary(params[:primary])
+    halt 404 unless @page
     render 'pages/page'
   end
 
   get '/:primary/:secondary', priority: :low do
     @page = Page.secondary(params[:first], params[:second])
-    if @page
-      render 'pages/page'
-    else
-      halt 404
-    end
+    halt 404 unless @page
+    render 'pages/page'
   end
-
-  # get :index, :map => '/foo/bar' do
-  #   session[:foo] = 'bar'
-  #   render 'index'
-  # end
-
-  # get :sample, :map => '/sample/url', :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
-
-  # get :foo, :with => :id do
-  #   'Maps to url '/foo/#{params[:id]}''
-  # end
-
-  # get '/example' do
-  #   'Hello world!'
-  # end
 end

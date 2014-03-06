@@ -1,6 +1,5 @@
 ru:
   Admin: Админка
-
   padrino:
     admin:
       edit: Изменить
@@ -33,3 +32,13 @@ ru:
       previous: "&lsaquo; Предыдущая"
       next: "Следующая &rsaquo;"
       truncate: "..."
+  custom_errors:
+    '403':
+      title: Ошибка 403
+      description: Доступ запрещен
+    '404':
+      title: Ошибка 404
+      description: Страница не найдена
+    '500':
+      title: Ошибка 500
+      description: Внутренняя ошибка сервера
