@@ -1,0 +1,31 @@
+.navbar-brand {
+  font-size: 2em;
+  text-transform: none; }
+
+#logo {
+  float: left;
+  margin: 3px 8px 0 0;
+  opacity: 0.8; }
+  #logo:hover {
+    opacity: 1; }
+
+.admin-link {
+  font-size: 2em;
+  margin-right: 5px; }
+  .admin-link:hover {
+    color: #333333; }
+
+.pagination {
+  display: block;
+  position: relative;
+  text-align: center; }
+  .pagination span {
+    border: 1px solid #dedede;
+    display: inline-block; }
+    .pagination span:hover {
+      background-color: #efefef; }
+    .pagination span.current {
+      padding: 4px 8px; }
+    .pagination span a {
+      display: block;
+      padding: 4px 8px; }

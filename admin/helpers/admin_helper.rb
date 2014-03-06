@@ -1,4 +1,11 @@
-Lenstroy::Admin.helpers do
+module AdminHelper
+  SORT_PER_PAGE = 30
+  Sort = Struct.new(:column, :order, :page)
+
+  def company_name
+    "ЛенСтройИнициатива"
+  end
+
   def root_pages
     pages = Page.roots.map { |parent| [parent.title, parent.id] }
     [["Нет родителя", 0]] +  pages
@@ -12,18 +19,23 @@ Lenstroy::Admin.helpers do
     Account.roles.map { |k, v| [v, k] }
   end
 
-  def sort_pages
-    @sort_column = params[:sort]  ? params[:sort].to_sym  : :id
-    @sort_order  = params[:order] ? params[:order].to_sym : :asc
-    @sort_url    = request.path_info
+  def sort_resource
+    @sort = Sort.new
+    @sort.column = params[:sort]  ? params[:sort]  : 'id'
+    @sort.order  = params[:order] ? params[:order] : 'asc'
+    @sort.page   = params[:page]  ? params[:page]  : 1
+    @sort
   end
 
   def sort_link(model, column)
-    # raise @sort_order.inspect
-    order = (column == @sort_column &&
-                @sort_order == :asc) ? :desc : :asc
-
-    link_to mat(model, column), url(:pages, :index, sort: column, order: order)
+    order = sorted_by_this?(column) ? 'desc' : 'asc'
+    link_to mat(model, column),
+      url(:pages, :index, sort: column, order: order, page: @sort.page)
   end
 
+  def sorted_by_this?(column)
+    column.to_s == @sort.column && @sort.order == 'asc'
+  end
 end
+
+Lenstroy::Admin.helpers AdminHelper

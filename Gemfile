@@ -11,13 +11,15 @@ gem 'haml'
 gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'sqlite3'
 gem 'puma'
+gem 'kaminari', :require => 'kaminari/sinatra'
 
 # Image uploads
 gem 'carrierwave'
 gem 'mini_magick'
 
-# Test requirements
 group :development, :test do
+  # gem 'foreman'
+  gem 'pry-byebug'
   gem 'guard-rspec'
   gem 'guard-cucumber'
 
@@ -28,7 +30,6 @@ end
 group :production do
   gem 'newrelic_rpm'
 end
-
 
 group :test do
   gem 'factory_girl'

@@ -26,3 +26,10 @@ ru:
       seo_desc: SEO описание
       seo_keys: Ключевые слова
       parent_id: Родительская
+  views:
+    pagination:
+      first: "&laquo; Первая"
+      last: "Последняя &raquo;"
+      previous: "&lsaquo; Предыдущая"
+      next: "Следующая &rsaquo;"
+      truncate: "..."

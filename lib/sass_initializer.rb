@@ -4,8 +4,15 @@ module SassInitializer
     # See http://nex-3.com/posts/88-sass-supports-rack for more details.
     # Store SASS files (by default) within 'app/stylesheets'.
     require 'sass/plugin/rack'
-    Sass::Plugin.options[:template_location] = Padrino.root("app/stylesheets")
-    Sass::Plugin.options[:css_location] = Padrino.root("public/stylesheets")
+    # Sass::Plugin.options[:template_location] = Padrino.root("app/stylesheets")
+    # Sass::Plugin.options[:css_location] = Padrino.root("public/stylesheets")
+    Sass::Plugin.add_template_location(
+      Padrino.root("app/assets/stylesheets"),
+      Padrino.root("public/stylesheets"))
+    Sass::Plugin.add_template_location(
+      Padrino.root("admin/assets/stylesheets"),
+      Padrino.root("public/admin/stylesheets"))
+
     app.use Sass::Plugin::Rack
   end
 end

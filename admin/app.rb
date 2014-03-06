@@ -6,6 +6,9 @@ module Lenstroy
     register Padrino::Helpers
     register Padrino::Admin::AccessControl
 
+    register SassInitializer
+    register Kaminari::Helpers::SinatraHelpers
+
     ##
     # Application configuration options
     #
@@ -27,6 +30,11 @@ module Lenstroy
 
     enable  :sessions
     disable :store_location
+    enable  :reload
+
+    configure :development do
+      disable :asset_stamp
+    end
 
     access_control.roles_for :any do |role|
       role.protect '/'

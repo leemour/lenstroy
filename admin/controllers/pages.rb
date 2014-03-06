@@ -1,11 +1,11 @@
 Lenstroy::Admin.controllers :pages do
   before :index do
-    sort_pages
+    sort_resource
   end
 
   get :index do
-    @title = "Pages"
-    @pages = Page.sorted_by(@sort_column, @sort_order)
+    @title = pat("Pages")
+    @pages = Page.sorted_by(@sort)
     render 'pages/index'
   end
 
@@ -60,7 +60,7 @@ Lenstroy::Admin.controllers :pages do
   end
 
   delete :destroy, :with => :id do
-    @title = "Pages"
+    @title = pat("Pages")
     page = Page.find(params[:id])
     if page
       if page.destroy
@@ -76,7 +76,7 @@ Lenstroy::Admin.controllers :pages do
   end
 
   delete :destroy_many do
-    @title = "Pages"
+    @title = pat("Pages")
     unless params[:page_ids]
       flash[:error] = pat(:destroy_many_error, :model => 'page')
       redirect(url(:pages, :index))

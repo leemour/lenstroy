@@ -1,10 +1,13 @@
 class Page < ActiveRecord::Base
-  belongs_to :parent, :class_name => 'Page'
   belongs_to :account
+  belongs_to :parent,   class_name: 'Page', foreign_key: 'parent_id'
+  has_many   :children, class_name: 'Page'
 
   validates_presence_of :title
   validates_presence_of :content
   validates_uniqueness_of :slug
+
+  paginates_per 2
 
   def self.primary(slug)
     page = where(slug: slug, parent_id: 0).first
@@ -13,15 +16,15 @@ class Page < ActiveRecord::Base
 
   def self.secondary(parent, child)
     page = find_by_slug(child)
-    page.seoize if page && page.parent.slug == parent
+    page.seoize if page && page.parent && page.parent.slug == parent
   end
 
   def self.roots
     where(parent_id: 0)
   end
 
-  def self.sorted_by(column, order)
-    Page.order(column => order)
+  def self.sorted_by(sort)
+    Page.order(sort.column => sort.order.to_sym).page(sort.page)
   end
 
   def self.statuses

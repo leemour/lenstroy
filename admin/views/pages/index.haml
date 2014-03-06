@@ -52,7 +52,7 @@
           %td.list-column=page.title
           %td.list-column=page.status
           %td.list-column=page.account.name
-          %td.list-column=page.parent.slug if page.parent
+          %td.list-column= link_to page.parent.title, url(:pages, :edit, id: page.parent.id) if page.parent
           / %td.list-column=page.content
           %td.list-column=page.excerpt
           %td.list-column=page.seo_column
@@ -72,3 +72,5 @@
                   = form_tag url(:pages, :destroy, :id => page.id), :method => :delete do
                     =submit_tag pat(:delete), :class =>'list-row-action-popover-delete-one-btn btn btn-danger btn-small'
                     .btn.btn-default.btn-small.cancel=pat(:cancel)
+
+    = paginate @pages
