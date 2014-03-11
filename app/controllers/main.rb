@@ -1,8 +1,6 @@
 Lenstroy::App.controller do
   get :index do
-    # binding.pry
-    # raise ENV['SESSION_SECRET'].inspect
-    @page = Page.find_by_slug(:index)
+    @page = Page.find_by_slug('index')
     render 'pages/index'
   end
 

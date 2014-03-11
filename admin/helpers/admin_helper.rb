@@ -1,5 +1,4 @@
 module AdminHelper
-  SORT_PER_PAGE = 30
   Sort = Struct.new(:column, :order, :page)
 
   def company_name
@@ -29,12 +28,19 @@ module AdminHelper
 
   def sort_link(model, column)
     order = sorted_by_this?(column) ? 'desc' : 'asc'
-    link_to mat(model, column),
+    link_to sort_header(model, column, order),
       url(:pages, :index, sort: column, order: order, page: @sort.page)
   end
 
   def sorted_by_this?(column)
     column.to_s == @sort.column && @sort.order == 'asc'
+  end
+
+  def sort_header(model, column, order)
+    klass = order == 'asc' ? '' : 'caret-reversed'
+    caret = "<span class='caret caret-sort #{klass}'></span>"
+    header = mat(model, column)
+    (header + caret).html_safe
   end
 end
 

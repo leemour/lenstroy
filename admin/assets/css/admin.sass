@@ -1,6 +1,14 @@
+$caret-color: #609ed3
+
 .navbar-brand
   font-size: 2em
   text-transform: none
+
+.nav-tabs a.tab-new
+  color: #70cd57
+  &:hover
+    color: #5eb347
+
 
 #logo
   float: left
@@ -26,6 +34,14 @@
       background-color: #efefef
     &.current
       padding: 4px 8px
+      &:hover
+      background-color: transparent
     a
       display: block
       padding: 4px 8px
+
+.caret.caret-sort
+  border-top-color: $caret-color
+.caret-reversed
+  border-top: 0 none
+  border-bottom: 4px solid $caret-color

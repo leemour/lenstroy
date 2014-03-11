@@ -1,3 +1,4 @@
+require_relative 'secret'
 ##
 # This file mounts each app in the Padrino project to a specified sub-uri.
 # You can mount additional applications using any of these commands below:
@@ -26,7 +27,7 @@
 # override these settings in the subapps as needed.
 #
 Padrino.configure_apps do
-  # enable :sessions
+  enable :sessions
   set :session_secret, ENV['SESSION_SECRET']
   set :protection, :except => :path_traversal
   set :protect_from_csrf, true

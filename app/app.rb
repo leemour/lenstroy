@@ -7,7 +7,7 @@ module Lenstroy
 
     register SassInitializer
 
-    enable :sessions
+    # enable :sessions
     enable :reload
 
     ##
@@ -58,6 +58,7 @@ module Lenstroy
       require 'rack-livereload'
       use Rack::LiveReload
       disable :asset_stamp
+      # set :show_exceptions, false
     end
 
     configure :production do
@@ -65,8 +66,18 @@ module Lenstroy
       set :sass, :style => :compressed
     end
 
-    #
     # You can manage errors like:
+
+    # error ActiveRecord::RecordNotFound do
+    #   status 404
+    #   render 'errors/404', :layout => :error
+    # end
+    not_found do
+      @title = t('custom_errors.404.title')
+      status 404
+      render 'errors/404', :layout => :error
+    end
+
     error 403 do
       @title = t('custom_errors.403.title')
       render 'errors/403', :layout => :error

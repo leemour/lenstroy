@@ -25,6 +25,9 @@ ru:
       seo_desc: SEO описание
       seo_keys: Ключевые слова
       parent_id: Родительская
+
+      page:
+        new: Новая
   views:
     pagination:
       first: "&laquo; Первая"

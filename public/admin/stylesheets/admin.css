@@ -2,6 +2,11 @@
   font-size: 2em;
   text-transform: none; }
 
+.nav-tabs a.tab-new {
+  color: #70cd57; }
+  .nav-tabs a.tab-new:hover {
+    color: #5eb347; }
+
 #logo {
   float: left;
   margin: 3px 8px 0 0;
@@ -25,7 +30,15 @@
     .pagination span:hover {
       background-color: #efefef; }
     .pagination span.current {
-      padding: 4px 8px; }
+      padding: 4px 8px;
+      background-color: transparent; }
     .pagination span a {
       display: block;
       padding: 4px 8px; }
+
+.caret.caret-sort {
+  border-top-color: #609ed3; }
+
+.caret-reversed {
+  border-top: 0 none;
+  border-bottom: 4px solid #609ed3; }

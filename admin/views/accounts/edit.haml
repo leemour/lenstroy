@@ -1,6 +1,6 @@
 %ul.nav.nav-tabs
   %li=link_to tag_icon(:list, pat(:list)), url(:accounts, :index)
-  %li=link_to tag_icon(:plus, pat(:new)), url(:accounts, :new)
+  %li=link_to tag_icon(:plus, pat(:new)), url(:accounts, :new), class: 'tab-new'
   %li.active=link_to tag_icon(:edit, pat(:edit)), url(:accounts, :edit, :id => @account.id)
 
 .tabs-content
