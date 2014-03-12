@@ -26,8 +26,8 @@ ru:
       seo_keys: Ключевые слова
       parent_id: Родительская
 
-      page:
-        new: Новая
+      # page:
+      #   new: Новая
   views:
     pagination:
       first: "&laquo; Первая"

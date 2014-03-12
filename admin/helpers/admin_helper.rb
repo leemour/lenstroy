@@ -42,6 +42,10 @@ module AdminHelper
     header = mat(model, column)
     (header + caret).html_safe
   end
+
+  def upload_url
+    '/admin' + UploadedImage::UPLOAD_PATH
+  end
 end
 
 Lenstroy::Admin.helpers AdminHelper

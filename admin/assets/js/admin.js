@@ -1,3 +1,5 @@
+(function($, undefined) {
+
 $('#myform').bind("ajax:loading", function() {
   // before the remote call is made.
   $('#loading').fadeIn()
@@ -31,3 +33,15 @@ $(document).on('click', 'form[data-remote]', function(e){
     success: function(res){ console.log(res) }
   })
 });
+
+CSRFProtection: function(xhr) {
+  var token = $('meta[name="csrf-token"]').attr('content');
+  if (token) xhr.setRequestHeader('X-CSRF-Token', token);
+}
+
+$.ajaxPrefilter(function(options, originalOptions, xhr){
+  if ( !options.crossDomain ) { rails.CSRFProtection(xhr); }
+});
+
+
+})( jQuery );
