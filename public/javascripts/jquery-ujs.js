@@ -101,9 +101,7 @@ $(function(){
 
     // Every xhr request is sent along with the CSRF token.
     $.ajaxPrefilter(function(options, originalOptions, xhr) {
-      alert(options)
-      if (options.verb !== 'GET' ||
-        options.verb == 'POST' && options.url == '/upl') {
+      if (options.verb !== 'GET') {
         var token = $('meta[name="csrf-token"]').attr('content');
         if (token) xhr.setRequestHeader('X-CSRF-Token', token);
       }

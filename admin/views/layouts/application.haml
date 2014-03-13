@@ -60,5 +60,8 @@
         imageUpload: '#{upload_url}',
         imageGetJson: '#{upload_url}imagelist.json',
         autoresize: false,
-        minHeight: 300
+        minHeight: 300,
+        uploadFields: {
+          #{csrf_param}: '#{csrf_token}'
+        }
       });});

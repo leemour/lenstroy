@@ -1,5 +1,5 @@
 Lenstroy::Admin.controllers :upload do
-  post 'images', csrf_protection: false do
+  post 'images', csrf_protection: true do
     answer = UploadedImage.store params[:file]
     answer.to_json
   end
