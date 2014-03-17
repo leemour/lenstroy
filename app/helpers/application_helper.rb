@@ -21,6 +21,4 @@ Lenstroy::App.helpers do
   def min
     Padrino.env == :production ? ".min" : ""
   end
-
-
 end

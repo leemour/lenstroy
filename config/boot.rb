@@ -8,6 +8,7 @@ require 'bundler/setup'
 Bundler.require(:default, RACK_ENV)
 require 'carrierwave'
 require 'bootstrap-sass'
+require 'sinatra/simple-navigation'
 
 ##
 # ## Enable devel logging

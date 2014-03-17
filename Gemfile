@@ -12,10 +12,12 @@ gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'sqlite3'
 gem 'puma'
 gem 'kaminari', :require => 'kaminari/sinatra'
+gem 'simple-navigation', git: 'git@github.com:leemour/simple-navigation.git'
+gem 'sinatra-simple-navigation', :require => 'sinatra/simple-navigation'
 
 # Assets
 gem 'bootstrap-sass'
-gem 'padrino-pipeline'
+# gem 'padrino-pipeline'
 
 # Image uploads
 gem 'carrierwave'

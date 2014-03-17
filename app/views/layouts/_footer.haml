@@ -1,20 +1,18 @@
-%footer
-  .container-fluid
-    .row-fuild
+.container-fluid
+  .row
+    .copyright.col-xs-5.col-sm-4.col-md-4
+      Все права защищены &copy;
+      =Time.now.year
+      %strong="ООО «#{company_name}»"
 
-      .copyright.span4
-        Все права защищены &copy;
-        =Time.now.year
-        %strong="ООО «#{company_name}»"
+    .col-xs-4.col-sm-4
+      %h3 Контакты
+      = mail_to contact_email
+      %br
+      ="Тел.: #{contact_tel}"
+      %br
+      ="Факс: #{contact_tel}"
 
-      .span4
-        %h3 Контакты
-        = mail_to contact_email
-        %br
-        ="Тел.: #{contact_tel}"
-        %br
-        ="Факс: #{contact_tel}"
-
-      .span3.pull-right
-        Создание сайта —
-        =link_to 'Рябит', 'http://riabit.ru'
+    .author.col-xs-12.col-sm-4.pull-right
+      Создание сайта —
+      =link_to 'Рябит', 'http://riabit.ru'

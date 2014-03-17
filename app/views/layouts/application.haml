@@ -1,41 +1,40 @@
 !!! 5
 %html{:lang => 'ru'}
   %head
-    %meta{:charset => 'utf-8'}/
-    %meta{:name => :viewport, :content => 'width=device-width,initial-scale=1'}/
+    %meta{ charset: 'utf-8'}/
+    %meta{'http-equiv' => "X-UA-Compatible", content: "IE=edge"}/
+    %meta{ name: 'viewport',    content: 'width=device-width,initial-scale=1'}/
     %meta{ name: 'description', content: @page.seo_desc }/
-    %meta{ name: 'keywords', content: @page.seo_keys }/
+    %meta{ name: 'keywords',    content: @page.seo_keys }/
     %title=full_title(@page)
     =favicon_tag 'favicon.ico'
     / %link{:href => 'http://fonts.googleapis.com/css?family=Varela', :rel => :stylesheet}
     =stylesheet_link_tag 'application'
 
     /[if lt IE 9]
-      %script{ :src => '//html5shiv.googlecode.com/svn/trunk/html5.js' }
-
+      %script{ src: '//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' }
+      %script{ src: "//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"}
   %body
-    / = raise Lenstroy::App.pipeline.inspect
 
     = partial 'layouts/header'
 
     %main#content{ role: 'main'}
       .container-fluid
-        .row-fluid
-          %div.main.span8
+        .row
+          %article.col-sm-8.col-lg-9
             = [:error, :warning, :success, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => true) }.join.html_safe
 
+            = yield
 
-            %article= yield
+          %aside#sidebar.col-sm-4.col-lg-3
+            = partial 'layouts/sidebar'
 
-
-          = partial 'layouts/sidebar'
-
-
-    = partial 'layouts/footer'
+    %footer
+      = partial 'layouts/footer'
 
     =javascript_include_tag "http://code.jquery.csom/jquery-latest#{min}.js"
     :javascript
       window.jQuery || document.write('<script src="javascripts/jquery.js">\/script>')
-    =javascript_include_tag 'jquery-ujs', "bootstrap#{min}", 'application'
+    =javascript_include_tag 'jquery-ujs', "bootstrap.min", 'application'
 
     = partial 'common/yandex_metrika'
