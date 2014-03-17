@@ -12,21 +12,7 @@
     =stylesheet_link_tag 'bootstrap', 'application', 'admin', 'redactor'
 
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          =link_to image_tag("/images/logo-admin.png"), '/', id: 'logo', title: "На главную"
-          =link_to 'Админка', url(:base, :index), :class => 'navbar-brand', :title => 'Панель управления'
-          %ul.nav.navbar-nav.pull-right
-            %li.navbar-edit-account=link_to tag_icon(:user), url(:accounts, :edit, :id => current_account.id), :title => pat(:profile), :class => 'navbar-nav-link'
-            %li.navbar-logout
-              =button_to :logout, url(:sessions, :destroy), :method => :delete, :class => 'navbar-nav-form' do
-                =content_tag :button, tag_icon(:off), :type => :submit, :title => pat(:logout), :class => 'navbar-nav-form-link'
-
-          %ul.nav.navbar-nav.pull-left
-            - project_modules.each do |project_module|
-              %li{:class => "navbar-module #{('active' if request.path_info =~ /^#{project_module.path}/)}"}
-                =link_to pat(project_module.human_name), url(project_module.path)
+    = partial 'layouts/header'
 
     .container.main
       .main-wrapper
@@ -37,21 +23,18 @@
         .main-wrapper-push
 
     %footer
-      .footer-wrapper.container
-        %p.pull-left
-          Все права защищены &copy;
-          =Time.now.year
-          #{company_name} - на Padrino v.#{Padrino.version}
-        %ul.pull-right.footer-links
-          %li= link_to tag_icon(:home, 'web'), 'http://www.padrinorb.com', :target => :_blank, :class => 'footer-links-link'
-          %li= link_to tag_icon(:heart, 'blog'), 'http://www.padrinorb.com/blog', :target => :_blank, :class => 'footer-links-link'
-          %li= link_to tag_icon(:github, 'code'), 'https://github.com/padrino/padrino-framework', :target => :_blank, :class => 'footer-links-link'
-          %li= link_to tag_icon(:twitter, 'twitter'), 'http://twitter.com/padrinorb', :target => :_blank, :class => 'footer-links-link'
+      = partial 'layouts/footer'
+
+    #loading
+      = image_tag("loading-large.gif")
 
     =javascript_include_tag 'jquery-1.9.0.min', '/javascripts/jquery-ujs'
-    =javascript_include_tag (Padrino.env == :production ? 'bootstrap/bootstrap.min' : %w[bootstrap/affix bootstrap/alert bootstrap/button bootstrap/carousel bootstrap/collapse bootstrap/dropdown  bootstrap/tooltip bootstrap/transition  bootstrap/modal bootstrap/popover bootstrap/scrollspy bootstrap/tab]), :application
+    -if Padrino.env == :production
+      =javascript_include_tag 'bootstrap/bootstrap.min', "redactor/redactor.min"
+    -else
+      =javascript_include_tag  "redactor/redactor", %w[bootstrap/affix bootstrap/alert bootstrap/button bootstrap/carousel bootstrap/collapse bootstrap/dropdown  bootstrap/tooltip bootstrap/transition  bootstrap/modal bootstrap/popover bootstrap/scrollspy bootstrap/tab]
 
-    =javascript_include_tag Padrino.env == :production ? "redactor/redactor.min" : "redactor/redactor"
+    =javascript_include_tag  :application, :admin
 
     :javascript
       $(function() {

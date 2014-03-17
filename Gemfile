@@ -13,6 +13,10 @@ gem 'sqlite3'
 gem 'puma'
 gem 'kaminari', :require => 'kaminari/sinatra'
 
+# Assets
+gem 'bootstrap-sass'
+gem 'padrino-pipeline'
+
 # Image uploads
 gem 'carrierwave'
 gem 'mini_magick'

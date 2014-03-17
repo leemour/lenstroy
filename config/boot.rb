@@ -7,6 +7,7 @@ require 'rubygems' unless defined?(Gem)
 require 'bundler/setup'
 Bundler.require(:default, RACK_ENV)
 require 'carrierwave'
+require 'bootstrap-sass'
 
 ##
 # ## Enable devel logging

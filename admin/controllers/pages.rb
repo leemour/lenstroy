@@ -10,7 +10,11 @@ Lenstroy::Admin.controllers :pages do
     when :html
       render 'pages/index'
     when :js
-      "$('#list tbody').html('#{partial "/pages/pages"}');"
+      # "$('#list tbody').html('#{partial "/pages/pages"}');".to_json
+      # "$('#list tbody').html('');" # working
+      (partial "/pages/pages").to_json
+      # html = partial '/pages/pages'
+      # {params: sort_params, html: html.to_s}.to_json
     end
   end
 

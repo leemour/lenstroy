@@ -42,3 +42,15 @@
 .caret-reversed {
   border-top: 0 none;
   border-bottom: 4px solid #609ed3; }
+
+#loading {
+  display: none;
+  margin: auto;
+  height: 66px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  text-align: center; }

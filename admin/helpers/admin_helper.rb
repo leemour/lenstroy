@@ -29,7 +29,10 @@ module AdminHelper
   def sort_link(model, column)
     order = sorted_by_this?(column) ? 'desc' : 'asc'
     link_to sort_header(model, column, order),
-      url(:pages, :index, sort: column, order: order, page: @sort.page)
+      url(:pages, :index,
+        sort: column, order: order, page: @sort.page)
+      #   sort: column, order: order, page: @sort.page, format: :js),
+      # remote: true
   end
 
   def sorted_by_this?(column)
@@ -41,6 +44,10 @@ module AdminHelper
     caret = "<span class='caret caret-sort #{klass}'></span>"
     header = mat(model, column)
     (header + caret).html_safe
+  end
+
+  def sort_params
+    params.select {|k,v| AdminHelper::Sort.members.include? k || k == :column }
   end
 
   def upload_url

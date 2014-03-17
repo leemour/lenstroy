@@ -56,8 +56,25 @@ module Lenstroy
     end
 
     # Custom error management
-    error(403) { @title = "Error 403"; render('errors/403', :layout => :error) }
-    error(404) { @title = "Error 404"; render('errors/404', :layout => :error) }
-    error(500) { @title = "Error 500"; render('errors/500', :layout => :error) }
+    not_found do
+      @title = t('custom_errors.404.title')
+      status 404
+      render 'errors/404', :layout => :error
+    end
+
+    error 403 do
+      @title = t('custom_errors.403.title')
+      render 'errors/403', :layout => :error
+    end
+
+    error 404 do
+      @title = t('custom_errors.404.title')
+      render 'errors/404', :layout => :error
+    end
+
+    error 500 do
+      @title = t('custom_errors.500.title')
+      render 'errors/500', :layout => :error
+    end
   end
 end

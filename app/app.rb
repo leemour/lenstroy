@@ -6,6 +6,21 @@ module Lenstroy
     register Padrino::Helpers
 
     register SassInitializer
+    register Padrino::Pipeline
+    configure_assets do |config|
+      config.pipeline = Padrino::Pipeline::Sprockets
+      config.css_assets = 'app/assets/css'
+      config.js_assets  = 'app/assets/js'
+      # config.js_assets  = ['app/assets/js', 'vendor/assets/javascripts', 'assets/javascripts']
+      # config.css_prefix = '/stylesheets'
+      # config.js_prefix  = '/javascripts'
+    end
+
+    assets.context_class.class_eval do
+      def asset_path(path, options = {})
+        "/assets/#{path}"
+      end
+    end
 
     # enable :sessions
     enable :reload

@@ -14,6 +14,7 @@
       %script{ :src => '//html5shiv.googlecode.com/svn/trunk/html5.js' }
 
   %body
+    / = raise Lenstroy::App.pipeline.inspect
 
     = partial 'layouts/header'
 
@@ -32,10 +33,9 @@
 
     = partial 'layouts/footer'
 
-    -min = Padrino.env == :production ? ".min" : ""
-    %script{type: "text/javascript", src: "http://code.jquery.com/jquery-latest#{min}.js"}
+    =javascript_include_tag "http://code.jquery.csom/jquery-latest#{min}.js"
     :javascript
-      window.jQuery || document.write('<script src="js/jquery#{min}.js">\x3C/script>')
-    =javascript_include_tag 'jquery', 'application', 'jquery-ujs', (Padrino.env == :production ? 'bootstrap.min' : 'bootstrap')
+      window.jQuery || document.write('<script src="javascripts/jquery.js">\/script>')
+    =javascript_include_tag 'jquery-ujs', "bootstrap#{min}", 'application'
 
     = partial 'common/yandex_metrika'

@@ -18,4 +18,9 @@ Lenstroy::App.helpers do
     "#{title} | #{base_title}"
   end
 
+  def min
+    Padrino.env == :production ? ".min" : ""
+  end
+
+
 end
