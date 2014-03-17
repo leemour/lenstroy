@@ -17,7 +17,7 @@ gem 'sinatra-simple-navigation', :require => 'sinatra/simple-navigation'
 
 # Assets
 gem 'bootstrap-sass'
-# gem 'padrino-pipeline'
+gem 'padrino-pipeline', git: 'git@github.com:Ortuna/padrino-pipeline.git'
 
 # Image uploads
 gem 'carrierwave'

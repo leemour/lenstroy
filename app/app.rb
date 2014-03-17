@@ -8,6 +8,14 @@ module Lenstroy
     register Sinatra::SimpleNavigation
     register SassInitializer
 
+    register Padrino::Pipeline
+    configure_assets do |assets|
+      assets.pipeline = Padrino::Pipeline::Sprockets
+      assets.js_assets =  [ "app/assets/js", Bootstrap.javascripts_path ]
+      assets.css_assets = [ "app/assets/css", Bootstrap.stylesheets_path ]
+      # assets.compiled_output = "#{public_path}"
+    end
+
     # enable :sessions
     enable :reload
 
