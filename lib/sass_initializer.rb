@@ -8,10 +8,10 @@ module SassInitializer
     # Sass::Plugin.options[:css_location] = Padrino.root("public/stylesheets")
     Sass::Plugin.add_template_location(
       Padrino.root("app/assets/css"),
-      Padrino.root("public/stylesheets"))
+      Padrino.root("public/css"))
     Sass::Plugin.add_template_location(
       Padrino.root("admin/assets/css"),
-      Padrino.root("public/admin/stylesheets"))
+      Padrino.root("public/admin/css"))
 
     app.use Sass::Plugin::Rack
   end

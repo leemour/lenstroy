@@ -3,15 +3,21 @@
     .copyright.col-xs-5.col-sm-4.col-md-4
       Все права защищены &copy;
       =Time.now.year
-      %strong="ООО «#{company_name}»"
+      %br/
+      %strong ООО «#{company_name}»
+      %br/
+      190000, Россия, Санкт-Петербург,
+      %br/
+      наб. Адмиралтейского канала д.&nbsp;27,&nbsp;оф.&nbsp;5
+
 
     .col-xs-4.col-sm-4
       %h3 Контакты
       = mail_to contact_email
-      %br
-      ="Тел.: #{contact_tel}"
-      %br
-      ="Факс: #{contact_tel}"
+      %br/
+      Тел.: #{contact_tel}
+      %br/
+      Факс: #{contact_tel}
 
     .author.col-xs-12.col-sm-4.pull-right
       Создание сайта —

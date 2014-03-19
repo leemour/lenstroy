@@ -1,8 +1,9 @@
 !!! 5
 %html{:lang => 'ru'}
   %head
-    %meta{:charset => 'utf-8'}/
-    %meta{:name => :viewport, :content => 'width=device-width,initial-scale=1'}/
+    %meta{ charset: 'utf-8'}/
+    %meta{'http-equiv' => "X-UA-Compatible", content: "IE=edge"}/
+    %meta{ name: 'viewport',    content: 'width=device-width,initial-scale=1'}/
     %meta{ name: 'description', content: @title }/
     %title= @title
     =favicon_tag 'favicon.ico'
@@ -10,25 +11,30 @@
     =stylesheet_link_tag 'application'
 
     /[if lt IE 9]
-      %script{ :src => '//html5shiv.googlecode.com/svn/trunk/html5.js' }
+      %script{ src: '//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' }
+      %script{ src: "//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"}
 
   %body
 
     = partial 'layouts/header'
 
-    %main#content{ role: 'main'}
+    %main#content{role: 'main'}
       .container-fluid
-        .row-fluid
-          %div.main.span8
+        .row
+          %article.col-sm-8.col-lg-9
             = [:error, :warning, :success, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => true) }.join.html_safe
 
+            = yield
 
-            %article= yield
+          %aside#sidebar.col-sm-4.col-lg-3
+            = partial 'layouts/sidebar'
 
+    %footer
+      = partial 'layouts/footer'
 
-          = partial 'layouts/sidebar'
-
-
-    = partial 'layouts/footer'
+    =javascript_include_tag "http://code.jquery.com/jquery-latest#{min}.js"
+    :javascript
+      window.jQuery || document.write('<script src="javascripts/jquery.js">\/script>')
+    =javascript_include_tag 'jquery-ujs', 'application'
 
     = partial 'common/yandex_metrika'

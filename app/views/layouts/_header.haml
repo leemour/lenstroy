@@ -5,28 +5,27 @@
         %a( href='/' id='logo' title='На главную')
           = image_tag("/images/logo.png")
 
-      %address.contacts-top.col-xs-5.col-sm-4.pull-right
+      %address.contacts.col-xs-5.col-sm-4.pull-right
         %p.tel= contact_tel
         %p.email= mail_to contact_email
 
-      .disclaimer.col-sm-4
+      .disclaimer.col-xs-12.col-sm-4
         Строительство загородных домов
         %br
         Ремонт, отделка, перепланировка
 
     .row
-      %nav.navbar
-        .navbar-inner
-          .container
-
-            %a.btn.btn-navbar{'data-target' => ".nav-collapse", 'data-toggle' => "collapse", :type => "button"}
+      %nav.navbar.navbar-default{role: "navigation"}
+        .container-fluid
+          .navbar-header
+            %button.navbar-toggle.collapsed{'data-target' => ".navbar-collapse", 'data-toggle' => "collapse", :type => "button"}
+              %span.sr-only Toggle navigation
               -3.times do
                 %span.icon-bar
+            / = link_to "#{company_name} Меню", '/', class: 'brand hidden-desktop'
 
-            = link_to "#{company_name} Меню", '/', class: 'brand hidden-desktop'
-
-            .nav-collapse.collapse
-              = render_navigation(renderer: :bootstrap, expand_all: true)
+          .navbar-collapse.collapse
+            = render_navigation(renderer: :bootstrap, expand_all: true)
 
 
       / = render_navigation(renderer: :bootstrap_breadcrumbs)

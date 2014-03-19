@@ -9,6 +9,17 @@ module Lenstroy
     register SassInitializer
     register Kaminari::Helpers::SinatraHelpers
 
+    register Padrino::Pipeline
+    configure_assets do |assets|
+      assets.pipeline = Padrino::Pipeline::Sprockets
+      assets.css_assets =  [ "admin/assets/css", Bootstrap.stylesheets_path ]
+      assets.js_assets  =  [ "admin/assets/js", Bootstrap.javascripts_path ]
+      assets.image_prefix = '/images'
+      assets.css_prefix = '/css'
+      assets.js_prefix  = '/js'
+      # assets.compiled_output = "#{public_path}"
+    end
+
     ##
     # Application configuration options
     #

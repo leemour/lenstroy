@@ -28,13 +28,13 @@
     #loading
       = image_tag("loading-large.gif")
 
-    =javascript_include_tag 'jquery-1.9.0.min', '/javascripts/jquery-ujs'
+    =javascript_include_tag 'jquery-1.9.0.min', '/js/jquery-ujs'
     -if Padrino.env == :production
-      =javascript_include_tag 'bootstrap/bootstrap.min', "redactor/redactor.min"
+      =javascript_include_tag "redactor/redactor.min", 'bootstrap/bootstrap.min'
     -else
       =javascript_include_tag  "redactor/redactor", %w[bootstrap/affix bootstrap/alert bootstrap/button bootstrap/carousel bootstrap/collapse bootstrap/dropdown  bootstrap/tooltip bootstrap/transition  bootstrap/modal bootstrap/popover bootstrap/scrollspy bootstrap/tab]
 
-    =javascript_include_tag  :application, :admin
+    =javascript_include_tag  'application', 'admin'
 
     :javascript
       $(function() {

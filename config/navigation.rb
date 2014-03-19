@@ -1,6 +1,6 @@
 SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
-    primary.dom_class = 'nav'
+    primary.dom_class = 'nav navbar-nav'
     primary.item :about,        'О нас',                '/about' do |about|
       about.item :how_we_work,  'Как мы работаем',      '/about/how-we-work'
       about.item :contacts,     'Контакты',             '/about/contacts'
