@@ -4,6 +4,12 @@
 main
   display: block
 
+.nowrap
+  white-space: nowrap
+
+.wrapper
+  padding: 0 15px
+
 header
   margin-top: 5px
   #logo img
@@ -30,22 +36,31 @@ header
     .btn-navbar .icon-bar
       background-color: #FFF
 
-// #content
-//   clear: both
-//   overflow: hidden
+.breadcrumb
+  li
+    padding-right: 3px
 
 .container-fluid
   max-width: 1170px
 
-#sidebar
-  // float: right
-  // min-width: 220px
+// article
+//   float: right
+//   margin-left: 250px
+//   overflow: hidden
+
+// #sidebar
+//   width: 220px
+//   margin: 0 15px
 
 .carousel-inner > .item
   -webkit-transition: 0.6s ease-in-out left
   -moz-transition: 0.6s ease-in-out left
   -o-transition: 0.6s ease-in-out left
   transition: 0.6s ease-in-out left
+
+.contact-details
+  h2
+    font-size: 24px
 
 footer
   margin: 40px 0 30px
@@ -68,6 +83,12 @@ footer
     &.navbar-default
       margin-left: 0
       margin-right: 0
+      .container-fluid
+        padding: 0 15px
+  article
+    margin-right: 0
+  #sidebar
+    float: none
   footer .author
     text-align: left
 

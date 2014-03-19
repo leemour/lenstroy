@@ -4986,6 +4986,12 @@ button.close {
 main {
   display: block; }
 
+.nowrap {
+  white-space: nowrap; }
+
+.wrapper {
+  padding: 0 15px; }
+
 header {
   margin-top: 5px; }
   header #logo img {
@@ -5011,6 +5017,9 @@ header {
   header .navbar .btn-navbar .icon-bar {
     background-color: white; }
 
+.breadcrumb li {
+  padding-right: 3px; }
+
 .container-fluid {
   max-width: 1170px; }
 
@@ -5019,6 +5028,9 @@ header {
   -moz-transition: 0.6s ease-in-out left;
   -o-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left; }
+
+.contact-details h2 {
+  font-size: 24px; }
 
 footer {
   margin: 40px 0 30px; }
@@ -5038,6 +5050,14 @@ footer {
   header .navbar.navbar-default {
     margin-left: 0;
     margin-right: 0; }
+    header .navbar.navbar-default .container-fluid {
+      padding: 0 15px; }
+
+  article {
+    margin-right: 0; }
+
+  #sidebar {
+    float: none; }
 
   footer .author {
     text-align: left; } }

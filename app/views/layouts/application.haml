@@ -24,6 +24,8 @@
           %article.col-sm-8.col-lg-9
             = [:error, :warning, :success, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => true) }.join.html_safe
 
+            = render_navigation(renderer: :bootstrap_breadcrumbs)
+
             = yield
 
           %aside#sidebar.col-sm-4.col-lg-3

@@ -1,6 +1,6 @@
 .container-fluid
   .row
-    .copyright.col-xs-5.col-sm-4.col-md-4
+    .copyright.col-xs-7.col-sm-5
       Все права защищены &copy;
       =Time.now.year
       %br/
@@ -11,7 +11,7 @@
       наб. Адмиралтейского канала д.&nbsp;27,&nbsp;оф.&nbsp;5
 
 
-    .col-xs-4.col-sm-4
+    .col-xs-5.col-sm-3
       %h3 Контакты
       = mail_to contact_email
       %br/
@@ -19,6 +19,6 @@
       %br/
       Факс: #{contact_tel}
 
-    .author.col-xs-12.col-sm-4.pull-right
+    .author.col-xs-6.col-sm-4
       Создание сайта —
       =link_to 'Рябит', 'http://riabit.ru'

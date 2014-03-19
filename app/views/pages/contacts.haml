@@ -1,0 +1,40 @@
+%h1 Контактная информация
+
+.contact-details{itemscope: true, itemtype: "http://schema.org/HomeAndConstructionBusiness"}
+  %address.full-contacts
+    %h2{itemprop: "name"} ООО «#{company_name}»
+
+    .row
+      .col-xs-6
+        %h3 Телефон
+        %p{itemprop: "telephone"} (812) 320-40-20
+
+      .col-xs-6
+        %h3 Email
+        %p{itemprop: "email"}
+          = link_to 'info@lenstroyin.ru', 'mailto:info@lenstroyin.ru'
+
+    / %h3 Skype
+    / %p= link_to 'lenstroyin', 'skype:lenstroyin?call'
+
+    .row
+      .col-sm-6
+        %h3 Адрес
+        %p{itemscope: true, itemprop: "address", itemtype: "http://schema.org/PostalAddress"}
+          %span.nowrap{itemprop: "postalCode"}> 190000
+          ,&ensp;
+          %span.nowrap{itemprop: "addressCountry"}> Россия
+          ,&ensp;
+          %span.nowrap{itemprop: "addressLocality"}> Санкт-Петербург
+          ,
+          %br
+          %span{itemprop: "streetAddress"}>
+            наб. Адмиралтейского канала д.27,&nbsp;оф.&nbsp;5
+
+      .col-sm-6
+        %h3 Часы работы
+        %time{ itemprop: "openingHours", datetime: "09:00−20:00"} 09:00 — 20:00
+
+.contact-form
+  %h3 Свяжитесь с нами сейчас
+  = partial 'common/contact_form'
