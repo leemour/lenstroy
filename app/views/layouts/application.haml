@@ -10,7 +10,7 @@
     =favicon_tag 'favicon.ico'
     / %link{:href => 'http://fonts.googleapis.com/css?family=Varela', :rel => :stylesheet}
     =stylesheet_link_tag 'application'
-
+    =stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
     /[if lt IE 9]
       %script{ src: '//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' }
       %script{ src: "//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"}
@@ -29,7 +29,7 @@
             = yield
 
           %aside#sidebar.col-sm-4.col-lg-3
-            = partial 'layouts/sidebar'
+            = partial "layouts/sidebar"
 
     %footer
       = partial 'layouts/footer'

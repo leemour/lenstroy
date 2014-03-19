@@ -1,4 +1,16 @@
-.well.sidebar-nav.sidebar-nav-fixed
+.well
+  %button.btn.btn-primary.btn-block{'data-target' => ".navbar-collapse", 'data-toggle' => "collapse", :type => "button"}
+    %span.glyphicon.glyphicon-download-alt
+    Скачать прайс лист
+
+-if @page && @page.contact_page?
+  .contact-form
+    %h2 Свяжитесь с нами сейчас
+    = partial 'common/contact_form'
+
+  .sidebar-nav.sidebar-nav-fixed
+    = render_navigation(renderer: :bootstrap, only: 'houses', expand_all: true)
+
   %ul.nav.nav-list
     %li.nav-header Это сайдбар
     %li.active
@@ -9,8 +21,13 @@
       %a{:href => "#"} Link
     %li
       %a{:href => "#"} Link
-    %li.nav-header Ссылочки
-    %li
+
+-else
+  .sidebar-nav.sidebar-nav-fixed
+
+  %ul.nav.nav-list
+    %li.nav-header Это сайдбар
+    %li.active
       %a{:href => "#"} Link
     %li
       %a{:href => "#"} Link
@@ -18,14 +35,7 @@
       %a{:href => "#"} Link
     %li
       %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li.nav-header Ссылочки
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
+
+  .contact-form
+    %h2 Свяжитесь с нами сейчас
+    = partial 'common/contact_form'

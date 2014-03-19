@@ -8,7 +8,7 @@ Lenstroy::App.helpers do
   end
 
   def contact_tel
-    "(812) 314-81-90"
+    "(812) 938-21-10"
   end
 
   def full_title(page)

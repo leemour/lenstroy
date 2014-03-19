@@ -1,25 +1,23 @@
-%h1 Контактная информация
-
 .contact-details{itemscope: true, itemtype: "http://schema.org/HomeAndConstructionBusiness"}
   %address.full-contacts
-    %h2{itemprop: "name"} ООО «#{company_name}»
+    %h1{itemprop: "name"} ООО «#{company_name}»
 
     .row
       .col-xs-6
-        %h3 Телефон
-        %p{itemprop: "telephone"} (812) 320-40-20
+        %h2 Телефон
+        %p{itemprop: "telephone"}= contact_tel
 
       .col-xs-6
-        %h3 Email
+        %h2 Email
         %p{itemprop: "email"}
-          = link_to 'info@lenstroyin.ru', 'mailto:info@lenstroyin.ru'
+          = mail_to contact_email
 
     / %h3 Skype
     / %p= link_to 'lenstroyin', 'skype:lenstroyin?call'
 
     .row
       .col-sm-6
-        %h3 Адрес
+        %h2 Адрес
         %p{itemscope: true, itemprop: "address", itemtype: "http://schema.org/PostalAddress"}
           %span.nowrap{itemprop: "postalCode"}> 190000
           ,&ensp;
@@ -32,9 +30,14 @@
             наб. Адмиралтейского канала д.27,&nbsp;оф.&nbsp;5
 
       .col-sm-6
-        %h3 Часы работы
+        %h2 Часы работы
         %time{ itemprop: "openingHours", datetime: "09:00−20:00"} 09:00 — 20:00
 
-.contact-form
-  %h3 Свяжитесь с нами сейчас
-  = partial 'common/contact_form'
+    .row
+      #map.col-sm-12
+
+%script{src: "//api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"}
+= partial 'common/ymaps'
+
+:javascript
+  ymaps.ready(initYMap);

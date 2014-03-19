@@ -1,16 +1,20 @@
 Lenstroy::App.controller :contacts do
+  before do
+    @message = ContactMessage.new(params[:message])
+  end
+
   before :contacts, :contacts_message do
     setup_negative_captcha
   end
 
   get :contact, map: '/about/contacts', priority: :high do
     @page = Page.find_by_slug(:contacts)
-    @message = ContactMessage.new
+    # @message = ContactMessage.new
     render 'pages/contacts'
   end
 
   post :message, map: '/about/contacts' do
-    @message = ContactMessage.new(@captcha.values) #Decrypted params
+    # @message = ContactMessage.new(@captcha.values) #Decrypted params
     if @captcha.valid? && @message.valid?
       @error = ContactMailer.contact_message(@message).deliver
       redirect_to '/mail-sent'

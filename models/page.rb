@@ -52,4 +52,8 @@ class Page < ActiveRecord::Base
   def index_page?
     slug == 'index'
   end
+
+  def contact_page?
+    slug == 'contacts'
+  end
 end

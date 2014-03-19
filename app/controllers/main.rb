@@ -1,4 +1,8 @@
 Lenstroy::App.controller do
+  before do
+    @message = ContactMessage.new(params[:message])
+  end
+
   get :index do
     @page = Page.find_by_slug('index')
     render 'pages/index'
