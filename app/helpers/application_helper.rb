@@ -18,6 +18,14 @@ Lenstroy::App.helpers do
     "#{title} | #{base_title}"
   end
 
+  def pricelist_url
+    '/docs/Lenstroyin_Pricelist_2014.pdf'
+  end
+
+  def latest_image(name, alt_text)
+    partial 'common/recent_work', locals: {name: name, alt_text: alt_text}
+  end
+
   def min
     Padrino.env == :production ? ".min" : ""
   end

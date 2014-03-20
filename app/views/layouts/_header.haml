@@ -25,4 +25,4 @@
             / = link_to "#{company_name} Меню", '/', class: 'brand hidden-desktop'
 
           .navbar-collapse.collapse
-            = render_navigation(renderer: :bootstrap, expand_all: true)
+            = render_navigation(renderer: :bootstrap, except: :houses, expand_all: true)

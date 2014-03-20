@@ -10,6 +10,9 @@ main
 .wrapper
   padding: 0 15px
 
+// .modal
+//   display: none
+
 header
   margin-top: 5px
   #logo img
@@ -52,6 +55,29 @@ header
   .well
     @include box-shadow(none)
     padding: 10px 30px
+  nav
+    ul
+      padding-left: 0
+    li
+      list-style: none inside
+    a
+      position: relative
+      display: block
+      padding: 10px 15px
+      margin-bottom: -1px
+      background-color: #FFF
+      border: 1px solid #DDD
+      &:first-child
+        border-top-right-radius: 4px
+        border-top-left-radius: 4px
+      &:last-child
+        margin-bottom: 0px
+        border-bottom-right-radius: 4px
+        border-bottom-left-radius: 4px
+      &:hover
+        background-color: #F5F5F5
+      &.active
+        background-color: #E7E7E7
 
 .carousel-inner > .item
   -webkit-transition: 0.6s ease-in-out left

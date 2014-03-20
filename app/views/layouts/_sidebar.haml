@@ -1,41 +1,39 @@
 .well
-  %button.btn.btn-primary.btn-block{'data-target' => ".navbar-collapse", 'data-toggle' => "collapse", :type => "button"}
+  = link_to pricelist_url, class: "btn btn-primary btn-block" do
     %span.glyphicon.glyphicon-download-alt
     Скачать прайс лист
 
 -if @page && @page.contact_page?
-  .contact-form
+  .widget.contact-form
     %h2 Свяжитесь с нами сейчас
     = partial 'common/contact_form'
 
-  .sidebar-nav.sidebar-nav-fixed
-    = render_navigation(renderer: :bootstrap, only: 'houses', expand_all: true)
+  %nav.navbar-sidebar
+    = render_navigation context: :sidebar, renderer: :list, expand_all: true
 
-  %ul.nav.nav-list
-    %li.nav-header Это сайдбар
-    %li.active
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
+  .widget.latest-works
+    %h2 Последние работы
+    .work
+      %h3 Загородные дома
+      = latest_image 'latest-house1', "Строительство дома из бруса в Ленинградской области"
+    .work
+      %h3 Ремонт квартир и офисов
+      = latest_image 'latest-repair1', "Ремонт квартиры в Петербурге"
+
 
 -else
-  .sidebar-nav.sidebar-nav-fixed
+  %nav.navbar-sidebar
+    = render_navigation context: :sidebar, renderer: :list, expand_all: true
 
-  %ul.nav.nav-list
-    %li.nav-header Это сайдбар
-    %li.active
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
+  .widget.latest-works
+    %h2 Последние работы
+    .work
+      %h3 Загородные дома
+      = latest_image 'latest-house1', "Строительство дома из бруса в Ленинградской области"
+    .work
+      %h3 Ремонт квартир и офисов
+      = latest_image 'latest-repair1', "Ремонт квартиры в Петербурге"
 
-  .contact-form
+  .widget.contact-form
     %h2 Свяжитесь с нами сейчас
     = partial 'common/contact_form'
