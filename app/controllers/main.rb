@@ -20,7 +20,7 @@ Lenstroy::App.controller do
   end
 
   get '/:primary/:secondary', priority: :low do
-    @page = Page.secondary(params[:first], params[:second])
+    @page = Page.secondary(params[:primary])
     halt 404 unless @page
     render 'pages/page'
   end

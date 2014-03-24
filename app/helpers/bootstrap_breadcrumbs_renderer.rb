@@ -1,7 +1,6 @@
 module SimpleNavigation
   module Renderer
     class BootstrapBreadcrumbs < SimpleNavigation::Renderer::Base
-
       def render(item_container)
         items = li_tags(item_container).join
         unless items.empty?
@@ -40,7 +39,6 @@ module SimpleNavigation
       end
 
       # Extracts the options relevant for the generated link
-      #
       def link_options_for(item)
         if options[:allow_classes_and_ids]
           opts = super

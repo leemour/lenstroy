@@ -1,3 +1,13 @@
-%p=tag_icon 'beaker icon-3x'
-%h1=pat('custom_errors.500.title')
-%p=pat('custom_errors.500.description')
+%h1=t('custom_errors.500.description')
+
+.error-content
+  =image_tag '500.png', alt: 'Ошибка 500'
+  %h2
+    =tag_icon 'exclamation-sign'
+    =t('custom_errors.500.title')
+  %p К сожалению, произошел внутренний сбой. Это наша вина.
+  %p Пожалуйста попробуйте еще раз. Если ошибка повторяется, попробуйте сделать это немного позднее.
+
+  %p
+    Мы уведомлены об ошибке, но будем рады, если вы опишите проблему по адресу
+    = mail_to support_email

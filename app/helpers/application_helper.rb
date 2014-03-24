@@ -1,4 +1,4 @@
-Lenstroy::App.helpers do
+module ApplicationHelper
   def company_name
     "ЛенСтройИнициатива"
   end
@@ -7,14 +7,25 @@ Lenstroy::App.helpers do
     "info@lenstroyin.ru"
   end
 
+  def support_email
+    "support@lenstroyin.ru"
+  end
+
   def contact_tel
     "(812) 938-21-10"
   end
 
+  def base_title
+    "#{company_name} - Строительство загородных домов"
+  end
+
   def full_title(page)
-    base_title = "#{company_name} - Строительство загородных домов"
-    return base_title if page.index_page?
-    title = page.seo_title.empty? ? page.title : page.seo_title
+    if page.is_a? Page
+      return base_title if page.index_page?
+      title = page.seo_title.empty? ? page.title : page.seo_title
+    else
+      title = page
+    end
     "#{title} | #{base_title}"
   end
 
@@ -29,4 +40,21 @@ Lenstroy::App.helpers do
   def min
     Padrino.env == :production ? ".min" : ""
   end
+
+  def sitemap_page_url(page)
+    path = '/'
+    page.slug = '' if page.slug == 'index'
+    if page.parent
+      path + page.parent.slug + '/' + page.slug
+    else
+      path + page.slug
+    end
+  end
+
+  def tag_icon(icon, tag = nil)
+    content = content_tag(:span, '', :class=> "glyphicon glyphicon-#{icon}")
+    content << " #{tag}"
+  end
 end
+
+Lenstroy::App.helpers ApplicationHelper

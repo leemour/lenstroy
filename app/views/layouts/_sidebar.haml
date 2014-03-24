@@ -5,35 +5,22 @@
 
 -if @page && @page.contact_page?
   .widget.contact-form
-    %h2 Свяжитесь с нами сейчас
+    %h3 Свяжитесь с нами сейчас
     = partial 'common/contact_form'
 
   %nav.navbar-sidebar
-    = render_navigation context: :sidebar, renderer: :list, expand_all: true
+    = render_navigation context: 'sidebar', renderer: :side_menu, expand_all: true
 
   .widget.latest-works
-    %h2 Последние работы
-    .work
-      %h3 Загородные дома
-      = latest_image 'latest-house1', "Строительство дома из бруса в Ленинградской области"
-    .work
-      %h3 Ремонт квартир и офисов
-      = latest_image 'latest-repair1', "Ремонт квартиры в Петербурге"
-
+    = partial 'common/latest_works'
 
 -else
   %nav.navbar-sidebar
-    = render_navigation context: :sidebar, renderer: :list, expand_all: true
+    = render_navigation context: 'sidebar', renderer: :side_menu, expand_all: true
 
-  .widget.latest-works
-    %h2 Последние работы
-    .work
-      %h3 Загородные дома
-      = latest_image 'latest-house1', "Строительство дома из бруса в Ленинградской области"
-    .work
-      %h3 Ремонт квартир и офисов
-      = latest_image 'latest-repair1', "Ремонт квартиры в Петербурге"
+  .widget.well.latest-works
+    = partial 'common/latest_works'
 
   .widget.contact-form
-    %h2 Свяжитесь с нами сейчас
+    %h3 Свяжитесь с нами сейчас
     = partial 'common/contact_form'

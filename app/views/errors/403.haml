@@ -1,3 +1,13 @@
-%p=tag_icon 'minus-sign icon-3x'
-%h1=pat('custom_errors.403.title')
-%p=pat('custom_errors.403.description')
+%h1=t('custom_errors.403.description')
+
+.error-content
+  =image_tag '403.png', alt: 'Ошибка 403'
+  %h2
+    =tag_icon 'exclamation-sign'
+    =t('custom_errors.403.title')
+  %p К сожалению, у вас нет прав для доступа к этой странице.
+  %p Проверьте, правильно ли вы набрали адрес или воспользуйтесь меню сайта для навигации
+
+  %p
+    Если вы столкнулись с ошибкой или недоразумением, пожалуйста напишите по адресу
+    = mail_to support_email

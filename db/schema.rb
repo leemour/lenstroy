@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311180138) do
+ActiveRecord::Schema.define(version: 20140324085340) do
 
   create_table "accounts", force: true do |t|
     t.string   "name"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(version: 20140311180138) do
     t.datetime "updated_at"
     t.integer  "account_id"
   end
+
+  add_index "pages", ["parent_id"], name: "index_pages_on_parent_id"
+  add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true
 
   create_table "uploaded_images", force: true do |t|
     t.string "file"

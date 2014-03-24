@@ -1,3 +1,4 @@
+SimpleNavigation.config.selected_class = 'active'
 SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
     primary.item :houses,       'Загородные дома',      '/houses' do |houses|

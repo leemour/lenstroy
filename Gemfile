@@ -12,8 +12,9 @@ gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'sqlite3'
 gem 'puma'
 gem 'kaminari', :require => 'kaminari/sinatra'
-gem 'simple-navigation', git: 'git@github.com:leemour/simple-navigation.git'
+gem 'simple-navigation', git: 'git@github.com:codeplant/simple-navigation.git'
 gem 'sinatra-simple-navigation', :require => 'sinatra/simple-navigation'
+gem 'sitemap_generator'
 
 # Assets
 gem 'bootstrap-sass'
@@ -24,6 +25,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 group :development, :test do
+  gem 'capistrano', '>= 3.1', require: false
   # gem 'foreman'
   gem 'pry-byebug'
   gem 'guard-rspec'

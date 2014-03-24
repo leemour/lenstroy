@@ -1,4 +1,4 @@
-#main-slider.carousel.slide
+#main-slider.carousel.slide{'data-ride' => 'carousel'}
   %ol.carousel-indicators
     %li.active{"data-slide-to" => "0", "data-target" => "#main-slider"}
     %li{"data-slide-to" => "1", "data-target" => "#main-slider"}
@@ -6,19 +6,31 @@
   / Carousel items
   .carousel-inner
     .active.item
-      = image_tag(src="/images/carousel/building001.jpg")
+      = image_tag "carousel/building001.jpg", alt: 'Деревянные дома из бруса'
       .carousel-caption
-        %h4 First Thumbnail label
+        %h4 Строительство загородных домов
         %p
-          Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-    .item= image_tag(src="/images/carousel/building002.jpg")
-    .item= image_tag(src="/images/carousel/building003.jpg")
+          Качественно, экологично, безопасно. Современные технологии.
+    .item
+      = image_tag "carousel/building002.jpg", alt: 'Деревянные дома из бруса'
+      .carousel-caption
+        %h4 Ремонт квартир и офисов
+        %p
+          Все типы: косметический, капитальный, элитный.
+    .item
+      = image_tag "carousel/building003.jpg", alt: 'Деревянные дома из бруса'
+      .carousel-caption
+        %h4 Инвестиции в недвижимость
+        %p
+          Покупка и расселение коммунальных квартир.
+
   / Carousel nav
-  %a.carousel-control.left{"data-slide" => "prev", :href => "#main-slider"} ‹
-  %a.carousel-control.right{"data-slide" => "next", :href => "#main-slider"} ›
+  %a.carousel-control.left{"data-slide" => "prev", :href => "#main-slider"}
+    = tag_icon 'chevron-left'
+  %a.carousel-control.right{"data-slide" => "next", :href => "#main-slider"}
+    = tag_icon 'chevron-right'
+
 
 %h1= @page.title
 
 %div.content= @page.content.html_safe
-
-/ %p= @page.excerpt

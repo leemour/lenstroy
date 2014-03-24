@@ -1,5 +1,5 @@
 = form_tag url_for(:contacts, :message), builder: 'NegBuilder' do
-  - if @message.errors.any?
+  - if @message && @message.errors.any?
     #error_explanation
       %h2= "Вы допустили ошибки при заполнении формы"
       %ul

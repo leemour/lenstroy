@@ -7,14 +7,13 @@ class Page < ActiveRecord::Base
   validates_presence_of :content
   validates_uniqueness_of :slug
 
-  paginates_per 2
-
   def self.primary(slug)
     page = where(slug: slug, parent_id: 0).first
     page.seoize if page
   end
 
-  def self.secondary(parent, child)
+  def self.secondary(params)
+    parent, child = *params
     page = find_by_slug(child)
     page.seoize if page && page.parent && page.parent.slug == parent
   end

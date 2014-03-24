@@ -1,2 +1,13 @@
-%h1=t('custom_errors.404.title')
-%p=t('custom_errors.404.description')
+%h1=t('custom_errors.404.description')
+
+.error-content
+  =image_tag '404.png', alt: 'Ошибка 404'
+  %h2
+    =tag_icon 'exclamation-sign'
+    =t('custom_errors.404.title')
+  %p К сожалению, запрашиваемая вами страница не найдена.
+  %p Проверьте, правильно ли вы набрали адрес или воспользуйтесь меню сайта для навигации
+
+  %p
+    Если вы столкнулись с ошибкой или недоразумением, пожалуйста напишите по адресу
+    = mail_to support_email

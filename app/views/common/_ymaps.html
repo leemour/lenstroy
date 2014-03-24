@@ -1,21 +1,22 @@
 <script type="text/javascript">
+  (function() {
   function initYMap() {
     var contactMap = new ymaps.Map("map", {
       center:    [59.929925, 30.286943],
-      zoom:      14,
-      behaviors: ["default", "scrollZoom"]
+      zoom:      14
     });
 
-    var trafficControl = new ymaps.control.TrafficControl();
     contactMap.controls
       .add('zoomControl', { left: 5, top: 5 })
       .add('typeSelector')                    // Список типов карты
       .add('mapTools', { left: 35, top: 5 })  // Стандартный набор кнопок
-      .add(trafficControl);                   // Пробки
+      .add('trafficControl');                 // Пробки
 
-    var ballonContent = "<span style='font-size:150%'>ЛенСтройИнициатива</span>";
-    contactMap.balloon.open([59.929925, 30.286942], ballonContent, {
+    var ballonContent = "<span style='font-size:120%'>ЛенСтройИнициатива</span>";
+    contactMap.balloon.open([59.929935, 30.287100], ballonContent, {
       closeButton: false // Не показываем кнопку закрытия
     });
   }
+  ymaps.ready(initYMap);
+  })();
 </script>

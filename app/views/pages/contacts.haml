@@ -36,8 +36,5 @@
     .row
       #map.col-sm-12
 
-%script{src: "//api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"}
+%script{src: "//api-maps.yandex.ru/2.0-stable/?load=package.full&lang=ru-RU"}
 = partial 'common/ymaps'
-
-:javascript
-  ymaps.ready(initYMap);
