@@ -1,5 +1,8 @@
 ru:
   Admin: Админка
+  Name: Имя
+  Message: Сообщение
+  Send: Отправить
   padrino:
     admin:
       edit: Изменить
@@ -25,9 +28,6 @@ ru:
       seo_desc: SEO описание
       seo_keys: Ключевые слова
       parent_id: Родительская
-
-      # page:
-      #   new: Новая
   views:
     pagination:
       first: "&laquo; Первая"

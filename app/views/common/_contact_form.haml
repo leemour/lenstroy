@@ -1,10 +1,26 @@
-= form_tag url_for(:contacts, :message), builder: 'NegBuilder' do
+%h3
+  = tag_icon 'envelope'
+  Свяжитесь с нами
+
+= form_tag url(:contacts, :message), role: "form", builder: 'NegativeCaptchaBuilder' do
   - if @message && @message.errors.any?
     #error_explanation
       %h2= "Вы допустили ошибки при заполнении формы"
       %ul
         - @message.errors.full_messages.each do |msg|
           %li= msg
+
+  %p.form-group
+    = label_tag t('Name'), for: :name
+    = text_field_tag :name, :value => params[:name], required: true, class: "form-control"
+  %p.form-group
+    = label_tag 'E-mail', for: :email
+    = text_field_tag :email, :value => params[:email], required: true, type: "email", class: "form-control"
+  %p.form-group
+    = label_tag t('Message'), for: :message
+    = text_area_tag :message, :value => params[:email], required: true, :rows => "6", :cols => "28", class: "form-control", placeholder: 'Мы ответим в течении 24 часов'
+  .actions
+    = submit_tag t('Send'), class: 'btn btn-primary'
   /=h negative_captcha(@captcha)
   .field
     /= negative_label_tag(@captcha, :name, 'Имя')
@@ -16,5 +32,3 @@
     /= negative_label_tag(@captcha, :content, 'Сообщение')
     /= negative_text_area_tag(@captcha, :content, :size => "28x6")
 
-  .actions
-    = submit_tag 'Отправить'

@@ -1,34 +1,36 @@
-#main-slider.carousel.slide{'data-ride' => 'carousel'}
+#slider-main.carousel.slide{'data-ride' => 'carousel'}
   %ol.carousel-indicators
-    %li.active{"data-slide-to" => "0", "data-target" => "#main-slider"}
-    %li{"data-slide-to" => "1", "data-target" => "#main-slider"}
-    %li{"data-slide-to" => "2", "data-target" => "#main-slider"}
+    %li.active{"data-slide-to" => "0", "data-target" => "#slider-main"}
+    %li{"data-slide-to" => "1", "data-target" => "#slider-main"}
+    %li{"data-slide-to" => "2", "data-target" => "#slider-main"}
   / Carousel items
   .carousel-inner
     .active.item
-      = image_tag "carousel/building001.jpg", alt: 'Деревянные дома из бруса'
+      = image_tag "carousel/carousel01.jpg", alt: 'Деревянные дома из бруса'
       .carousel-caption
         %h4 Строительство загородных домов
         %p
           Качественно, экологично, безопасно. Современные технологии.
     .item
-      = image_tag "carousel/building002.jpg", alt: 'Деревянные дома из бруса'
+      = image_tag "carousel/carousel02.jpg", alt: 'Деревянные дома из бруса'
       .carousel-caption
         %h4 Ремонт квартир и офисов
         %p
           Все типы: косметический, капитальный, элитный.
     .item
-      = image_tag "carousel/building003.jpg", alt: 'Деревянные дома из бруса'
+      = image_tag "carousel/carousel03.jpg", alt: 'Деревянные дома из бруса'
       .carousel-caption
         %h4 Инвестиции в недвижимость
         %p
           Покупка и расселение коммунальных квартир.
 
   / Carousel nav
-  %a.carousel-control.left{"data-slide" => "prev", :href => "#main-slider"}
+  %a.carousel-control.left{"data-slide" => "prev", :href => "#slider-main"}
     = tag_icon 'chevron-left'
-  %a.carousel-control.right{"data-slide" => "next", :href => "#main-slider"}
+  %a.carousel-control.right{"data-slide" => "next", :href => "#slider-main"}
     = tag_icon 'chevron-right'
+
+  .progressbar
 
 
 %h1= @page.title

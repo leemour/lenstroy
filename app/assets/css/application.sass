@@ -2,6 +2,7 @@
 @import "bootstrap"
 
 $light_text_color: #555
+$dark_blue: #3e5d87
 
 main
   display: block
@@ -14,6 +15,7 @@ main
 
 .carousel
   margin-bottom: 20px
+  overflow: hidden
   .carousel-indicators
     position: absolute
     top: auto
@@ -22,8 +24,9 @@ main
     bottom: 15px
     z-index: 31
     width: auto
+    opacity: 0.8
     li
-      @include box-shadow(1px 1px 0 rgba(0, 0, 0,.2))
+      +box-shadow(1px 1px 0 rgba(0, 0, 0,.2))
       width: 15px
       height: 15px
       margin: 0
@@ -43,11 +46,37 @@ main
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8)
     h4, p
       z-index: 32
+  .progressbar
+    width: 0%
+    height: 3px
+    background-color: $brand-primary
 
 .modal
   img
     max-width: 100%
     max-height: 100%
+
+body
+  textarea:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  input[type="number"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="color"]:focus,
+  .uneditable-input:focus,
+  .form-control:focus
+    border: 2px solid $brand-primary
+    box-shadow: none
+    outline: 0 none
 
 header
   margin-top: 5px
@@ -92,20 +121,36 @@ article
     font-size: 20px
 
 #sidebar
-  .well
-    @include box-shadow(none)
-    padding: 10px 30px
-    margin-bottom: 10px
   h3
     font-size: 20px
-    margin: 0
+    margin: 0 -20px 0 0
+    .glyphicon
+      font-size: 80%
   h4
     color: $light_text_color
     font-size: 14px
     // font-weight: bold
     text-transform: uppercase
+  .widget
+    clear: both
+  .well
+    +box-shadow(none)
+    padding: 10px 25px
+    margin-bottom: 10px
   .work
     margin: 20px 0
+  #contact-form
+    background-color: #F5F5F5
+    border: 1px solid #E3E3E3
+    border-radius: 4px
+    padding: 10px 20px
+    margin-bottom: 10px
+    h3
+      margin-bottom: 10px
+    textarea
+      margin: 2px 0
+      &:focus
+        margin: 0
   nav
     ul
       padding-left: 0
@@ -117,7 +162,7 @@ article
           border-bottom-left-radius: 4px
     // Top level menu link
     & > ul > li:first-child > a
-      background-color: #3e5d87
+      background-color: $dark_blue
       color: #fff
       border-top-right-radius: 4px
       border-top-left-radius: 4px
@@ -182,11 +227,6 @@ footer
     address
       font-size: 1em
 
-@media (max-width: $screen-sm-max)
-  .error-content
-    h2, p
-      clear: left
-
 @media (max-width: $screen-xs-max)
   header .navbar
     &.navbar-default
@@ -200,6 +240,20 @@ footer
     float: none
   footer .author
     text-align: left
+  #sidebar
+    .work
+      float: left
+      margin-left: 20px
+      margin-right: 20px
+      &:first-of-type
+        margin-left: -20px
+      &:last-child
+        margin-right: -20px
+
+@media (max-width: $screen-sm-max)
+  .error-content
+    h2, p
+      clear: left
 
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
   .navbar-default

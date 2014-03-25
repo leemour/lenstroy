@@ -4,14 +4,13 @@
     Скачать прайс лист
 
 -if @page && @page.contact_page?
-  .widget.contact-form
-    %h3 Свяжитесь с нами сейчас
+  #contact-form.widget
     = partial 'common/contact_form'
 
   %nav.navbar-sidebar
     = render_navigation context: 'sidebar', renderer: :side_menu, expand_all: true
 
-  .widget.latest-works
+  .widget.well.latest-works
     = partial 'common/latest_works'
 
 -else
@@ -21,6 +20,5 @@
   .widget.well.latest-works
     = partial 'common/latest_works'
 
-  .widget.contact-form
-    %h3 Свяжитесь с нами сейчас
+  #contact-form.widget
     = partial 'common/contact_form'

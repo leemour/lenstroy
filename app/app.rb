@@ -58,6 +58,15 @@ module Lenstroy
     # layout  :my_layout            # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
     #
 
+    set :delivery_method, :smtp => {
+      :address         => 'smtp.mandrillapp.com',
+      :port            => '587',
+      :user_name       => 'leemour@gmail.com',
+      :password        => ENV['MANDRILL_API_KEY'],
+      :authentication  => :plain, # :plain, :login, :cram_md5, no auth by default
+      :domain          => "localhost.localdomain" # the HELO domain provided by the client to the server
+    }
+
     ##
     # You can configure for a specified environment like:
     #
