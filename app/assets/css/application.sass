@@ -219,6 +219,26 @@ footer
     clear: none
     margin-left: 0
 
+body.message
+  h2
+    color: $state-success-text
+  .contact-form-error
+    h2
+      color: $state-danger-text
+    h3
+      font-size: 18px
+    .error-explanation
+      ul
+        padding-left: 0
+        list-style: none inside
+        .alert-danger
+          padding: 6px 10px
+          margin: 5px 0 10px
+    form
+      input.invalid,
+      textarea.invalid
+        border-color: $btn-danger-border
+
 // .glyphicon-exclamation-sign
 //   font-size: 200%
 

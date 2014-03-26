@@ -55,6 +55,16 @@ module ApplicationHelper
     content = content_tag(:span, '', :class=> "glyphicon glyphicon-#{icon}")
     content << " #{tag}"
   end
+
+  def setup_contact_form
+    @message = ContactForm.new params[:contact_form]
+  end
+
+  def contact_param
+    params[:contact_form] ||= {}
+    params[:contact_form].symbolize_keys!
+    {name: '', email: '', content: ''}.update params[:contact_form]
+  end
 end
 
 Lenstroy::App.helpers ApplicationHelper

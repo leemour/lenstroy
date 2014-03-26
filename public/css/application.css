@@ -5189,6 +5189,22 @@ footer {
     clear: none;
     margin-left: 0; }
 
+body.message h2 {
+  color: #3c763d; }
+body.message .contact-form-error h2 {
+  color: #a94442; }
+body.message .contact-form-error h3 {
+  font-size: 18px; }
+body.message .contact-form-error .error-explanation ul {
+  padding-left: 0;
+  list-style: none inside; }
+  body.message .contact-form-error .error-explanation ul .alert-danger {
+    padding: 6px 10px;
+    margin: 5px 0 10px; }
+body.message .contact-form-error form input.invalid,
+body.message .contact-form-error form textarea.invalid {
+  border-color: #d43f3a; }
+
 @media (max-width: 500px) {
   header address {
     font-size: 1em; } }

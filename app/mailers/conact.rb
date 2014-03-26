@@ -39,18 +39,15 @@
 # and then all delivered mail will use these settings unless otherwise specified.
 #
 
-module ContactMailer do
-
-  email :contact_email do |name, user|
-    from 'admin@site.com'
-    to   user.email
-    subject 'Welcome to the site!'
-    locals  :name => name
-    content_type 'text/html'       # optional, defaults to plain/text
-    via     :sendmail              # optional, to smtp if defined, otherwise sendmail
-    render  'registration_email'
+Lenstroy::App.mailer :contact do
+  email :contact_email do |name, email, content|
+    receiver = Padrino.env == :production ? ENV['PROD_MAIL_TO'] : ENV['DEV_MAIL_TO']
+    from    email
+    to      receiver
+    subject 'С сайта Lenstroy'
+    locals  name: name, email: email, content: content
+    content_type 'text/html'   # optional, defaults to plain/text
+    via     :smtp              # optional, to smtp if defined, otherwise sendmail
+    render  'contact_email'#, layout: 'email'
   end
-
 end
-
-Lenstroy::App.mailer ContactMailer

@@ -64,7 +64,7 @@ module Lenstroy
       :user_name       => 'leemour@gmail.com',
       :password        => ENV['MANDRILL_API_KEY'],
       :authentication  => :plain, # :plain, :login, :cram_md5, no auth by default
-      :domain          => "localhost.localdomain" # the HELO domain provided by the client to the server
+      :domain          => "lenstroyin.ru" # the HELO domain provided by the client to the server
     }
 
     ##

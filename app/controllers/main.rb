@@ -1,6 +1,6 @@
 Lenstroy::App.controller do
   before do
-    @message = ContactMessage.new(params[:message])
+    setup_contact_form
   end
 
   get :index do
@@ -10,7 +10,7 @@ Lenstroy::App.controller do
 
   get '/mail-sent' do
     @page = Page.find_by_slug('mail-sent')
-    render 'pages/mail-sent'
+    render 'pages/mail_sent'
   end
 
   get '/:primary', priority: :low do

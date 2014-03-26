@@ -29,3 +29,14 @@ ru:
         seo_keys: Ключевые слова
         parent_id: Родительская
         <<: *common_attrs
+  activemodel:
+    models:
+      contact_form: Форма связи
+    attributes:
+      contact_form:
+        Name: Имя
+        name: Имя
+        Email: E-mail
+        email: E-mail
+        Content: Сообщение
+        content: Сообщение

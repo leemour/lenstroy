@@ -44,6 +44,7 @@ end
 # Add your after (RE)load hooks here
 #
 Padrino.after_load do
+  I18n.reload! if Padrino.env == :development
 end
 
 Padrino.load!

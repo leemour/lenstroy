@@ -1,0 +1,18 @@
+%h1= @page.title
+- if @message.errors.any?
+  .contact-form-error
+    %h2 Неправильно заполнена форма
+    %p
+      Пожалуйста, исправьте ошибку и отправьте форму заново
+    = partial 'common/contact_form'
+
+- elsif !@message.sent?
+  .contact-form-error
+    %h2 Ошибка отправки сообщения
+    %p
+      Извините, произошла ошибка во время отправки сообщения. Попробуйте еще раз
+      или напишите нам на почту
+      = mail_to contact_email
+
+- else
+  = @page.content.html_safe

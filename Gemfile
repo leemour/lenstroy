@@ -15,6 +15,7 @@ gem 'kaminari', :require => 'kaminari/sinatra'
 gem 'simple-navigation', git: 'git@github.com:codeplant/simple-navigation.git'
 gem 'sinatra-simple-navigation', :require => 'sinatra/simple-navigation'
 gem 'sitemap_generator'
+# gem 'negative_captcha'
 
 # Assets
 gem 'bootstrap-sass'
