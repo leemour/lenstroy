@@ -24,4 +24,8 @@ Lenstroy::App.controller do
     halt 404 unless @page
     render 'pages/page'
   end
+
+  get '/500' do
+    halt 500
+  end
 end

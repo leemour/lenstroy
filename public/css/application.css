@@ -5049,12 +5049,12 @@ header {
     color: #747b82; }
     header .navbar .nav li a:hover {
       color: #333333; }
-    header .navbar .nav li a.selected {
+  header .navbar .nav li li a {
+    color: #777777; }
+    header .navbar .nav li li a.selected {
       color: white;
       color: white !important;
       cursor: default; }
-  header .navbar .nav li li a {
-    color: #777777; }
     header .navbar .nav li li a:hover {
       color: #555555; }
 

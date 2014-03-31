@@ -30,6 +30,7 @@ set :deploy_to, "/srv/www/#{fetch :full_app_name}"
 set :linked_files, %w{
   config/database.rb
   config/secret.rb
+  config/puma.rb
 }
 
 # Default value for linked_dirs is []
@@ -41,30 +42,47 @@ set :linked_dirs, %w{
   public/system public/uploads
 }
 
-# Shared dirs to be created in shared
-set :shared_files, %w{config db public}
+# Shared dirs to be created
+set :create_shared_dirs, %w{
+  config
+  db
+  public
+}
 
-# Shared config files
+# Shared dirs to be uploaded
+set :shared_dirs, %w{
+  public/uploads/.
+}
+
+# Shared config files to be uploaded and linked
 set :shared_files, [
   {from: 'config/database.rb',       to: 'config/database.rb'},
   {from: 'config/secret.rb',         to: 'config/secret.rb'},
-  {from: 'config/shared/nginx.conf', to: 'config/nginx.conf'},
   {from: 'config/shared/monit',      to: 'config/monit'},
-  {from: 'public/uploads',           to: 'public/uploads'},
+  {from: 'config/shared/puma.rb',    to: 'config/puma.rb'},
+  {from: 'config/shared/puma.sh',    to: 'config/puma.sh'},
+  {from: 'config/shared/nginx_staging.conf',    to: 'config/nginx_staging.conf'},
+  {from: 'config/shared/nginx_production.conf', to: 'config/nginx_production.conf'},
 ]
 
 # Make config files executable
-set :executable_config_files, []
+set :executable_files, %w{
+  config/puma.sh
+}
 
 # Symlink config files to system paths
 set :symlinks, [
   {
-    from: "config/nginx.conf",
+    from: "config/nginx_#{fetch :stage}.conf",
     to:   "/etc/nginx/sites-enabled/#{fetch :full_app_name}"
   },
   {
     from: "config/monit",
     to:   "/etc/monit/conf.d/#{fetch :full_app_name}.conf"
+  },
+  {
+    from: "config/puma.sh",
+    to:   "/etc/init.d/puma_#{fetch :application}"
   }
 ]
 
@@ -80,16 +98,19 @@ set :ssh_options, {
   port: ENV["REMOTE_PORT"]
 }
 
-# Setup rvm.
-set :rbenv_type, :system
+# Setup rbenv
+set :rbenv_type, :user
 set :rbenv_ruby, '2.1.0'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch :rbenv_path} RBENV_VERSION=#{fetch :rbenv_ruby} #{fetch :rbenv_path}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 
-# Set App environment
-set :padrino_env, :production
+# Setup Bundler
+set :bundle_bins, fetch(:bundle_bins, []) + %w{puma}
 
-# set(:newrelic_key) { "#{ newrelic_key }" }
+# Set Rack environment
+set :rack_env, :production
+
+# set :newrelic_key ENV["NEW_RELIC_LICENSE_KEY"]
 # after "deploy:update", "newrelic:notice_deployment"
 
 namespace :deploy do
@@ -113,104 +134,14 @@ namespace :deploy do
       # end
     end
   end
-end
 
-namespace :deploy do
-  desc "Copy config files to remote shared. Create shared folders"
-  task :setup_config do
-    on roles(:app) do
-      fetch(:shared_dirs).each do |dir|
-        execute :mkdir, "-p #{shared_path}/#{dir}"
-      end
-
-      fetch(:shared_files).each do |file|
-        file_to = "#{shared_path}/#{file[:to]}"
-
-        if File.exist? file[:from]
-          upload! file[:from], file_to
-          info "copying: #{file[:from]} to: #{file_to}"
-        else
-          error "error #{file[:from]} not found"
-        end
-      end
-
-      # which of the above files should be marked as executable
-      fetch(:executable_config_files).each do |file|
-        execute :chmod, "+x #{shared_path}/config/#{file}"
-      end
-
-      # symlink stuff which should be... symlinked
-      fetch(:symlinks).each do |link|
-        sudo "ln -nfs #{shared_path}/config/#{link[:source]} #{link[:link]}"
-      end
-    end
-  end
-
-  desc "Make sure local git is in sync with remote."
-  task :check_revision do
-    branch = fetch(:branch)
-    unless `git rev-parse HEAD` == `git rev-parse origin/#{branch}`
-      puts "WARNING: HEAD is not the same as origin/#{branch}"
-      puts "Run `git push` to sync changes or make sure you've"
-      puts "checked out the branch: #{branch} as you can only deploy"
-      puts "if you've got the target branch checked out"
-      exit
-    end
-  end
-
-  desc "Check that we can access everything"
-  task :check_write_permissions do
-    on roles(:all) do |host|
-      if test("[ -w #{fetch(:deploy_to)} ]")
-        info "#{fetch(:deploy_to)} is writable on #{host}"
-      else
-        error "#{fetch(:deploy_to)} is not writable on #{host}"
+  %w[start stop restart].each do |command|
+    desc "#{command} puma server"
+    task command do
+      on roles(:app) do
+        # run "/etc/init.d/unicorn_#{application} #{command}"
+        execute "service puma_#{fetch :application} #{command} #{fetch :stage}"
       end
     end
   end
 end
-
-# namespace :monit
-#   task :install do
-#     sudo "apt-get -y install monit"
-#   end
-#   after "deploy:install", "monit:install"
-
-#   desc "Setup general Monit config"
-#   task :setup do
-#     on roles(:app) do
-#       monit_config "monit", "/etc/monit/conf.d/#{fetch :full_app_name}.conf"
-#       invoke :syntax
-#       invoke :reload
-#     end
-#   end
-
-#   %w[start stop restart syntax reload].each do |command|
-#     desc "Run Monit #{command} script"
-#     task command do
-#       sudo "service monit #{command}"
-#     end
-#   end
-# end
-
-# def monit_config(name, destination = nil)
-#   destination ||= "/etc/monit/conf.d/#{name}.conf"
-#   sudo "ln -nfs #{shared_path}/config/#{name} #{destination}"
-#   sudo "chown root #{destination}"
-#   sudo "chmod 600 #{destination}"
-# end
-
-# namespace :logs do
-#   task :tail, :file do |t, args|
-#     if args[:file]
-#       on roles(:app) do
-#         execute "tail -f #{shared_path}/log/#{args[:file]}.log"
-#       end
-#     else
-#       puts "please specify a logfile e.g: 'rake logs:tail[logfile]"
-#       puts "will tail 'shared_path/log/logfile.log'"
-#       puts "remember if you use zsh you'll need to format it as:"
-#       puts "rake 'logs:tail[logfile]' (single quotes)"
-#     end
-#   end
-# end

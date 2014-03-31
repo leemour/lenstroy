@@ -305,3 +305,7 @@
  /home/leemour/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/gems/puma-2.8.0/lib/puma/server.rb:254:in `block in run'
  /home/leemour/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/gems/puma-2.8.0/lib/puma/thread_pool.rb:92:in `call'
  /home/leemour/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/gems/puma-2.8.0/lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+[31m  ERROR[0m - [33m01/Apr/2014 11:44:06[0m SyntaxError: /home/leemour/Ruby/lenstroy/app/controllers/main.rb:28: syntax error, unexpected tINTEGER, expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+  get :500 do
+          ^
+/home/leemour/Ruby/lenstroy/app/controllers/main.rb:32: syntax error, unexpected keyword_end, expecting end-of-input; /home/leemour/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/gems/activesupport-4.0.3/lib/active_support/dependencies.rb:229:in `require'
