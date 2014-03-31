@@ -8,7 +8,7 @@
     =csrf_meta_tags
     =favicon_tag 'favicon.ico'
     %title= @title.present? ? "#{@title} | #{company_name}" : "Админка"
-    %link{:href => 'http://fonts.googleapis.com/css?family=Varela', :rel => :stylesheet}
+    / %link{:href => 'http://fonts.googleapis.com/css?family=PT+Sans&subset=cyrillic-ext,latin', :rel => :stylesheet}
     =stylesheet_link_tag 'bootstrap', 'application', 'admin', 'redactor'
 
   %body

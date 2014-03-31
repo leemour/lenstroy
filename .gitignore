@@ -24,3 +24,6 @@ db/*.db
 
 # Ignore Backup
 /backup
+
+# Ignore Shared
+/config/shared

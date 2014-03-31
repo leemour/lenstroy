@@ -9,13 +9,12 @@ $('#slider-main').carousel({
   interval: 7500
 })
 
-
 $('#slider-main').on('click', '.carousel-control', function() {
   $(this).carousel('pause');
 });
 
-$(document).off('mouseleave', '.carousel');
-$(document).off('mouseleave', '#slider-main');
+// $(document).off('mouseleave', '.carousel');
+// $(document).off('mouseleave', '#slider-main');
 
 
 $(function() {

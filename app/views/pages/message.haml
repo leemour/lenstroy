@@ -1,5 +1,5 @@
 %h1= @page.title
-- if @message.errors.any?
+- if @message.invalid? || @message.errors.any?
   .contact-form-error
     %h2 Неправильно заполнена форма
     %p

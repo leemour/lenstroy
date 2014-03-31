@@ -4,6 +4,14 @@
 $light_text_color: #555
 $dark_blue: #3e5d87
 
+html body
+  font-family: 'Clear Sans', 'Liberation Sans', Helvetica, Arial
+  font-weight: 300
+  font-size: 15px
+
+.container-fluid
+  max-width: 1170px
+
 main
   display: block
 
@@ -12,49 +20,6 @@ main
 
 .wrapper
   padding: 0 15px
-
-.carousel
-  margin-bottom: 20px
-  overflow: hidden
-  .carousel-indicators
-    position: absolute
-    top: auto
-    left: auto
-    right: 15px
-    bottom: 15px
-    z-index: 31
-    width: auto
-    opacity: 0.8
-    li
-      +box-shadow(1px 1px 0 rgba(0, 0, 0,.2))
-      width: 15px
-      height: 15px
-      margin: 0
-      &.active
-        margin: 0 !important
-  .carousel-control
-    opacity: 0.8
-    z-index: 30
-  .carousel-caption
-    text-align: left
-    position: absolute
-    left: 0px
-    right: 0px
-    bottom: 0px
-    padding: 0 15px
-    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.65)
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8)
-    h4, p
-      z-index: 32
-  .progressbar
-    width: 0%
-    height: 3px
-    background-color: $brand-primary
-
-.modal
-  img
-    max-width: 100%
-    max-height: 100%
 
 body
   textarea:focus,
@@ -103,15 +68,24 @@ header
         padding: 0
     .btn-navbar .icon-bar
       background-color: #FFF
-    .nav li a.selected:hover
-      cursor: default
+    .nav li
+      a
+        color: #747b82
+        &:hover
+          color: #333
+        &.selected
+          color: #FFF
+          &:hover
+          color: #FFF !important
+          cursor: default
+      li a
+        color: #777
+        &:hover
+          color: #555
 
 .breadcrumb
   li
     padding-right: 3px
-
-.container-fluid
-  max-width: 1170px
 
 article
   h1
@@ -119,6 +93,56 @@ article
     margin-top: 0
   h2
     font-size: 20px
+
+.carousel
+  margin-bottom: 20px
+  overflow: hidden
+  .carousel-indicators
+    position: absolute
+    top: auto
+    left: auto
+    right: 15px
+    bottom: 15px
+    z-index: 31
+    width: auto
+    li
+      +box-shadow(1px 1px 0 rgba(0, 0, 0,.2))
+      height: 15px
+      margin: 0
+      opacity: 0.8
+      width: 15px
+      &:hover
+        background-color: #FFF
+        opacity: 1
+      &.active
+        margin: 0 !important
+  .carousel-control
+    opacity: 0.8
+    // z-index: 30
+    &:hover
+      opacity: 1
+      // z-index: 36
+  .carousel-caption
+    font-weight: 400
+    text-align: left
+    position: absolute
+    left: 0px
+    right: 0px
+    bottom: 0px
+    padding: 0 15px
+    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.65)
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8)
+    h4, p
+      z-index: 32
+  .progressbar
+    width: 0%
+    height: 3px
+    background-color: $brand-primary
+
+.modal
+  img
+    max-width: 100%
+    max-height: 100%
 
 #sidebar
   h3
@@ -219,14 +243,17 @@ footer
     clear: none
     margin-left: 0
 
-body.message
+body.message article
   h2
     color: $state-success-text
+  h3
+    font-size: 18px
+  .hint
+    color: #777
+    font-size: 90%
   .contact-form-error
     h2
       color: $state-danger-text
-    h3
-      font-size: 18px
     .error-explanation
       ul
         padding-left: 0

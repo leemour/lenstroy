@@ -1,3 +1,4 @@
+ruby '2.1.0'
 source 'https://rubygems.org'
 
 # Project requirements
@@ -27,6 +28,8 @@ gem 'mini_magick'
 
 group :development, :test do
   gem 'capistrano', '>= 3.1', require: false
+  gem 'capistrano-rbenv', ">= 2.0", require: false
+  gem 'capistrano-bundler', require: false
   # gem 'foreman'
   gem 'pry-byebug'
   gem 'guard-rspec'

@@ -14,4 +14,9 @@ Lenstroy::App.controller :contacts, map: 'about' do
     @page = Page.find_by_slug(:message)
     render 'pages/message'
   end
+
+  get :message do
+    @page = Page.find_by_slug(:message)
+    render 'pages/message'
+  end
 end

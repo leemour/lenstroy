@@ -8,12 +8,13 @@
     %meta{ name: 'keywords',    content: @page.seo_keys }/
     %title= full_title(@page)
     =favicon_tag 'favicon.ico'
-    / %link{:href => 'http://fonts.googleapis.com/css?family=Varela', :rel => :stylesheet}
+    %link{:href => '//webfonts.ru/import/clearsans.css', :rel => :stylesheet}
     =stylesheet_link_tag 'application'
     =stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
     /[if lt IE 9]
       %script{ src: '//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' }
       %script{ src: "//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"}
+
   %body{class: @page.slug}
 
     = partial 'layouts/header'
