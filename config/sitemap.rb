@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sitemap_generator'
-require 'pry-byebug'
+
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://lenstroyin.ru"
 SitemapGenerator::Sitemap.compress = false

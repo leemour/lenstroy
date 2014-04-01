@@ -6,6 +6,9 @@ lock '3.1.0'
 set :application, 'lenstroy'
 set :repo_url, 'git@github.com:leemour/lenstroy.git'
 
+# Set Rack environment
+set :rack_env, :production
+
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
@@ -27,10 +30,11 @@ set :deploy_to, "/srv/www/#{fetch :full_app_name}"
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{
+set :linked_files, %W{
   config/database.rb
   config/secret.rb
   config/puma.rb
+  db/#{fetch :application}_#{fetch :rack_env}.db
 }
 
 # Default value for linked_dirs is []
@@ -51,6 +55,7 @@ set :create_shared_dirs, %w{
 
 # Shared dirs to be uploaded
 set :shared_dirs, %w{
+  bin/.
   public/uploads/.
 }
 
@@ -68,6 +73,15 @@ set :shared_files, [
 # Make config files executable
 set :executable_files, %w{
   config/puma.sh
+}
+
+# Create files unless they exist
+set :touch_files, %w{
+  puma.sock
+  log/nginx_access.log
+  log/nginx_error.log
+  log/puma.log
+  log/puma.err.log
 }
 
 # Symlink config files to system paths
@@ -107,14 +121,15 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 # Setup Bundler
 set :bundle_bins, fetch(:bundle_bins, []) + %w{puma}
 
-# Set Rack environment
-set :rack_env, :production
-
-# set :newrelic_key ENV["NEW_RELIC_LICENSE_KEY"]
-# after "deploy:update", "newrelic:notice_deployment"
+# New Relic
+# TODO: recipe not updated to Capistrano 3, using capistrano/newrelic but
+#   it fails with 'app doesn't exist'
+# set :newrelic_appname,    ENV["NEW_RELIC_APP_NAME"]
+# set :newrelic_license_key, ENV["NEW_RELIC_LICENSE_KEY"]
 
 namespace :deploy do
   before :deploy, "deploy:check_revision"
+  # before :finished, 'newrelic:notice_deployment'
 
   desc 'Restart application'
   task :restart do
@@ -134,13 +149,17 @@ namespace :deploy do
       # end
     end
   end
+end
 
+namespace :puma do
   %w[start stop restart].each do |command|
     desc "#{command} puma server"
     task command do
       on roles(:app) do
-        # run "/etc/init.d/unicorn_#{application} #{command}"
-        execute "service puma_#{fetch :application} #{command} #{fetch :stage}"
+        within current_path do
+          # run "/etc/init.d/unicorn_#{application} #{command}"
+          execute "service puma_#{fetch :application} #{command} #{fetch :stage}"
+        end
       end
     end
   end

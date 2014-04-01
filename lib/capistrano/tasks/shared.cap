@@ -5,6 +5,7 @@ namespace :shared do
     invoke 'shared:upload_dirs'
     invoke 'shared:upload_files'
     invoke 'shared:executable_files'
+    invoke 'shared:touch_files'
     invoke 'shared:symlink_system'
   end
 
@@ -52,6 +53,15 @@ namespace :shared do
     on roles(:app) do
       fetch(:executable_files).each do |file|
         execute :chmod, "+x #{shared_path}/#{file}"
+      end
+    end
+  end
+
+  desc 'Create empty files unless exist (logs etc)'
+  task :touch_files do
+    on roles(:app) do
+      fetch(:touch_files).each do |file|
+        execute :touch, "#{shared_path}/#{file}"
       end
     end
   end

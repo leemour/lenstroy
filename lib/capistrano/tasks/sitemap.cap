@@ -1,0 +1,10 @@
+namespace :sitemap do
+  desc "Make sure local git is in sync with remote."
+  task :refresh do
+    on roles(:app) do
+      within current_path do
+        execute :rake, "-s sitemap:refresh"
+      end
+    end
+  end
+end

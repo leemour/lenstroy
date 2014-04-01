@@ -26,10 +26,15 @@ gem 'padrino-pipeline', git: 'git@github.com:Ortuna/padrino-pipeline.git'
 gem 'carrierwave'
 gem 'mini_magick'
 
+group :production, :development do
+  gem 'newrelic_rpm'
+end
+
 group :development, :test do
   gem 'capistrano', '>= 3.1', require: false
   gem 'capistrano-rbenv', ">= 2.0", require: false
   gem 'capistrano-bundler', require: false
+  gem 'capistrano-newrelic', require: false
   # gem 'foreman'
   gem 'pry-byebug'
   gem 'guard-rspec'
@@ -37,10 +42,6 @@ group :development, :test do
 
   gem 'guard-livereload'
   gem 'rack-livereload'
-end
-
-group :production do
-  gem 'newrelic_rpm'
 end
 
 group :test do
