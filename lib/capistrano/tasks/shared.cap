@@ -57,6 +57,14 @@ namespace :shared do
     end
   end
 
+  task :writable_db do
+    on roles(:app) do
+      fetch(:writable_files).each do |file|
+        sudo :chmod, "664 #{shared_path}/#{file}"
+      end
+    end
+  end
+
   desc 'Create empty files unless exist (logs etc)'
   task :touch_files do
     on roles(:app) do

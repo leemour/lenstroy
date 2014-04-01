@@ -7,14 +7,16 @@ class Page < ActiveRecord::Base
   validates_presence_of :content
   validates_uniqueness_of :slug
 
+  scope :published, -> { where(status: :published) }
+
   def self.primary(slug)
-    page = where(slug: slug, parent_id: 0).first
+    page = where(slug: slug, parent_id: 0).published.first
     page.seoize if page
   end
 
   def self.secondary(params)
     parent, child = *params
-    page = find_by_slug(child)
+    page = where(slug: child).published.first
     page.seoize if page && page.parent && page.parent.slug == parent
   end
 
@@ -31,8 +33,8 @@ class Page < ActiveRecord::Base
   end
 
   def status
-    status = read_attribute(:status)
-    self.class.statuses[status.to_sym] if status
+    real_status = read_attribute(:status)
+    self.class.statuses[real_status.to_sym] if real_status
   end
 
   def seoize

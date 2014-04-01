@@ -75,6 +75,11 @@ set :executable_files, %w{
   config/puma.sh
 }
 
+# Make some files writeable
+set :writable_files, %W{
+  db/#{fetch :application}_#{fetch :rack_env}.db
+}
+
 # Create files unless they exist
 set :touch_files, %w{
   puma.sock
