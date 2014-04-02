@@ -15,7 +15,13 @@ class Page < ActiveRecord::Base
   end
 
   def self.secondary(params)
-    parent, child = *params
+    # TODO: submit issue and fix this ugliness
+    if params[:primary].is_a? Array
+      parent, child = *params[:primary]
+    else
+      parent = params[:primary]
+      child  = params[:secondary]
+    end
     page = where(slug: child).published.first
     page.seoize if page && page.parent && page.parent.slug == parent
   end

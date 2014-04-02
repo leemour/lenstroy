@@ -27,7 +27,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 group :production, :development do
-  # gem 'newrelic_rpm'
+  gem 'newrelic_rpm'
 end
 
 group :development, :test do

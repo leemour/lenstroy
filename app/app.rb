@@ -83,8 +83,9 @@ module Lenstroy
     end
 
     configure :production do
-      set :haml, :ugly => :true
-      set :sass, :style => :compressed
+      set :haml,    :ugly => :true
+      set :sass,    :style => :compressed
+      set :logging, true
     end
 
     # You can manage errors like:
