@@ -6,7 +6,9 @@ module AdminHelper
   end
 
   def root_pages
-    pages = Page.roots.map { |parent| [parent.title, parent.id] }
+    pages = Page.roots.select(:title, :id, :slug).map do |parent|
+      ["#{parent.title}  &nbsp;/#{parent.slug}".html_safe, parent.id]
+    end
     [["Нет родителя", 0]] +  pages
   end
 

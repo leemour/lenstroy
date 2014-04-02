@@ -284,7 +284,6 @@ DEPENDENCIES
   haml
   kaminari
   mini_magick
-  newrelic_rpm
   padrino (= 0.12.0)
   padrino-pipeline!
   pry-byebug

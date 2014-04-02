@@ -5,6 +5,7 @@ namespace :shared do
     invoke 'shared:upload_dirs'
     invoke 'shared:upload_files'
     invoke 'shared:executable_files'
+    invoke 'shared:writable_files'
     invoke 'shared:touch_files'
     invoke 'shared:symlink_system'
   end
@@ -57,7 +58,7 @@ namespace :shared do
     end
   end
 
-  task :writable_db do
+  task :writable_files do
     on roles(:app) do
       fetch(:writable_files).each do |file|
         sudo :chmod, "664 #{shared_path}/#{file}"

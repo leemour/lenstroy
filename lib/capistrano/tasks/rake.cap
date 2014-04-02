@@ -1,0 +1,13 @@
+namespace :sake do
+  namespace :sitemaps do
+    task :refresh do
+      on roles(:app) do
+        within current_path do
+          with rack_env: 'production' do
+            execute "RACK_ENV=production cd #{current_path} && rake sitemaps:refresh"
+          end
+        end
+      end
+    end
+  end
+end
