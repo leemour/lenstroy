@@ -1,0 +1,102 @@
+[04/02/14 11:54:54 +0400 ubu (7042)] INFO : Starting the New Relic agent in "development" environment.
+[04/02/14 11:54:54 +0400 ubu (7042)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[04/02/14 11:54:54 +0400 ubu (7042)] INFO : Reading configuration from config/newrelic.yml
+[04/02/14 11:54:54 +0400 ubu (7042)] INFO : Enabling the Request Sampler.
+[04/02/14 11:54:54 +0400 ubu (7042)] ERROR : No application name configured.
+[04/02/14 11:54:54 +0400 ubu (7042)] ERROR : The Agent cannot start without at least one. Please check your 
+[04/02/14 11:54:54 +0400 ubu (7042)] ERROR : newrelic.yml and ensure that it is valid and has at least one 
+[04/02/14 11:54:54 +0400 ubu (7042)] ERROR : value set for app_name in the development 
+[04/02/14 11:54:54 +0400 ubu (7042)] ERROR : environment.
+[04/02/14 11:54:54 +0400 ubu (7042)] INFO : Installing Net instrumentation
+[04/02/14 11:54:54 +0400 ubu (7042)] INFO : Finished instrumentation
+[04/02/14 12:28:36 +0400 ubu (7361)] INFO : Starting the New Relic agent in "development" environment.
+[04/02/14 12:28:36 +0400 ubu (7361)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[04/02/14 12:28:36 +0400 ubu (7361)] INFO : Reading configuration from config/newrelic.yml
+[04/02/14 12:28:36 +0400 ubu (7361)] INFO : Enabling the Request Sampler.
+[04/02/14 12:28:36 +0400 ubu (7361)] ERROR : No application name configured.
+[04/02/14 12:28:36 +0400 ubu (7361)] ERROR : The Agent cannot start without at least one. Please check your 
+[04/02/14 12:28:36 +0400 ubu (7361)] ERROR : newrelic.yml and ensure that it is valid and has at least one 
+[04/02/14 12:28:36 +0400 ubu (7361)] ERROR : value set for app_name in the development 
+[04/02/14 12:28:36 +0400 ubu (7361)] ERROR : environment.
+[04/02/14 12:28:36 +0400 ubu (7361)] INFO : Installing Net instrumentation
+[04/02/14 12:28:36 +0400 ubu (7361)] INFO : Finished instrumentation
+[04/02/14 12:32:57 +0400 ubu (7554)] INFO : Starting the New Relic agent in "development" environment.
+[04/02/14 12:32:57 +0400 ubu (7554)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[04/02/14 12:32:57 +0400 ubu (7554)] INFO : Reading configuration from config/newrelic.yml
+[04/02/14 12:32:57 +0400 ubu (7554)] INFO : Enabling the Request Sampler.
+[04/02/14 12:32:57 +0400 ubu (7554)] ERROR : No application name configured.
+[04/02/14 12:32:57 +0400 ubu (7554)] ERROR : The Agent cannot start without at least one. Please check your 
+[04/02/14 12:32:57 +0400 ubu (7554)] ERROR : newrelic.yml and ensure that it is valid and has at least one 
+[04/02/14 12:32:57 +0400 ubu (7554)] ERROR : value set for app_name in the development 
+[04/02/14 12:32:57 +0400 ubu (7554)] ERROR : environment.
+[04/02/14 12:32:57 +0400 ubu (7554)] INFO : Installing Net instrumentation
+[04/02/14 12:32:57 +0400 ubu (7554)] INFO : Finished instrumentation
+[04/02/14 12:33:30 +0400 ubu (7682)] INFO : Starting the New Relic agent in "development" environment.
+[04/02/14 12:33:30 +0400 ubu (7682)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[04/02/14 12:33:30 +0400 ubu (7682)] INFO : Reading configuration from config/newrelic.yml
+[04/02/14 12:33:30 +0400 ubu (7682)] INFO : Enabling the Request Sampler.
+[04/02/14 12:33:30 +0400 ubu (7682)] ERROR : No application name configured.
+[04/02/14 12:33:30 +0400 ubu (7682)] ERROR : The Agent cannot start without at least one. Please check your 
+[04/02/14 12:33:30 +0400 ubu (7682)] ERROR : newrelic.yml and ensure that it is valid and has at least one 
+[04/02/14 12:33:30 +0400 ubu (7682)] ERROR : value set for app_name in the development 
+[04/02/14 12:33:30 +0400 ubu (7682)] ERROR : environment.
+[04/02/14 12:33:30 +0400 ubu (7682)] INFO : Installing Net instrumentation
+[04/02/14 12:33:30 +0400 ubu (7682)] INFO : Finished instrumentation
+[04/02/14 12:34:11 +0400 ubu (7811)] INFO : Starting the New Relic agent in "development" environment.
+[04/02/14 12:34:11 +0400 ubu (7811)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[04/02/14 12:34:11 +0400 ubu (7811)] INFO : Reading configuration from config/newrelic.yml
+[04/02/14 12:34:11 +0400 ubu (7811)] INFO : Enabling the Request Sampler.
+[04/02/14 12:34:11 +0400 ubu (7811)] ERROR : No application name configured.
+[04/02/14 12:34:11 +0400 ubu (7811)] ERROR : The Agent cannot start without at least one. Please check your 
+[04/02/14 12:34:11 +0400 ubu (7811)] ERROR : newrelic.yml and ensure that it is valid and has at least one 
+[04/02/14 12:34:11 +0400 ubu (7811)] ERROR : value set for app_name in the development 
+[04/02/14 12:34:11 +0400 ubu (7811)] ERROR : environment.
+[04/02/14 12:34:11 +0400 ubu (7811)] INFO : Installing Net instrumentation
+[04/02/14 12:34:11 +0400 ubu (7811)] INFO : Finished instrumentation
+[04/02/14 12:41:57 +0400 ubu (8166)] INFO : Starting the New Relic agent in "production" environment.
+[04/02/14 12:41:57 +0400 ubu (8166)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[04/02/14 12:41:57 +0400 ubu (8166)] INFO : Reading configuration from config/newrelic.yml
+[04/02/14 12:41:57 +0400 ubu (8166)] INFO : Enabling the Request Sampler.
+[04/02/14 12:41:57 +0400 ubu (8166)] ERROR : No application name configured.
+[04/02/14 12:41:57 +0400 ubu (8166)] ERROR : The Agent cannot start without at least one. Please check your 
+[04/02/14 12:41:57 +0400 ubu (8166)] ERROR : newrelic.yml and ensure that it is valid and has at least one 
+[04/02/14 12:41:57 +0400 ubu (8166)] ERROR : value set for app_name in the production 
+[04/02/14 12:41:57 +0400 ubu (8166)] ERROR : environment.
+[04/02/14 12:41:57 +0400 ubu (8166)] INFO : Installing deferred Rack instrumentation
+[04/02/14 12:41:57 +0400 ubu (8166)] INFO : Installing Sinatra instrumentation
+[04/02/14 12:41:57 +0400 ubu (8166)] INFO : Installing Padrino instrumentation
+[04/02/14 12:41:57 +0400 ubu (8166)] INFO : Installing Net instrumentation
+[04/02/14 12:41:57 +0400 ubu (8166)] INFO : Installing ActiveRecord 4 instrumentation
+[04/02/14 12:41:57 +0400 ubu (8166)] INFO : Finished instrumentation
+[04/02/14 12:41:59 +0400 ubu (8166)] INFO : Doing deferred dependency-detection before Rack startup
+[04/02/14 12:42:57 +0400 ubu (8508)] INFO : Starting the New Relic agent in "development" environment.
+[04/02/14 12:42:57 +0400 ubu (8508)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[04/02/14 12:42:57 +0400 ubu (8508)] INFO : Reading configuration from config/newrelic.yml
+[04/02/14 12:42:57 +0400 ubu (8508)] INFO : Enabling the Request Sampler.
+[04/02/14 12:42:57 +0400 ubu (8508)] ERROR : No application name configured.
+[04/02/14 12:42:57 +0400 ubu (8508)] ERROR : The Agent cannot start without at least one. Please check your 
+[04/02/14 12:42:57 +0400 ubu (8508)] ERROR : newrelic.yml and ensure that it is valid and has at least one 
+[04/02/14 12:42:57 +0400 ubu (8508)] ERROR : value set for app_name in the development 
+[04/02/14 12:42:57 +0400 ubu (8508)] ERROR : environment.
+[04/02/14 12:42:57 +0400 ubu (8508)] INFO : Installing deferred Rack instrumentation
+[04/02/14 12:42:57 +0400 ubu (8508)] INFO : Installing Sinatra instrumentation
+[04/02/14 12:42:57 +0400 ubu (8508)] INFO : Installing Padrino instrumentation
+[04/02/14 12:42:57 +0400 ubu (8508)] INFO : Installing Net instrumentation
+[04/02/14 12:42:57 +0400 ubu (8508)] INFO : Installing ActiveRecord 4 instrumentation
+[04/02/14 12:42:57 +0400 ubu (8508)] INFO : Finished instrumentation
+[04/02/14 12:43:00 +0400 ubu (8508)] INFO : Doing deferred dependency-detection before Rack startup
+[04/02/14 13:03:39 +0400 ubu (10042)] INFO : Starting the New Relic agent in "development" environment.
+[04/02/14 13:03:39 +0400 ubu (10042)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[04/02/14 13:03:39 +0400 ubu (10042)] INFO : Reading configuration from config/newrelic.yml
+[04/02/14 13:03:39 +0400 ubu (10042)] INFO : Enabling the Request Sampler.
+[04/02/14 13:03:39 +0400 ubu (10042)] ERROR : No application name configured.
+[04/02/14 13:03:39 +0400 ubu (10042)] ERROR : The Agent cannot start without at least one. Please check your 
+[04/02/14 13:03:39 +0400 ubu (10042)] ERROR : newrelic.yml and ensure that it is valid and has at least one 
+[04/02/14 13:03:39 +0400 ubu (10042)] ERROR : value set for app_name in the development 
+[04/02/14 13:03:39 +0400 ubu (10042)] ERROR : environment.
+[04/02/14 13:03:39 +0400 ubu (10042)] INFO : Installing deferred Rack instrumentation
+[04/02/14 13:03:39 +0400 ubu (10042)] INFO : Installing Sinatra instrumentation
+[04/02/14 13:03:39 +0400 ubu (10042)] INFO : Installing Padrino instrumentation
+[04/02/14 13:03:39 +0400 ubu (10042)] INFO : Installing Net instrumentation
+[04/02/14 13:03:39 +0400 ubu (10042)] INFO : Installing ActiveRecord 4 instrumentation
+[04/02/14 13:03:39 +0400 ubu (10042)] INFO : Finished instrumentation

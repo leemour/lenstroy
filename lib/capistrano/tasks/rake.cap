@@ -2,9 +2,11 @@ namespace :sake do
   namespace :sitemaps do
     task :refresh do
       on roles(:app) do
+        # within doesn't work, using cd manually
         within current_path do
+          execute "cd #{current_path}"
           with rack_env: 'production' do
-            execute "RACK_ENV=production cd #{current_path} && rake sitemaps:refresh"
+             execute :rake, "sitemaps:refresh"
           end
         end
       end

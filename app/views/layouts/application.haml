@@ -29,6 +29,8 @@
 
             = yield
 
+            = social_buttons
+
           %aside#sidebar.col-sm-4.col-lg-3
             = partial "layouts/sidebar"
 
@@ -39,5 +41,6 @@
     :javascript
       window.jQuery || document.write('<script src="javascripts/jquery.js">\/script>')
     =javascript_include_tag 'jquery-ujs', 'application'
+    =javascript_include_tag '//yandex.st/share/share.js'
 
     = partial 'common/yandex_metrika'

@@ -35,7 +35,10 @@ SitemapGenerator::Sitemap.create do
   add '/docs/Lenstroyin_Pricelist_2014.pdf', :priority => 0.3,
       :changefreq => 'yearly'
 
+  not_for_search = %w{'message'}
+
   Page.includes(:parent).find_each do |page|
+    next if not_for_search.include? page.slug
     add sitemap_page_url(page),
       :priority => 0.5, :changefreq => 'monthly'
   end

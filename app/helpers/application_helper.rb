@@ -65,6 +65,19 @@ module ApplicationHelper
     params[:contact_form].symbolize_keys!
     {name: '', email: '', content: ''}.update params[:contact_form]
   end
+
+  def social_buttons
+    capture_haml do
+      haml_tag :div, class: 'social-buttons' do
+        haml_tag :h4, "Поделитесь информацией с друзьями:"
+        haml_tag :div, class: 'yashare-auto-init',
+          'data-yashareL10n' => 'ru',
+          'data-yashareQuickServices' =>
+            'vkontakte,facebook,odnoklassniki,moimir,twitter',
+          'data-yashareTheme' => 'counter'
+      end
+    end
+  end
 end
 
 Lenstroy::App.helpers ApplicationHelper
