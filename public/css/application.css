@@ -5030,14 +5030,48 @@ header {
     margin-top: 15px;
     padding: 0; }
   header address {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 0;
     text-align: right;
-    margin: 10px 0; }
+    margin-bottom: 10px; }
     header address p {
       margin: 0; }
     header address .tel {
-      font-size: 1.4em; }
+      font-size: 1.35em; }
+  header .social-groups {
+    margin-top: 5px; }
+    header .social-groups .vk-group {
+      background-color: #48729e;
+      border-radius: 3px;
+      color: white;
+      display: inline-block;
+      font-size: 13px;
+      height: 24px;
+      padding: 4px 0;
+      text-decoration: none;
+      transition: black 200ms linear 0s;
+      overflow: hidden;
+      vertical-align: bottom; }
+      header .social-groups .vk-group:hover {
+        background-color: #3a5b7e; }
+      header .social-groups .vk-group:active {
+        -webkit-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.5); }
+        header .social-groups .vk-group:active span {
+          margin-top: 3px; }
+      header .social-groups .vk-group span {
+        display: inline-block;
+        float: left; }
+      header .social-groups .vk-group .vk-icon {
+        background: url("//yandex.st/share/static/b-share_counter_large.png") -5px -62px;
+        margin: 0 4px 0 6px;
+        height: 16px;
+        width: 16px; }
+      header .social-groups .vk-group .vk-text {
+        border-left: 1px solid white;
+        line-height: 13px;
+        margin: 1px 8px 0 0;
+        padding-left: 7px; }
   header .navbar.navbar-default {
     margin-left: 10px;
     margin-right: 10px; }

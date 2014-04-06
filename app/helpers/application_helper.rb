@@ -15,6 +15,10 @@ module ApplicationHelper
     "(812) 938-21-10"
   end
 
+  def vk_group_url
+    "http://vk.com/lenstroyin"
+  end
+
   def base_title
     "#{company_name} - Строительство загородных домов"
   end

@@ -2,6 +2,17 @@
   %li.active=link_to tag_icon(:list, pat(:list)), url(:pages, :index)
   %li=link_to tag_icon(:plus, 'Новая'), url(:pages, :new), class: 'tab-new'
 
+.filters
+  .btn-group
+    - Page.filters.each do |filter|
+      = filter_link filter, :pages
+  .parent-filter
+    Родительская:
+    %select.parent.form-control.input-xlarge
+      - root_pages_list.each do |page|
+        %option{value: page[1], 'data-uri' => parent_filter_uri(page).html_safe,selected: filter_selected?(page)}
+          = page[0]
+
 .tabs-content
   %table#list.table.table-striped.table-hover.table-condensed
     %thead

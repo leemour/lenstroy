@@ -20,6 +20,37 @@
   .admin-link:hover {
     color: #333333; }
 
+.tabs-content {
+  padding-top: 20px; }
+
+.filters {
+  display: table;
+  margin: 10px auto 0;
+  overflow: hidden; }
+  .filters .btn-group {
+    float: left;
+    margin-right: 20px; }
+    .filters .btn-group .btn {
+      border: 1px solid #d0d0d0; }
+      .filters .btn-group .btn.active {
+        background-color: whitesmoke; }
+  .filters .parent-filter {
+    float: left;
+    font-size: 14px;
+    margin-top: 3px; }
+    .filters .parent-filter select {
+      display: inline-block;
+      font-size: 15px;
+      height: 28px;
+      margin-top: 2px;
+      padding: 2px 6px;
+      width: auto; }
+      .filters .parent-filter select option {
+        font: 14px "Courier New", Courier, monospace; }
+
+form #page_parent_id {
+  font-family: "Courier New", "Courier", monospace; }
+
 .pagination {
   display: block;
   position: relative;

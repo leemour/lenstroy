@@ -8,6 +8,12 @@
       %address.contacts.col-xs-5.col-sm-4.pull-right
         %p.tel= contact_tel
         %p.email= mail_to contact_email
+        %p.social-groups
+          Мы
+          = link_to vk_group_url, class: 'vk-group' do
+            %span.vk-icon
+            %span.vk-text
+              Вконтакте
 
       .disclaimer.col-xs-12.col-sm-4
         Строительство загородных домов

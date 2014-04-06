@@ -12,6 +12,8 @@ ru:
       Account: Пользователь
       Pages: Страницы
       Page: Страница
+      roots: Корневые
+      promotions: Акции
 
       id: ID
       name: Имя

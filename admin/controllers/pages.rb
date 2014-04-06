@@ -1,11 +1,12 @@
 Lenstroy::Admin.controllers :pages do
   before :index do
     sort_resource
+    filter_resource
   end
 
   get :index, provides: [:html, :js] do
     @title = pat("Pages")
-    @pages = Page.sorted_by(@sort)
+    @pages = Page.filter_by(@filter).sort_by(@sort)
     case content_type
     when :html
       render 'pages/index'

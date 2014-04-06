@@ -4,7 +4,7 @@
       =check_box_tag 'page_ids[]', :value => page.id, :class => 'list-selectable-checkbox'
     %td.list-column=page.id
     %td.list-column=page.slug
-    %td.list-column=page.title
+    %td.list-column=link_to page.title, url(:pages, :edit, :id => page.id), class: 'title-link'
     %td.list-column=page.status
     %td.list-column=page.account.name
     %td.list-column= link_to page.parent.title, url(:pages, :edit, id: page.parent.id) if page.parent
