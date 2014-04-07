@@ -1,10 +1,14 @@
 namespace :assets do
-  desc 'compile assets'
+  desc 'Compile all assets'
   task :compile => [:compile_js, :compile_css] do
   end
 
+  desc 'Compile JS assets for Admin and App'
+  task :compile_js => [:compile_app_js, :compile_admin_js] do
+  end
+
   desc 'compile javascript assets'
-  task :compile_js => :environment do
+  task :compile_app_js => :environment do
     sprockets = Sprockets::Environment.new(PADRINO_ROOT) do |env|
       env.logger = Logger.new(STDOUT)
     end
@@ -15,7 +19,21 @@ namespace :assets do
     asset = sprockets['application.js']
     asset.write_to(outpath)
     # asset.write_to("#{outpath}.gz")
-    puts "successfully compiled js assets"
+    puts "successfully compiled App js assets"
+  end
+
+  desc 'compile javascript assets'
+  task :compile_admin_js => :environment do
+    sprockets = Sprockets::Environment.new(PADRINO_ROOT) do |env|
+      env.logger = Logger.new(STDOUT)
+    end
+    sprockets.append_path File.join PADRINO_ROOT, 'admin', 'assets', 'js'
+    outpath = File.join PADRINO_ROOT, 'public', 'admin', 'js', 'admin.js'
+
+    asset = sprockets['admin.js']
+    asset.write_to(outpath)
+    # asset.write_to("#{outpath}.gz")
+    puts "successfully compiled Admin js assets"
   end
 
   # desc 'compile css assets'

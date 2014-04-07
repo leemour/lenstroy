@@ -19,6 +19,10 @@ module ApplicationHelper
     "http://vk.com/lenstroyin"
   end
 
+  def promo_url(slug)
+    "/promotions/#{slug}"
+  end
+
   def base_title
     "#{company_name} - Строительство загородных домов"
   end

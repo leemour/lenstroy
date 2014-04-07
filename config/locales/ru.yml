@@ -3,6 +3,10 @@ ru:
   Name: Имя
   Message: Сообщение
   Send: Отправить
+  main_menu: Главное Меню
+  to_home: На главную
+  toggle_nav: Раскрыть меню
+
   padrino:
     admin:
       edit: Изменить

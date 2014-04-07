@@ -13,12 +13,20 @@
   .widget.well.latest-works
     = partial 'common/latest_works'
 
+  .disclaimer
+    = link_to promo_url('renovation-discount') do
+      = image_tag "banner-side.png", class: "img-responsive", alt: "Cкидка 5% на строительство дома до 1 мая"
+
 -else
   %nav.navbar-sidebar
     = render_navigation context: 'sidebar', renderer: :side_menu, expand_all: true
 
   .widget.well.latest-works
     = partial 'common/latest_works'
+
+  .disclaimer
+    = link_to promo_url('renovation-discount') do
+      = image_tag "banner-side.png", class: "img-responsive", alt: "Cкидка 5% на строительство дома до 1 мая"
 
   #contact-form.widget
     = partial 'common/contact_form', locals: {in_sidebar: true}

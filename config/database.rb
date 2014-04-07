@@ -16,19 +16,16 @@
 ActiveRecord::Base.configurations[:development] = {
   :adapter => 'sqlite3',
   :database => Padrino.root('db', 'lenstroy_development.db')
-
 }
 
 ActiveRecord::Base.configurations[:production] = {
   :adapter => 'sqlite3',
   :database => Padrino.root('db', 'lenstroy_production.db')
-
 }
 
 ActiveRecord::Base.configurations[:test] = {
   :adapter => 'sqlite3',
   :database => Padrino.root('db', 'lenstroy_test.db')
-
 }
 
 # Setup our logger

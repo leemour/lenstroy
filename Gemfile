@@ -26,10 +26,6 @@ gem 'padrino-pipeline', git: 'git@github.com:Ortuna/padrino-pipeline.git'
 gem 'carrierwave'
 gem 'mini_magick'
 
-group :production, :development do
-  gem 'newrelic_rpm'
-end
-
 group :development, :test do
   gem 'capistrano', '>= 3.1', require: false
   gem 'capistrano-rbenv', ">= 2.0", require: false
@@ -55,6 +51,10 @@ group :test do
   gem 'rb-inotify', :require => false
   #gem 'rb-fsevent', :require => false
   #gem 'rb-fchange', :require => false
+end
+
+group :production, :development do
+  gem 'newrelic_rpm'
 end
 
 # JSON codec (faster performance)

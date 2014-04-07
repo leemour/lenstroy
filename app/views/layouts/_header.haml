@@ -2,10 +2,10 @@
   .container-fluid
     .row
       .col-xs-6.col-sm-4
-        %a( href='/' id='logo' title='На главную')
-          = image_tag("/images/logo.png")
+        %a{ href: '/', id: 'logo', title: t('to_home')}
+          = image_tag "logo.png"
 
-      %address.contacts.col-xs-5.col-sm-4.pull-right
+      %address.contacts.col-xs-5.col-sm-3.pull-right
         %p.tel= contact_tel
         %p.email= mail_to contact_email
         %p.social-groups
@@ -15,20 +15,22 @@
             %span.vk-text
               Вконтакте
 
-      .disclaimer.col-xs-12.col-sm-4
-        Строительство загородных домов
-        %br
-        Ремонт, отделка, перепланировка
+      .disclaimer.col-xs-8.col-sm-5
+        = link_to promo_url('renovation-discount') do
+          = image_tag "banner-top.png", class: "img-responsive", alt: "Cкидка 5% на внутреннюю отделку до 1 мая"
+        / Строительство загородных домов
+        / %br
+        / Ремонт, отделка, перепланировка
 
     .row
       %nav.navbar.navbar-default{role: "navigation"}
         .container-fluid
           .navbar-header
-            %button.navbar-toggle.collapsed{'data-target' => ".navbar-collapse", 'data-toggle' => "collapse", :type => "button"}
-              %span.sr-only Toggle navigation
+            %button.navbar-toggle.collapsed{'data-target' => ".navbar-collapse", 'data-toggle' => "collapse", :type => "button", title: t('toggle_nav')}
+              %span.sr-only t('toggle_nav')
               -3.times do
                 %span.icon-bar
-            / = link_to "#{company_name} Меню", '/', class: 'brand hidden-desktop'
+            .brand.visible-xs= t('main_menu')
 
           .navbar-collapse.collapse
             = render_navigation(renderer: :bootstrap, except: :houses, expand_all: true)
