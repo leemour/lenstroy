@@ -19,6 +19,8 @@ module Lenstroy
       # assets.compiled_output = "#{public_path}"
     end
 
+    register NegCaptcha::Helpers
+
     # enable :sessions
     enable :reload
 

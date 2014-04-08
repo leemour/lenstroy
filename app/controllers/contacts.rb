@@ -9,14 +9,13 @@ Lenstroy::App.controller :contacts, map: 'about' do
   end
 
   post :message do
-    # raise request.params.inspect
-    @message.deliver if @message.valid? #&& @captcha.valid?
+    # raise params.inspect
+    @message.deliver if @message.is_valid?
     @page = Page.find_by_slug(:message)
     render 'pages/message'
   end
 
   get :message do
-    # raise request.params.inspect
     @page = Page.find_by_slug(:message)
     render 'pages/message'
   end

@@ -10,27 +10,29 @@ class ContactForm
   validates_format_of :email,
     with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates_length_of :name, :maximum => 50
-  validates_length_of :content, :maximum => 500
+  # validates_length_of :content, :maximum => 500
 
   def initialize(request)
-    attributes = request.params['contact_form']
-    # binding.pry
-    return false unless attributes
-    attributes.each do |name, value|
+    attributes = symbolize_captcha_keys!(request.params)
+    @sent = false
+    @captcha = NegativeCaptcha.new(
+      secret:  ENV['NEGATIVE_CAPTCHA_SECRET'],
+      spinner: request.ip,
+      fields:  [:name, :email, :content],
+      params:  attributes || {}
+    )
+    @captcha.values.each do |name, value|
       send("#{name}=", value)
     end
-    @attributes = attributes
-    @sent       = false
-    @captcha = NegativeCaptcha.new(
-      :secret => ENV['NEGATIVE_CAPTCHA_SECRET'],
-      :spinner => request.ip,
-      :fields => [:name, :email, :content],
-      :params => request.params
-    )
+    attributes
   end
 
   def persisted?
     false
+  end
+
+  def is_valid?
+    self.valid? && @captcha.valid?
   end
 
   def deliver
@@ -42,5 +44,15 @@ class ContactForm
 
   def sent?
     @sent
+  end
+
+  private
+
+  def symbolize_captcha_keys!(hash)
+    %w{spinner timestamp}.each do |key|
+      hash[key.to_sym] = hash[key]
+      hash.delete(key)
+    end
+    hash
   end
 end

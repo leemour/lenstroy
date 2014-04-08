@@ -5069,6 +5069,36 @@ header {
 .breadcrumb li {
   padding-right: 3px; }
 
+form .reposition_field {
+  position: absolute;
+  left: -2000px; }
+
+.modal img {
+  max-width: 100%;
+  max-height: 100%; }
+
+article h1 {
+  font-size: 28px;
+  margin-top: 0; }
+article h2 {
+  font-size: 20px; }
+article .social-buttons {
+  margin: 30px 0 20px; }
+  article .social-buttons h4 {
+    margin: 15px 0; }
+article .promotion {
+  margin: 40px 0; }
+
+.contact-details h1 {
+  font-size: 24px; }
+.contact-details h2 {
+  font-size: 20px;
+  margin: 10px 0 5px; }
+
+#map {
+  height: 400px;
+  margin-top: 20px; }
+
 .social-groups {
   margin-top: 5px; }
   .social-groups .vk-group {
@@ -5103,18 +5133,6 @@ header {
       line-height: 13px;
       margin: 1px 8px 0 0;
       padding-left: 7px; }
-
-article h1 {
-  font-size: 28px;
-  margin-top: 0; }
-article h2 {
-  font-size: 20px; }
-article .social-buttons {
-  margin: 30px 0 20px; }
-  article .social-buttons h4 {
-    margin: 15px 0; }
-article .promotion {
-  margin: 40px 0; }
 
 .carousel {
   margin-bottom: 20px;
@@ -5159,10 +5177,6 @@ article .promotion {
     width: 0%;
     height: 3px;
     background-color: #428bca; }
-
-.modal img {
-  max-width: 100%;
-  max-height: 100%; }
 
 #sidebar h3 {
   font-size: 20px;
@@ -5231,16 +5245,6 @@ article .promotion {
   -o-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left; }
 
-.contact-details h1 {
-  font-size: 24px; }
-.contact-details h2 {
-  font-size: 20px;
-  margin: 10px 0 5px; }
-
-#map {
-  height: 400px;
-  margin-top: 20px; }
-
 footer {
   margin: 40px 0 30px; }
   footer .copyright {
@@ -5272,10 +5276,10 @@ body.message article .hint {
   font-size: 90%; }
 body.message article .contact-form-error h2 {
   color: #a94442; }
-body.message article .contact-form-error .error-explanation ul {
+body.message article .contact-form-error ul.error-explanation {
   padding-left: 0;
   list-style: none inside; }
-  body.message article .contact-form-error .error-explanation ul .alert-danger {
+  body.message article .contact-form-error ul.error-explanation .alert-danger {
     padding: 6px 10px;
     margin: 5px 0 10px; }
 body.message article .contact-form-error form input.invalid,

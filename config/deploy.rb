@@ -76,9 +76,9 @@ set :executable_files, %w{
 }
 
 # Make some files writeable
-set :writable_files, %W{
-  db/#{fetch :application}_#{fetch :rack_env}.db
-}
+set :writable_files, []# %W{
+#   db/#{fetch :application}_#{fetch :rack_env}.db
+# }
 
 # Create files unless they exist
 set :touch_files, %w{
@@ -87,6 +87,7 @@ set :touch_files, %w{
   log/nginx_error.log
   log/puma.log
   log/puma.err.log
+  log/newrelic_agent.log
 }
 
 # Symlink config files to system paths

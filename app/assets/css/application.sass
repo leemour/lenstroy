@@ -95,6 +95,40 @@ header
   li
     padding-right: 3px
 
+form
+  .reposition_field
+    position: absolute
+    left: -2000px
+
+.modal
+  img
+    max-width: 100%
+    max-height: 100%
+
+article
+  h1
+    font-size: 28px
+    margin-top: 0
+  h2
+    font-size: 20px
+  .social-buttons
+    margin: 30px 0 20px
+    h4
+      margin: 15px 0
+  .promotion
+    margin: 40px 0
+
+.contact-details
+  h1
+    font-size: 24px
+  h2
+    font-size: 20px
+    margin: 10px 0 5px
+
+#map
+  height: 400px
+  margin-top: 20px
+
 .social-groups
   margin-top: 5px
   .vk-group
@@ -128,19 +162,6 @@ header
       line-height: 13px
       margin: 1px 8px 0 0
       padding-left: 7px
-
-article
-  h1
-    font-size: 28px
-    margin-top: 0
-  h2
-    font-size: 20px
-  .social-buttons
-    margin: 30px 0 20px
-    h4
-      margin: 15px 0
-  .promotion
-    margin: 40px 0
 
 .carousel
   margin-bottom: 20px
@@ -184,11 +205,6 @@ article
     width: 0%
     height: 3px
     background-color: $brand-primary
-
-.modal
-  img
-    max-width: 100%
-    max-height: 100%
 
 #sidebar
   h3
@@ -261,17 +277,6 @@ article
   -o-transition: 0.6s ease-in-out left
   transition: 0.6s ease-in-out left
 
-.contact-details
-  h1
-    font-size: 24px
-  h2
-    font-size: 20px
-    margin: 10px 0 5px
-
-#map
-  height: 400px
-  margin-top: 20px
-
 footer
   margin: 40px 0 30px
   .copyright
@@ -305,13 +310,12 @@ body.message article
   .contact-form-error
     h2
       color: $state-danger-text
-    .error-explanation
-      ul
-        padding-left: 0
-        list-style: none inside
-        .alert-danger
-          padding: 6px 10px
-          margin: 5px 0 10px
+    ul.error-explanation
+      padding-left: 0
+      list-style: none inside
+      .alert-danger
+        padding: 6px 10px
+        margin: 5px 0 10px
     form
       input.invalid,
       textarea.invalid
