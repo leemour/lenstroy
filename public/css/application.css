@@ -4987,6 +4987,8 @@ html body {
   font-family: "Clear Sans", "Liberation Sans", Helvetica, Arial;
   font-weight: 300;
   font-size: 15px; }
+  html body b, html body strong {
+    font-weight: 500; }
 
 .container-fluid {
   max-width: 1170px; }
