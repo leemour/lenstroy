@@ -6,6 +6,11 @@ ru:
   main_menu: Главное Меню
   to_home: На главную
   toggle_nav: Раскрыть меню
+  vk: Вконтакте
+  we: Мы
+  contacts: Контакты
+  web_development: Создание сайта
+  promotions: Рекламные акции
 
   padrino:
     admin:

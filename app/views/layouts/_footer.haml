@@ -1,6 +1,6 @@
 .container-fluid
   .row
-    .copyright.col-xs-7.col-sm-5
+    .copyright.col-xs-6.col-sm-5.col-md-4
       Все права защищены &copy;
       =Time.now.year
       %br/
@@ -10,15 +10,26 @@
       %br/
       наб. Адмиралтейского канала д.&nbsp;27,&nbsp;оф.&nbsp;5
 
-
-    .col-xs-5.col-sm-3
-      %h3 Контакты
+    .col-xs-5.col-sm-3.col-md-3
+      %h3= t(:contacts)
       = mail_to contact_email
       %br/
       Тел.: #{contact_tel}
       %br/
       Факс: #{contact_tel}
 
-    .author.col-xs-6.col-sm-4
-      Создание сайта —
+    .clearfix.visible-xs
+
+    .col-xs-6.hidden-sm.col-md-2
+      %p.promotions
+        = link_to t(:promotions), promo_url
+      %p.social-groups
+        = t(:we)
+        = link_to vk_group_url, class: 'vk-group' do
+          %span.vk-icon
+          %span.vk-text
+            = t(:vk)
+
+    .author.col-xs-6.col-sm-4.col-md-3
+      = t(:web_development) + '—'
       =link_to 'Рябит', 'http://riabit.ru'

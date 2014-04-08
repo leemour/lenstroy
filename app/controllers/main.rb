@@ -5,12 +5,15 @@ Lenstroy::App.controller do
 
   get :index do
     @page = Page.find_by_slug('index')
+    halt 404 unless @page
     render 'pages/index'
   end
 
-  get '/mail-sent' do
-    @page = Page.find_by_slug('mail-sent')
-    render 'pages/mail_sent'
+  get '/promotions' do
+    @page = Page.find_by_slug('promotions')
+    @promotions = Page.children_of('promotions')
+    halt 404 unless @page
+    render 'pages/promotions'
   end
 
   get '/:primary', priority: :low do

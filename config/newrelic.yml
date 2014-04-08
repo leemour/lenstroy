@@ -10,6 +10,7 @@
 
 # Here are the settings that are common to all environments
 common: &default_settings
+  # dispatcher: puma
   # ============================== LICENSE KEY ===============================
 
   # You must specify the license key associated with your New Relic

@@ -12,6 +12,7 @@ module AdminHelper
 
   def root_pages_list
     list = root_pages
+    list.delete_if {|item| item[1] == 1} # delete index page
     list[0] = ['Все', -1]
     list
   end

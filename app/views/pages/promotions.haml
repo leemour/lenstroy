@@ -1,0 +1,9 @@
+%h1= @page.title
+
+.content= @page.content.html_safe
+
+.promotions
+  - @promotions.each do |promo|
+    .promotion
+      %h2= link_to promo.title, promo_url(promo.slug)
+      .text= promo.excerpt.html_safe

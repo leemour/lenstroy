@@ -30,5 +30,13 @@ SimpleNavigation::Configuration.run do |navigation|
       projects.item :bania,     'Проекты бань',         '/projects/bania'
     end
     primary.item :gallery,      'Галерея',              '/gallery'
+
+
+    primary.item :promotions,    'Акции',          '/promotions' do |promotions|
+      promotions.item :dom,      'Скидка на ремонт квартиры',
+                                 '/promotions/renovation-discount'
+      promotions.item :kvartira, 'Скидка на ремонт квартиры',
+                                 '/promotions/free-estimate-offer'
+    end
   end
 end

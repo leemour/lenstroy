@@ -2,7 +2,7 @@ ruby '2.1.0'
 source 'https://rubygems.org'
 
 # Project requirements
-gem 'padrino', '0.12.0'
+gem 'padrino', '~> 0.12', git: 'git@github.com:padrino/padrino-framework.git'
 gem 'rake'
 
 # Component requirements
@@ -16,7 +16,7 @@ gem 'kaminari', :require => 'kaminari/sinatra'
 gem 'simple-navigation', git: 'git@github.com:codeplant/simple-navigation.git'
 gem 'sinatra-simple-navigation', :require => 'sinatra/simple-navigation'
 gem 'sitemap_generator'
-# gem 'negative_captcha'
+gem 'negative_captcha'
 
 # Assets
 gem 'bootstrap-sass'

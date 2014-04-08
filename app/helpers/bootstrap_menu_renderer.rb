@@ -3,7 +3,8 @@ module SimpleNavigation
     class Bootstrap < Base
       def render(item_container)
         return '' if skip_if_empty? && item_container.empty?
-        list_items   = item_container.items.select &method(:included?)
+        list_items = item_container.items.select &method(:included?)
+        list_items.each(&method(:add_primary)) # Add parent item to sub_navigation
         list_content = list_items.map(&method(:process)).join('')
         content_tag(:ul, list_content,
           {:id => item_container.dom_id, :class => item_container.dom_class})
@@ -13,6 +14,14 @@ module SimpleNavigation
 
       def included?(item)
         not [*options[:except]].include? item.key
+      end
+
+      def add_primary(item)
+        if item.sub_navigation
+          primary_item = Item.new(item.sub_navigation,
+            item.key, item.name, item.url, class: 'primary')
+          item.sub_navigation.items.prepend primary_item
+        end
       end
 
       def process(item)

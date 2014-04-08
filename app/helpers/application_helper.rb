@@ -19,7 +19,8 @@ module ApplicationHelper
     "http://vk.com/lenstroyin"
   end
 
-  def promo_url(slug)
+  def promo_url(slug='')
+    return '/promotions' if slug.empty?
     "/promotions/#{slug}"
   end
 
@@ -65,7 +66,7 @@ module ApplicationHelper
   end
 
   def setup_contact_form
-    @message = ContactForm.new params[:contact_form]
+    @message = ContactForm.new request
   end
 
   def contact_param

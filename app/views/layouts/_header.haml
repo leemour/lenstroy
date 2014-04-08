@@ -9,13 +9,13 @@
         %p.tel= contact_tel
         %p.email= mail_to contact_email
         %p.social-groups
-          Мы
+          = t(:we)
           = link_to vk_group_url, class: 'vk-group' do
             %span.vk-icon
             %span.vk-text
-              Вконтакте
+              = t(:vk)
 
-      .disclaimer.col-xs-8.col-sm-5
+      .disclaimer.hidden-xs.col-sm-5
         = link_to promo_url('renovation-discount') do
           = image_tag "banner-top.png", class: "img-responsive", alt: "Cкидка 5% на внутреннюю отделку до 1 мая"
         / Строительство загородных домов
@@ -27,10 +27,10 @@
         .container-fluid
           .navbar-header
             %button.navbar-toggle.collapsed{'data-target' => ".navbar-collapse", 'data-toggle' => "collapse", :type => "button", title: t('toggle_nav')}
-              %span.sr-only t('toggle_nav')
+              %span.sr-only= t('toggle_nav')
               -3.times do
                 %span.icon-bar
             .brand.visible-xs= t('main_menu')
 
           .navbar-collapse.collapse
-            = render_navigation(renderer: :bootstrap, except: :houses, expand_all: true)
+            = render_navigation(renderer: :bootstrap, except: [:houses, :promotions], expand_all: true)

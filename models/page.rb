@@ -15,13 +15,8 @@ class Page < ActiveRecord::Base
   end
 
   def self.secondary(params)
-    # TODO: submit issue and fix this ugliness
-    if params[:primary].is_a? Array
-      parent, child = *params[:primary]
-    else
-      parent = params[:primary]
-      child  = params[:secondary]
-    end
+    parent = params[:primary]
+    child  = params[:secondary]
     page = where(slug: child).published.first
     page.seoize if page && page.parent && page.parent.slug == parent
   end
@@ -30,12 +25,16 @@ class Page < ActiveRecord::Base
     where(parent_id: 0)
   end
 
+  def self.children_of(slug)
+    Page.joins(:parent).where(parents_pages: {slug: slug})
+  end
+
   def self.filter_by(filter)
     case
     when filter[:name] == 'roots'
       Page.roots
     when filter[:name] == 'promotions'
-      Page.joins(:parent).where(parents_pages: {slug: filter[:name]})
+      Page.children_of(filter[:name])
     when filter[:type] == 'parent' && filter[:name].to_i > -1
       Page.where(parent_id: filter[:name])
     else

@@ -12,19 +12,21 @@ class ContactForm
   validates_length_of :name, :maximum => 50
   validates_length_of :content, :maximum => 500
 
-  def initialize(attributes = {})
+  def initialize(request)
+    attributes = request.params['contact_form']
+    # binding.pry
     return false unless attributes
     attributes.each do |name, value|
       send("#{name}=", value)
     end
     @attributes = attributes
     @sent       = false
-    # @captcha = NegativeCaptcha.new(
-    #   :secret => ENV['NEGATIVE_CAPTCHA_SECRET'], #from config/secret.rb
-    #   :spinner => request.ip,
-    #   :fields => [:name, :email, :content], #Whatever fields are in your form
-    #   :params => params
-    # )
+    @captcha = NegativeCaptcha.new(
+      :secret => ENV['NEGATIVE_CAPTCHA_SECRET'],
+      :spinner => request.ip,
+      :fields => [:name, :email, :content],
+      :params => request.params
+    )
   end
 
   def persisted?
