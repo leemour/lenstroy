@@ -31,9 +31,8 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :design,       'Дизайн интерьера',      '/design'
     # primary.item :gallery,      'Галерея',              '/gallery'
 
-
     primary.item :promotions,    'Акции',          '/promotions' do |promotions|
-      promotions.item :dom,      'Скидка новоселам',
+      promotions.item :new,      'Скидка новоселам',
                                  '/promotions/renovation-discount'
       promotions.item :estimate, 'Бесплатная смета',
                                  '/promotions/free-estimate-offer'
@@ -41,7 +40,7 @@ SimpleNavigation::Configuration.run do |navigation|
                                  '/promotions/free-materials-purchasing'
       promotions.item :pensioner,'Скидка пенсионерам',
                                  '/promotions/pensioner-discount'
-      promotions.item :recomend, 'Скидка по рекомендации',
+      promotions.item :recommend,'Скидка по рекомендации',
                                  '/promotions/recomendation-discount'
     end
   end

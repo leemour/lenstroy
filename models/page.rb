@@ -9,6 +9,8 @@ class Page < ActiveRecord::Base
 
   scope :published, -> { where(status: :published) }
 
+  paginates_per 15
+
   def self.primary(slug)
     page = where(slug: slug, parent_id: 0).published.first
     page.seoize if page
