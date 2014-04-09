@@ -33,7 +33,7 @@ module AdminHelper
     @sort = params[:sort] ? params[:sort].symbolize_keys : {}
     @sort[:column] ||= 'id'
     @sort[:order]  ||= 'asc'
-    @sort[:page]   ||= 1
+    @sort[:page]   = params[:page] ? params[:page] : 1
     @sort
   end
 
