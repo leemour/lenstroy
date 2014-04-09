@@ -134,7 +134,7 @@ set :bundle_bins, fetch(:bundle_bins, []) + %w{puma}
 # set :newrelic_license_key, ENV["NEW_RELIC_LICENSE_KEY"]
 
 namespace :deploy do
-  before :deploy, "deploy:check_revision"
+  before :deploy, "check:revision"
   # before :finished, 'newrelic:notice_deployment'
 
   desc 'Restart application'

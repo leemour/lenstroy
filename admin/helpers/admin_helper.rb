@@ -7,12 +7,12 @@ module AdminHelper
     pages = Page.roots.select(:title, :id, :slug).map do |parent|
       ["#{rpad parent.title, 16} /#{parent.slug}".html_safe, parent.id]
     end
+    pages.delete_if {|item| item[1] == 1} # delete index page
     [["Нет родителя", 0]] +  pages
   end
 
   def root_pages_list
     list = root_pages
-    list.delete_if {|item| item[1] == 1} # delete index page
     list[0] = ['Все', -1]
     list
   end

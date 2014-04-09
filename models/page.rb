@@ -38,7 +38,7 @@ class Page < ActiveRecord::Base
     when filter[:type] == 'parent' && filter[:name].to_i > -1
       Page.where(parent_id: filter[:name])
     else
-      scoped
+      all
     end
   end
 

@@ -19,7 +19,7 @@ SimpleNavigation::Configuration.run do |navigation|
       works.item :zabor,        'Заборы',               '/works/fences'
       works.item :fundament,    'Фундамент',            '/works/foundation'
     end
-    primary.item :repair,       'Ремонт квартир/офисов','/renovation' do |renovation|
+    primary.item :renovation,   'Ремонт квартир/офисов','/renovation' do |renovation|
       renovation.item :otdelka, 'Отделочные работы',    '/renovation/finishing'
       renovation.item :otdelka, 'Перепланировка',       '/renovation/replanning'
     end
@@ -33,10 +33,16 @@ SimpleNavigation::Configuration.run do |navigation|
 
 
     primary.item :promotions,    'Акции',          '/promotions' do |promotions|
-      promotions.item :dom,      'Скидка на ремонт квартиры',
+      promotions.item :dom,      'Скидка новоселам',
                                  '/promotions/renovation-discount'
-      promotions.item :kvartira, 'Скидка на ремонт квартиры',
+      promotions.item :estimate, 'Бесплатная смета',
                                  '/promotions/free-estimate-offer'
+      promotions.item :materials,'Бесплатная закупка материалов',
+                                 '/promotions/free-materials-purchasing'
+      promotions.item :pensioner,'Скидка пенсионерам',
+                                 '/promotions/pensioner-discount'
+      promotions.item :recomend, 'Скидка по рекомендации',
+                                 '/promotions/recomendation-discount'
     end
   end
 end
