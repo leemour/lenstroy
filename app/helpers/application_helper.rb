@@ -25,7 +25,7 @@ module ApplicationHelper
   end
 
   def base_title
-    "#{company_name} - Строительство загородных домов"
+    "#{company_name} - Ремонт квартир, строительство загородных домов"
   end
 
   def full_title(page)
@@ -39,7 +39,7 @@ module ApplicationHelper
   end
 
   def pricelist_url
-    '/docs/Lenstroyin_Pricelist_2014.pdf'
+    '/docs/Pricelist_Lenstroyin.pdf'
   end
 
   def latest_image(name, alt_text)

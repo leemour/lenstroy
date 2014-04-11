@@ -24,9 +24,9 @@ SimpleNavigation::Configuration.run do |navigation|
       renovation.item :otdelka, 'Перепланировка',       '/renovation/replanning'
     end
     primary.item :projects,     'Проектирование',       '/projects' do |projects|
-      projects.item :dom,       'Проекты домов',        '/projects/houses'
-      projects.item :kvartira,  'Проекты квартир',      '/projects/flats'
-      projects.item :bania,     'Проекты бань',         '/projects/bath-houses'
+      projects.item :dom,       'Проекты домов',        '/projects/house'
+      projects.item :kvartira,  'Проекты квартир',      '/projects/flat'
+      projects.item :bania,     'Проекты бань',         '/projects/bath-house'
     end
     primary.item :design,       'Дизайн интерьера',      '/design'
     # primary.item :gallery,      'Галерея',              '/gallery'

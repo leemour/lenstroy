@@ -32,8 +32,7 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-  add '/docs/Lenstroyin_Pricelist_2014.pdf', :priority => 0.3,
-      :changefreq => 'yearly'
+  add pricelist_url, :priority => 0.3, :changefreq => 'yearly'
 
   not_for_search = %w{'message'}
 
