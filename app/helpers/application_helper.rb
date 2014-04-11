@@ -70,7 +70,7 @@ module ApplicationHelper
   end
 
   def new_captcha
-    Message.new_captcha request
+    ContactForm.new_captcha request
   end
 
   def contact_param
