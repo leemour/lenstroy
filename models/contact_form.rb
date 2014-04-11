@@ -15,16 +15,20 @@ class ContactForm
   def initialize(request)
     attributes = symbolize_captcha_keys!(request.params)
     @sent = false
-    @captcha = NegativeCaptcha.new(
-      secret:  ENV['NEGATIVE_CAPTCHA_SECRET'],
-      spinner: request.ip,
-      fields:  [:name, :email, :content],
-      params:  attributes || {}
-    )
+    @captcha = new_captcha(request, attributes)
     @captcha.values.each do |name, value|
       send("#{name}=", value)
     end
     attributes
+  end
+
+  def new_captcha(request, attributes={})
+    NegativeCaptcha.new(
+      secret:  ENV['NEGATIVE_CAPTCHA_SECRET'],
+      spinner: request.ip,
+      fields:  [:name, :email, :content],
+      params:  attributes
+    )
   end
 
   def persisted?

@@ -8,7 +8,7 @@ SimpleNavigation::Configuration.run do |navigation|
     end
     primary.item :houses,       'Загородные дома',      '/houses' do |houses|
       houses.item :brus,        'Из бруса',             '/houses/brus'
-      houses.item :karkass,     'Каркасные дома',       '/houses/karkas'
+      houses.item :karkas,      'Каркасные дома',       '/houses/karkas'
       houses.item :gazobeton,   'Дома из газобетона',   '/houses/gazobeton'
       houses.item :srub,        'Срубы, бани',          '/houses/srub'
     end

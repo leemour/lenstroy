@@ -69,6 +69,10 @@ module ApplicationHelper
     @message = ContactForm.new request
   end
 
+  def new_captcha
+    Message.new_captcha request
+  end
+
   def contact_param
     params[:contact_form] ||= {}
     params[:contact_form].symbolize_keys!

@@ -10,16 +10,17 @@
       - @message.errors.full_messages.each do |msg|
         %li.alert.alert-danger= msg
 
-  != negative_captcha(@message.captcha)
+  - captcha = @message? @message.captcha : new_captcha
+  != negative_captcha(captcha)
   %p
-    = negative_label_tag @message.captcha, :name, t('Name')
-    = negative_text_field_tag(@message.captcha, :name, required: true, class: "form-control")
+    = negative_label_tag captcha, :name, t('Name')
+    = negative_text_field_tag(captcha, :name, required: true, class: "form-control")
   %p
-    = negative_label_tag @message.captcha, :email, t('Email')
-    = negative_text_field_tag(@message.captcha, :email, required: true, class: "form-control")
+    = negative_label_tag captcha, :email, t('Email')
+    = negative_text_field_tag(captcha, :email, required: true, class: "form-control")
   %p
-    = negative_label_tag @message.captcha, :content, t('Message')
-    = negative_text_area_tag @message.captcha, :content, required: true, class: "form-control", :rows => "6", :cols => "28", placeholder: 'Мы ответим в течении 24 часов'
+    = negative_label_tag captcha, :content, t('Message')
+    = negative_text_area_tag captcha, :content, required: true, class: "form-control", :rows => "6", :cols => "28", placeholder: 'Мы ответим в течении 24 часов'
   .actions
     = submit_tag t('Send'), class: 'btn btn-primary'
 
