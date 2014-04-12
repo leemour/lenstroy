@@ -1,0 +1,15 @@
+%h1= @page.title
+
+.content
+  .description= @page.content.html_safe
+
+  .projects
+    - if @projects
+      - @projects.each do |project|
+        .project
+          %h2= project.title
+          .description= project.description
+          .images
+            - project.images.each do |image|
+              = image.url
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324085340) do
+ActiveRecord::Schema.define(version: 20140411183001) do
 
   create_table "accounts", force: true do |t|
     t.string   "name"
@@ -40,6 +40,23 @@ ActiveRecord::Schema.define(version: 20140324085340) do
 
   add_index "pages", ["parent_id"], name: "index_pages_on_parent_id"
   add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true
+
+  create_table "project_images", force: true do |t|
+    t.integer  "project_id"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_images", ["project_id"], name: "index_project_images_on_project_id"
+
+  create_table "projects", force: true do |t|
+    t.string   "slug"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "uploaded_images", force: true do |t|
     t.string "file"

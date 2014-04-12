@@ -16,6 +16,13 @@ Lenstroy::App.controller do
     render 'pages/promotions'
   end
 
+  get '/projects' do
+    @page = Page.find_by_slug('projects')
+    @projects = Projects.all
+    halt 404 unless @page
+    render 'pages/projects'
+  end
+
   get '/:primary', priority: :low do
     @page = Page.primary(params[:primary])
     halt 404 unless @page

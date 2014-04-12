@@ -1955,49 +1955,44 @@
 
 
 
-
-
-// $(document).on('mouseleave', '#slider-main', function() {
-//   $(this).carousel('pause');
-// });
-
-$('#slider-main').carousel({
-  interval: 7500
-})
-
-$('#slider-main').on('click', '.carousel-control', function() {
-  $(this).carousel('pause');
-});
-
-// $(document).off('mouseleave', '.carousel');
-// $(document).off('mouseleave', '#slider-main');
-
-
 $(function() {
   var counter = 0;
   var progressBar;
 
   function progressBarRun() {
     progressBar = setInterval(function() {
-      counter += 0.133;
-      if (counter > 100) clearInterval(progressBar);
+      counter += 0.14;
+      if (counter > 100) {
+        clearInterval(progressBar);
+        $('#slider-main').carousel('next');
+      }
       $(".progressbar").css("width", counter + "%");
     }, 10);
   }
   progressBarRun();
 
+
+  $('#slider-main').carousel({
+    interval: false
+  });
+
+  $('#slider-main').on('click', '.carousel-control', function() {
+    counter = 0;
+    clearInterval(progressBar);
+  });
+
   $('#slider-main').on('slid.bs.carousel', function () {
     counter = 0;
     clearInterval(progressBar);
-    progressBarRun();
+    if (!$('#slider-main').is(":hover")) progressBarRun();
   });
 
   $('#slider-main').on('mouseenter', function() {
-    counter = 0;
     clearInterval(progressBar);
   });
 
   $('#slider-main').on('mouseleave', function() {
+    clearInterval(progressBar);
     progressBarRun();
   });
 });

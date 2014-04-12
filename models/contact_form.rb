@@ -13,21 +13,21 @@ class ContactForm
   # validates_length_of :content, :maximum => 500
 
   def initialize(request)
-    attributes = symbolize_captcha_keys!(request.params)
     @sent = false
-    @captcha = new_captcha(request, attributes)
+    @captcha = new_captcha(request)
     @captcha.values.each do |name, value|
       send("#{name}=", value)
     end
-    attributes
   end
 
-  def new_captcha(request, attributes={})
+  def new_captcha(request, attrs={})
+    params = symbolize_captcha_keys! request.params
+    params.update attrs
     NegativeCaptcha.new(
       secret:  ENV['NEGATIVE_CAPTCHA_SECRET'],
       spinner: request.ip,
       fields:  [:name, :email, :content],
-      params:  attributes
+      params:  params
     )
   end
 

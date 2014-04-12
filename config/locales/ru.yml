@@ -22,8 +22,11 @@ ru:
       Account: Пользователь
       Pages: Страницы
       Page: Страница
+      Projects: Проекты
+      Project: Проект
       roots: Корневые
       promotions: Акции
+      upload_file: Выберите файл для загрузки
 
       id: ID
       name: Имя
@@ -57,3 +60,13 @@ ru:
     '500':
       title: Ошибка 500
       description: Внутренняя ошибка сервера
+  errors:
+    messages:
+      carrierwave_processing_error: Невозможно обработать изображение
+      carrierwave_integrity_error: Файл не является изображением
+      carrierwave_download_error: Невозможно скачать файл
+      extension_white_list_error: "Вы не можете загружать файлы типа %{extension}, разрешенные типы: %{allowed_types}"
+      extension_black_list_error: "Вы не можете загружать файлы типа %{extension}, запрещенные типы: %{prohibited_types}"
+      rmagick_processing_error: "Ошибка взаимодействия с RMagick, может быть это не изображение? Исходная ошибка: %{e}"
+      mime_types_processing_error: "Не получилось обработать файл с MIME::Types, возможно неправильный content-type? Исходная ошибка: %{e}"
+      mini_magick_processing_error: "Ошибка взаимодействия с MiniMagick, может быть это не изображение? Исходная ошибка: %{e}"

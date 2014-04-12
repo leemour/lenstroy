@@ -1,0 +1,36 @@
+- error = @project.errors.include?(:slug)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :slug, :class => 'control-label'
+  .controls
+    =f.text_field :slug, :class => 'form-control input-large input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:slug, :class => 'text-error') : pat(:example)
+
+- error = @project.errors.include?(:title)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :title, :class => 'control-label'
+  .controls
+    =f.text_field :title, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:title, :class => 'text-error') : pat(:example)
+
+- error = @project.errors.include?(:description)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :description, :class => 'control-label'
+  .controls
+    ~f.text_area :description, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:description, :class => 'text-error') : pat(:example)
+
+- error = @project.errors.include?(:"images.file")
+/ = @project.errors.inspect
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  = f.fields_for :images do |image_form|
+    =image_form.label :file, :class => 'control-label'
+    .controls
+      =image_form.file_field :file, :class => 'input-xlarge input-with-feedback', :multiple => true
+      %span.help-inline=error ? image_form.error_message_on(:file, :class => 'text-error') : pat(:upload_file)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:projects, :index), :class => 'btn btn-default'

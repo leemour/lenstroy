@@ -3,6 +3,8 @@ ru:
     common_attributes: &common_attrs
       created_at: Создан
       updated_at: Изменен
+      slug: Путь
+      title: Заголовок
     account:
       name: Пользователи
       attributes:
@@ -18,8 +20,6 @@ ru:
     page:
       name: Страницы
       attributes:
-        slug: Путь
-        title: Заголовок
         status: Статус
         account_id: Автор
         content: Содержание
@@ -28,6 +28,12 @@ ru:
         seo_desc: SEO описание
         seo_keys: Ключевые слова
         parent_id: Родительская
+        <<: *common_attrs
+    project:
+      name: Проекты
+      attributes:
+        description: Описание
+        projects_images: Фотографии
         <<: *common_attrs
   activemodel:
     models:
