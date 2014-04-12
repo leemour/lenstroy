@@ -2,9 +2,8 @@
 /.idea
 
 # Ignore all logfiles and tempfiles.
-/log
-log/**/*
-tmp/**/*
+/log/*.log
+/tmp
 bin/*
 vendor/gems/*
 !vendor/gems/cache/
