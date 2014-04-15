@@ -43,8 +43,8 @@ module CompassInitializer
       Compass.configure_sass_plugin!
       Compass.handle_configuration_change!
 
-      # Sass::Plugin.options[:template_location] = Padrino.root("admin/assets/css")
-      # Sass::Plugin.options[:css_location] = Padrino.root("public/admin/css")
+      Sass::Plugin.options[:template_location] = Padrino.root("admin/assets/css")
+      Sass::Plugin.options[:css_location] = Padrino.root("public/admin/css")
       app.use Sass::Plugin::Rack
     end
   end

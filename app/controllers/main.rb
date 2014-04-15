@@ -18,7 +18,7 @@ Lenstroy::App.controller do
 
   get '/projects' do
     @page = Page.find_by_slug('projects')
-    @projects = Projects.all
+    @projects = Project.all
     halt 404 unless @page
     render 'pages/projects'
   end
