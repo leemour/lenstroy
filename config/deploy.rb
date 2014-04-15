@@ -56,7 +56,6 @@ set :create_shared_dirs, %w{
 # Shared dirs to be uploaded
 set :shared_dirs, %w{
   bin/.
-  public/uploads/.
 }
 
 # Shared config files to be uploaded and linked
