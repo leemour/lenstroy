@@ -1,30 +1,26 @@
-# Enables support for Compass, a stylesheet authoring framework based on SASS.
-# See http://compass-style.org/ for more details.
-# Store Compass/SASS files (by default) within 'app/stylesheets'
+# http://compass-style.org/help/tutorials/configuration-reference/
 
 module CompassInitializer
-  module Main
+  module App
     def self.registered(app)
       require 'sass/plugin/rack'
 
       Compass.configuration do |config|
-        config.project_path = Padrino.root
-        config.sass_dir = "app/assets/stylesheets"
+        config.project_path    = Padrino.root
+        config.sass_dir        = "app/assets/css"
+        config.css_dir         = "public/css"
+        config.images_dir      = "public/images"
+        config.javascripts_dir = "public/js"
+        config.http_path       = "/"
         config.project_type = :stand_alone
-        config.http_path = "/"
-        config.css_dir = "public/stylesheets"
-        config.images_dir = "public/images"
-        config.javascripts_dir = "public/javascripts"
         config.output_style = :compressed
       end
 
       Compass.configure_sass_plugin!
       Compass.handle_configuration_change!
 
-      # app.use Sass::Plugin::Rack
-      # require 'sass/plugin/rack'
-      Sass::Plugin.options[:template_location] = Padrino.root("app/assets/stylesheets")
-      Sass::Plugin.options[:css_location] = Padrino.root("public/stylesheets")
+      Sass::Plugin.options[:template_location] = Padrino.root("app/assets/css")
+      Sass::Plugin.options[:css_location] = Padrino.root("public/css")
       app.use Sass::Plugin::Rack
     end
   end
@@ -34,19 +30,21 @@ module CompassInitializer
       require 'sass/plugin/rack'
 
       Compass.configuration do |config|
-        config.project_path = Padrino.root
-        config.sass_dir = "admin/stylesheets"
+        config.project_path    = Padrino.root
+        config.sass_dir        = "admin/assets/css"
+        config.css_dir         = "public/admin/css"
+        config.images_dir      = "public/admin/images"
+        config.javascripts_dir = "public/admin/js"
+        config.http_path       = "/admin/"
         config.project_type = :stand_alone
-        config.http_path = "/"
-        config.css_dir = "public/admin/stylesheets"
-        config.images_dir = "public/admin/mages"
-        config.javascripts_dir = "public/admin/javascripts"
         config.output_style = :compressed
       end
 
       Compass.configure_sass_plugin!
       Compass.handle_configuration_change!
 
+      # Sass::Plugin.options[:template_location] = Padrino.root("admin/assets/css")
+      # Sass::Plugin.options[:css_location] = Padrino.root("public/admin/css")
       app.use Sass::Plugin::Rack
     end
   end

@@ -6,18 +6,17 @@ module Lenstroy
     register Padrino::Helpers
     register Padrino::Admin::AccessControl
 
-    register SassInitializer
+    register CompassInitializer::Admin
     register Kaminari::Helpers::SinatraHelpers
 
     register Padrino::Pipeline
     configure_assets do |assets|
       assets.pipeline = Padrino::Pipeline::Sprockets
-      assets.css_assets =  [ "admin/assets/css", Bootstrap.stylesheets_path ]
-      assets.js_assets  =  [ "admin/assets/js", Bootstrap.javascripts_path ]
+      assets.css_assets   = ["admin/assets/css", Bootstrap.stylesheets_path]
+      assets.js_assets    = ["admin/assets/js", Bootstrap.javascripts_path]
       assets.image_prefix = '/images'
-      assets.css_prefix = '/css'
-      assets.js_prefix  = '/js'
-      # assets.compiled_output = "#{public_path}"
+      assets.css_prefix   = '/css'
+      assets.js_prefix    = '/js'
     end
 
     ##
@@ -44,6 +43,8 @@ module Lenstroy
     enable  :reload
 
     configure :development do
+      require 'rack-livereload'
+      use Rack::LiveReload
       disable :asset_stamp
     end
 

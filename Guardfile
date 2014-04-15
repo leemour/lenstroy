@@ -7,14 +7,12 @@ guard 'livereload' do
   watch(%r{public/.+\.(css|js|html)})
   watch(%r{config/locales/.+\.yml})
   # Padrino
-  # watch(%r{(app|vendor)/assets(/\w+/.+\.(css|sass|scss|js|coffee))}) { |m| "#{m[3]}" }
-  watch(%r{app/assets/stylesheets/.+\.(css|sass|scss)}) { "/public/stylesheets/application.css" }
-  watch(%r{app/assets/javascripts(/(?<!bootstr)(\w+/)?.+\.(js|coffee))}) { "/public/javascripts/application.js" }
-  watch(%r{app/assets/javascripts/bootstrap/.+\.(js|coffee)}) { "/public/javascripts/bootstrap.js" }
-
-  watch(%r{admin/assets/stylesheets/.+\.(css|sass|scss)}) { "/public/admin/stylesheets/admin.css" }
-  watch(%r{admin/assets/javascripts(/(?<!bootstr)(\w+/)?.+\.(js|coffee))}) { "/public/admin/javascripts/application.js" }
-  watch(%r{app/assets/javascripts/bootstrap/.+\.(js|coffee)}) { "/public/admin/javascripts/bootstrap.js" }
+  #   App
+  watch(%r{app/assets/css/.+\.(css|sass|scss)}) { "/public/css/application.css" }
+  watch(%r{app/assets/js/.+\.(js|coffee)})      { "/public/js/application.js" }
+  #   Admin
+  watch(%r{admin/assets/css/.+\.(css|sass|scss)}) { "/public/admin/css/admin.css" }
+  watch(%r{admin/assets/js/.+\.(js|coffee)})      { "/public/admin/js/application.js" }
 
   # Rails Assets Pipeline
   # watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html))).*}) { |m| "/assets/#{m[3]}" }

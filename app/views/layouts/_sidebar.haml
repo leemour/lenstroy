@@ -5,7 +5,7 @@
 
 -if @page && @page.contact_page?
   #contact-form.widget
-    = partial 'common/contact_form'
+    = partial 'common/contact_form', locals: {in_sidebar: true}
 
   %nav.navbar-sidebar
     = render_navigation context: 'sidebar', renderer: :side_menu, expand_all: true

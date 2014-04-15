@@ -21,6 +21,7 @@ gem 'negative_captcha'
 # Assets
 gem 'bootstrap-sass'
 gem 'padrino-pipeline', git: 'git@github.com:Ortuna/padrino-pipeline.git'
+gem 'compass'
 
 # Image uploads
 gem 'carrierwave'

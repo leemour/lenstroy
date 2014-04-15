@@ -6,20 +6,19 @@ module Lenstroy
     register Padrino::Helpers
 
     register Sinatra::SimpleNavigation
-    register SassInitializer
+    register CompassInitializer::App
+
+    register NegCaptcha::Helpers
 
     register Padrino::Pipeline
     configure_assets do |assets|
-      assets.pipeline = Padrino::Pipeline::Sprockets
-      assets.css_assets =  [ "app/assets/css", Bootstrap.stylesheets_path ]
-      assets.js_assets  =  [ "app/assets/js", Bootstrap.javascripts_path ]
+      assets.pipeline     = Padrino::Pipeline::Sprockets
+      assets.css_assets   = ["app/assets/css", Bootstrap.stylesheets_path]
+      assets.js_assets    = ["app/assets/js", Bootstrap.javascripts_path]
       assets.image_prefix = '/images'
-      assets.css_prefix = '/css'
-      assets.js_prefix  = '/js'
-      # assets.compiled_output = "#{public_path}"
+      assets.css_prefix   = '/css'
+      assets.js_prefix    = '/js'
     end
-
-    register NegCaptcha::Helpers
 
     # enable :sessions
     enable :reload
@@ -61,22 +60,15 @@ module Lenstroy
     #
 
     set :delivery_method, :smtp => {
-      :address         => 'smtp.mandrillapp.com',
-      :port            => '587',
-      :user_name       => 'leemour@gmail.com',
-      :password        => ENV['MANDRILL_API_KEY'],
-      :authentication  => :plain, # :plain, :login, :cram_md5, no auth by default
-      :domain          => "lenstroyin.ru" # the HELO domain provided by the client to the server
+      address:        'smtp.mandrillapp.com',
+      port:           '587',
+      user_name:      'leemour@gmail.com',
+      password:       ENV['MANDRILL_API_KEY'],
+      authentication: :plain, # :plain, :login, :cram_md5, no auth by default
+      domain:         "lenstroyin.ru" # the HELO domain provided by the client to the server
     }
 
-    ##
-    # You can configure for a specified environment like:
-    #
-    #   configure :development do
-    #     set :foo, :bar
-    #     disable :asset_stamp # no asset timestamping for dev
-    #   end
-    #
+    ## Environments
     configure :development do
       require 'rack-livereload'
       use Rack::LiveReload
