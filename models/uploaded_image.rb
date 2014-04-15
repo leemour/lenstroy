@@ -1,5 +1,5 @@
 class UploadedImage < ActiveRecord::Base
-  UPLOAD_PATH = '/upload/images/'
+  UPLOAD_PATH = '/uploads/images/'
 
   mount_uploader :file, ImageUploader
 
