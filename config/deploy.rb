@@ -33,7 +33,7 @@ set :deploy_to, "/srv/www/#{fetch :full_app_name}"
 set :linked_files, %W{
   config/database.rb
   config/secret.rb
-  config/puma.rb
+  config/unicorn.rb
   db/#{fetch :application}_#{fetch :rack_env}.db
 }
 
@@ -63,15 +63,15 @@ set :shared_files, [
   {from: 'config/database.rb',       to: 'config/database.rb'},
   {from: 'config/secret.rb',         to: 'config/secret.rb'},
   {from: 'config/shared/monit',      to: 'config/monit'},
-  {from: 'config/shared/puma.rb',    to: 'config/puma.rb'},
-  {from: 'config/shared/puma.sh',    to: 'config/puma.sh'},
+  {from: 'config/shared/unicorn.rb',    to: 'config/unicorn.rb'},
+  {from: 'config/shared/unicorn.sh',    to: 'config/unicorn.sh'},
   {from: 'config/shared/nginx_staging.conf',    to: 'config/nginx_staging.conf'},
   {from: 'config/shared/nginx_production.conf', to: 'config/nginx_production.conf'},
 ]
 
 # Make config files executable
 set :executable_files, %w{
-  config/puma.sh
+  config/unicorn.sh
 }
 
 # Make some files writeable
@@ -81,11 +81,11 @@ set :writable_files, []# %W{
 
 # Create files unless they exist
 set :touch_files, %w{
-  puma.sock
+  unicorn.sock
   log/nginx_access.log
   log/nginx_error.log
-  log/puma.log
-  log/puma.err.log
+  log/unicorn.log
+  log/unicorn.err.log
   log/newrelic_agent.log
 }
 
@@ -124,7 +124,7 @@ set :rbenv_prefix, "RBENV_ROOT=#{fetch :rbenv_path} RBENV_VERSION=#{fetch :rbenv
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 
 # Setup Bundler
-set :bundle_bins, fetch(:bundle_bins, []) + %w{puma}
+set :bundle_bins, fetch(:bundle_bins, []) + %w{unicorn}
 
 # New Relic
 # TODO: recipe not updated to Capistrano 3, using capistrano/newrelic but
