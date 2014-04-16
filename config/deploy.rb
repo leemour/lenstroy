@@ -100,8 +100,8 @@ set :symlinks, [
     to:   "/etc/monit/conf.d/#{fetch :full_app_name}.conf"
   },
   {
-    from: "config/puma.sh",
-    to:   "/etc/init.d/puma_#{fetch :application}"
+    from: "config/unicorn.sh",
+    to:   "/etc/init.d/unicorn_#{fetch :application}"
   }
 ]
 
@@ -138,7 +138,7 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    invoke "puma:restart"
+    invoke "unicorn:restart"
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
@@ -153,6 +153,19 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+    end
+  end
+end
+
+namespace :unicorn do
+  %w[start stop restart reload upgrade].each do |command|
+    desc "#{command} Unicorn server"
+    task command do
+      on roles(:app) do
+        within current_path do
+          execute "service unicorn_#{fetch :application} #{command} #{fetch :stage}"
+        end
+      end
     end
   end
 end
