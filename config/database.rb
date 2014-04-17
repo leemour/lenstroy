@@ -16,19 +16,22 @@
 ActiveRecord::Base.configurations[:development] = {
   adapter:  'sqlite3',
   database: Padrino.root('db', 'lenstroy_development.db'),
-  pool:     16
+  pool:     16,
+  timeout:  5000,
 }
 
 ActiveRecord::Base.configurations[:production] = {
   adapter:  'sqlite3',
   database: Padrino.root('db', 'lenstroy_production.db'),
-  pool:     16
+  pool:     16,
+  timeout:  5000,
 }
 
 ActiveRecord::Base.configurations[:test] = {
   adapter:  'sqlite3',
   database: Padrino.root('db', 'lenstroy_test.db'),
-  pool:     16
+  pool:     16,
+  timeout:  5000,
 }
 
 # Setup our logger

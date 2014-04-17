@@ -60,11 +60,13 @@ module Lenstroy
     end
 
     access_control.roles_for :editor do |role|
+      role.project_module :projects, '/projects'
       role.project_module :pages, '/pages'
       role.project_module :accounts, '/accounts'
     end
 
     access_control.roles_for :writer do |role|
+      role.project_module :projects, '/projects'
       role.project_module :pages, '/pages'
     end
 
