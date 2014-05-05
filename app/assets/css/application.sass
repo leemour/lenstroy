@@ -1,5 +1,6 @@
 @import "variables"
 @import "bootstrap"
+@import "ekko-lightbox"
 
 $light_text_color: #555
 $dark_blue: #3e5d87
@@ -331,6 +332,15 @@ body.message article
       textarea.invalid
         border-color: $btn-danger-border
 
+
+body.gallery
+  .images
+    clear: both
+    overflow: hidden
+    margin: 10px 0 30px
+    img
+      float: left
+      margin: 0 4px 10px
 
 // Media Queries
 @media (max-width: 500px)

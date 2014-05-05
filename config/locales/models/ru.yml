@@ -35,6 +35,15 @@ ru:
         description: Описание
         projects_images: Фотографии
         <<: *common_attrs
+    project_image:
+      attributes:
+        file: Фото
+        remove_file: Удалить фото
+    uploaded_image:
+      name: Загруженное фото
+      attributes:
+        file: Фото
+        <<: *common_attrs
   activemodel:
     models:
       contact_form: Форма связи

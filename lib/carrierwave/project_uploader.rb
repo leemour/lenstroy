@@ -4,7 +4,7 @@ class ProjectUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   def store_dir
-    "uploads/images/projects/#{model.slug}/"
+    "uploads/images/projects/#{model.project.slug}/"
   end
 
   def extension_white_list

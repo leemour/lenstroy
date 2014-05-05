@@ -1,5 +1,5 @@
 !!! 5
-%html{:lang => 'ru'}
+%html{lang: 'ru'}
   %head
     %meta{ charset: 'utf-8'}/
     %meta{'http-equiv' => "X-UA-Compatible", content: "IE=edge"}/
@@ -8,14 +8,14 @@
     %meta{ name: 'keywords',    content: @page.seo_keys }/
     %title= full_title(@page)
     =favicon_tag 'favicon.ico'
-    %link{:href => '//webfonts.ru/import/clearsans.css', :rel => :stylesheet}
+    %link{href: '//webfonts.ru/import/clearsans.css', rel: :stylesheet}
     =stylesheet_link_tag 'application'
     =stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
     /[if lt IE 9]
       %script{ src: '//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' }
       %script{ src: "//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"}
 
-  %body{class: @page.slug}
+  %body{class: body_class(@page)}
 
     = partial 'layouts/header'
 
@@ -23,7 +23,7 @@
       .container-fluid
         .row
           %article.col-sm-8.col-lg-9
-            = [:error, :warning, :success, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => true) }.join.html_safe
+            = flash_messages
 
             = render_navigation(renderer: :bootstrap_breadcrumbs)
 

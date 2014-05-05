@@ -24,6 +24,10 @@ module ApplicationHelper
     "/promotions/#{slug}"
   end
 
+  def body_class(page)
+    "#{request.route_obj.controller} #{page.slug}"
+  end
+
   def base_title
     "#{company_name} - Ремонт квартир, строительство загородных домов"
   end
@@ -36,6 +40,12 @@ module ApplicationHelper
       title = page
     end
     "#{title} | #{base_title}"
+  end
+
+  def flash_messages
+    [:error, :warning, :success, :notice].map do |type|
+      flash_tag(type, class: "alert alert-#{type} fade in", bootstrap: true)
+    end.join.html_safe
   end
 
   def pricelist_url
@@ -90,6 +100,10 @@ module ApplicationHelper
           'data-yashareTheme' => 'counter'
       end
     end
+  end
+
+  def photo_title(project, i)
+    "#{t('Project')}: #{project.title}, #{t('Photo')} #{i+1}"
   end
 end
 

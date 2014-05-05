@@ -3,5 +3,5 @@
   %li.active=link_to tag_icon(:plus, pat(:new)), url(:projects, :new)
 
 .tabs-content
-  = form_for @project, url(:projects, :create), multipart: true, :class => 'form-horizontal' do |f|
+  = form_for @project, url(:projects, :create), multipart: true, :class => 'project form-horizontal' do |f|
     =partial 'projects/form', :locals => { :f => f }

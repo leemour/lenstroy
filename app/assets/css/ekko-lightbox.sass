@@ -1,0 +1,62 @@
+.ekko-lightbox-container
+  position: relative
+
+.ekko-lightbox-nav-overlay
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 100
+  width: 100%
+  height: 100%
+  a
+    z-index: 100
+    display: block
+    width: 49%
+    height: 100%
+    padding-top: 45%
+    font-size: 30px
+    color: #fff
+    text-shadow: 2px 2px 4px #000
+    opacity: 0
+    filter: dropshadow(color = black, offx = 2, offy = 2)
+    -webkit-transition: opacity 0.5s
+    -moz-transition: opacity 0.5s
+    -o-transition: opacity 0.5s
+    transition: opacity 0.5s
+    &:empty
+      width: 49%
+
+.ekko-lightbox
+  a
+    opacity: 1
+    &, &:active, &:hover, &:visited
+      color: #FFF !important
+      text-decoration: none !important
+      outline: 0 none !important
+  .glyphicon
+    position: relative
+    &::after
+      content: ""
+      opacity: 0.5
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      position: absolute
+      z-index: -1
+  .glyphicon-chevron-left
+    left: 0
+    float: left
+    padding-left: 15px
+    text-align: left
+    &:hover::after
+      background-image: linear-gradient(to left, transparent, #555)
+  .glyphicon-chevron-right
+    right: 0
+    float: right
+    padding-right: 15px
+    text-align: right
+    &:hover::after
+      background-image: linear-gradient(to right, transparent, #555)
+  .modal-footer
+    text-align: left

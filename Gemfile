@@ -6,10 +6,10 @@ gem 'padrino', '~> 0.12', git: 'git@github.com:padrino/padrino-framework.git'
 gem 'rake'
 
 # Component requirements
-gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'sass'
 gem 'haml'
-gem 'activerecord', '>= 3.1', :require => 'active_record'
+gem 'activerecord', '>= 3.1', require: 'active_record'
 gem 'sqlite3'
 gem 'unicorn'
 gem 'kaminari', :require => 'kaminari/sinatra'

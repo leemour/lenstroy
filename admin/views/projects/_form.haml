@@ -20,13 +20,25 @@
     %span.help-inline=error ? f.error_message_on(:description, :class => 'text-error') : pat(:example)
 
 - error = @project.errors.include?(:"images.file")
-/ = @project.errors.inspect
-%fieldset.control-group{:class => error ? 'has-error' : ''}
-  = f.fields_for :images do |image_form|
-    =image_form.label :file, :class => 'control-label'
+- n = 0 # Uploaded images counter
+= f.fields_for :images do |image_f|
+  %fieldset.control-group{:class => error ? 'has-error' : ''}
+    =image_f.label :file, :class => 'control-label'
     .controls
-      =image_form.file_field :file, :class => 'input-xlarge input-with-feedback', :multiple => true
-      %span.help-inline=error ? image_form.error_message_on(:file, :class => 'text-error') : pat(:upload_file)
+      =image_f.file_field :file, :class => 'input-xlarge input-with-feedback'
+      %span.help-inline=error ? image_f.error_message_on(:file, :class => 'text-error') : pat(:upload_file)
+      - if @project.images[n].file_url
+        .image-url
+          %span= @project.images[n].file_url
+        =image_tag(@project.images[n].file_url(:thumb))
+
+    - if @project.images[n].file_url
+      .controls.delete-file
+        =image_f.label :remove_file, :class => 'control-label' do
+          =image_f.check_box :_destroy
+      - n += 1
+
+%button#add-upload.btn.btn-warning= pat('add_upload')
 
 .form-actions
   =f.submit pat(:save), :class => 'btn btn-primary'

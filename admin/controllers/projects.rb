@@ -28,6 +28,7 @@ Lenstroy::Admin.controllers :projects do
   get :edit, :with => :id do
     @title = pat(:edit_title, :model => "project #{params[:id]}")
     @project = Project.find(params[:id])
+    @project.images.build
     if @project
       render 'projects/edit'
     else

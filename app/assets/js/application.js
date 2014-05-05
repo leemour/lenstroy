@@ -1,4 +1,5 @@
 //= require bootstrap
+//= require ekko-lightbox
 
 $(function() {
   var counter = 0;

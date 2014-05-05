@@ -12,6 +12,8 @@ ru:
   contacts: Контакты
   web_development: Создание сайта
   promotions: Рекламные акции
+  Photo: Фото
+  Project: Проект
 
   padrino:
     admin:
@@ -27,6 +29,7 @@ ru:
       roots: Корневые
       promotions: Акции
       upload_file: Выберите файл для загрузки
+      add_upload: Добавить фотографию
 
       id: ID
       name: Имя

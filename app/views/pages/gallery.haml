@@ -1,0 +1,25 @@
+%h1= @page.title
+
+.content
+  .description= @page.content.html_safe
+
+  - unless @projects.empty?
+    #projects
+      - @projects.each do |project|
+
+        .project
+          %h2= project.title
+          .description= project.description
+          .images
+            - project.images.each_with_index do |image, i|
+              %a{href: image.file_url, 'data-title' => photo_title(project, i), 'data-toggle' => 'lightbox', 'data-gallery' => project.slug}
+                = image_tag image.file_url(:thumb), class: "img-responsive"
+
+
+:javascript
+  window.onload = function() {
+    $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
+  }

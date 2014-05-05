@@ -19,7 +19,7 @@ SimpleNavigation::Configuration.run do |navigation|
       works.item :zabor,        'Заборы',               '/works/fences'
       works.item :fundament,    'Фундамент',            '/works/foundation'
     end
-    primary.item :renovation,   'Ремонт квартир/офисов','/renovation' do |renovation|
+    primary.item :renovation,   'Ремонт','/renovation' do |renovation|
       renovation.item :otdelka, 'Отделочные работы',    '/renovation/finishing'
       renovation.item :otdelka, 'Перепланировка',       '/renovation/replanning'
     end
@@ -29,7 +29,7 @@ SimpleNavigation::Configuration.run do |navigation|
       projects.item :bania,     'Проекты бань',         '/projects/bath-house'
     end
     primary.item :design,       'Дизайн интерьера',      '/design'
-    # primary.item :gallery,      'Галерея',              '/gallery'
+    primary.item :gallery,      'Галерея',              '/gallery'
 
     primary.item :promotions,    'Акции',          '/promotions' do |promotions|
       promotions.item :new,      'Скидка новоселам',

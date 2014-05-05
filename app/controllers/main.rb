@@ -1,4 +1,4 @@
-Lenstroy::App.controller do
+Lenstroy::App.controller :main, map: '/' do
   before do
     setup_contact_form
   end
@@ -16,11 +16,11 @@ Lenstroy::App.controller do
     render 'pages/promotions'
   end
 
-  get '/projects' do
-    @page = Page.find_by_slug('projects')
+  get '/gallery' do
+    @page = Page.find_by_slug('gallery')
     @projects = Project.all
     halt 404 unless @page
-    render 'pages/projects'
+    render 'pages/gallery'
   end
 
   get '/:primary', priority: :low do

@@ -1,5 +1,4 @@
 class Project < ActiveRecord::Base
-  has_many :images, class_name: 'ProjectImage', foreign_key: 'project_id'#,
-    #:table_name => :project_images, inverse_of: :project#, dependent: :destroy
-  accepts_nested_attributes_for :images, allow_destroy: true
+  has_many :images, class_name: 'ProjectImage', foreign_key: 'project_id'
+  accepts_nested_attributes_for :images, allow_destroy: true, reject_if: :all_blank
 end
