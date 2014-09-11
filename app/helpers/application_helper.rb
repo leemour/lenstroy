@@ -1,4 +1,10 @@
+require 'ostruct'
+
 module ApplicationHelper
+  def current_user
+    OpenStruct.new
+  end
+
   def company_name
     "ЛенСтройИнициатива"
   end
